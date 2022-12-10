@@ -1,0 +1,25 @@
+:root {
+  --body-bg-color: #121214;
+  --text-color: #ece8e8;
+  --bg-cards: #2c2c31;
+  --bg-input: #4c4c55;
+
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--body-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
