@@ -1,5 +1,7 @@
 import React from 'react'
-import * as S from './styled'
+import { Button } from '../Button/Button'
+import { GradeInputs } from '../GradeInputs/GradeInputs'
+import * as S from './style'
 export function Section() {
   return (
     <S.SectionStyled>
@@ -8,11 +10,14 @@ export function Section() {
       </header>
 
       <div>
-        <button>Calc. Bimestre</button>
-        <button>Calc. Trimestre</button>
+        <Button title="Calc. Bimestre" />
+        <Button title="Calc. Trimestre" />
       </div>
 
-      <div></div>
+      <div className="divWithBackground">
+        <GradeInputs />
+        <GradeInputs />
+      </div>
     </S.SectionStyled>
   )
 }
