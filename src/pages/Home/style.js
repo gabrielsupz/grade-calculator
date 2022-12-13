@@ -13,6 +13,7 @@ export const CalcAndSignIn = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 100%;
 `
 
 export const asideFlex = styled.aside`
@@ -22,7 +23,9 @@ export const asideFlex = styled.aside`
   justify-content: space-between;
 
   div {
+    gap: 1.5rem;
     display: flex;
     flex-direction: column;
+    max-width: 21rem;
   }
 `

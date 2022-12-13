@@ -2,8 +2,8 @@
   --body-bg-color: #121214;
   --text-color: #ece8e8;
   --bg-cards: #2c2c31;
-  --bg-input: #4c4c55;
-
+  --bg-input: hsl(240, 6%, 32%);
+  --response-color: #67f436;
   font-size: 62.5%;
   /* 1rem = 10px */
 }

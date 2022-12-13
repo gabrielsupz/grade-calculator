@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as S from './style'
+
 interface ButtonProps {
   title: string
 }
