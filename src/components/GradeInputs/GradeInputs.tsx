@@ -1,33 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { NoteBox } from '../NoteBox/NoteBox'
 import * as S from './style'
+
+export interface gradeProps {
+  grade: number
+}
 
 export function GradeInputs() {
   return (
     <S.GradeInputBox>
       {' '}
       <>
-        <h2>Nota Final</h2>
+        <h2>Nota Final </h2>
 
-        <S.NoteBox>
-          {' '}
-          <label htmlFor="nota1">Nota 1: </label>
-          <input maxLength={3} max={100} min={0} id="nota1" type="number" />
-        </S.NoteBox>
-        <S.NoteBox>
-          {' '}
-          <label htmlFor="nota1">Nota 2: </label>
-          <input id="nota3" type="number" />
-        </S.NoteBox>
-        <S.NoteBox>
-          {' '}
-          <label htmlFor="nota1">Nota 3: </label>
-          <input id="nota3" type="number" />
-        </S.NoteBox>
-        <S.NoteBox>
-          {' '}
-          <label htmlFor="nota1">Nota 4: </label>
-          <input id="nota4" type="number" />
-        </S.NoteBox>
+        <NoteBox numberNote="1" />
+        <NoteBox numberNote="2" />
+        <NoteBox numberNote="3" />
+        <NoteBox numberNote="4" />
       </>
       <S.ResultDiv>
         <S.respH3>Resultado:</S.respH3>
