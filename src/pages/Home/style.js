@@ -34,7 +34,8 @@ export const leftMessages = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  max-width: 22rem;
+  max-width: 25rem;
   justify-content: center;
   align-items: center;
+  margin-left: 3rem;
 `

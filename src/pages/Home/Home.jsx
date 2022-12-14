@@ -7,9 +7,15 @@ export function Home() {
   return (
     <S.HomeStyled>
       <S.leftMessages>
-        <InfoMessage />
+        <InfoMessage
+          text=" São contadas as notas dos 4 bimestres, sendo que a ultima tem seu valor
+        dobrado"
+        />
 
-        <AlertMessage />
+        <AlertMessage
+          text="Calcule a sua nota final ou a nota que precisa tirar para atingir a
+        média"
+        />
       </S.leftMessages>
 
       <Section />
