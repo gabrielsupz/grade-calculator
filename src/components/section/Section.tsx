@@ -4,6 +4,10 @@ import { GradeInputs } from '../GradeInputs/GradeInputs'
 import * as S from './style'
 
 export function Section() {
+
+
+
+
   return (
     <S.SectionStyled>
       <header>

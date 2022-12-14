@@ -11,14 +11,21 @@ export const GradeInputBox = styled.section`
   }
 `
 export const NoteBox = styled.div`
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   input {
+    font-size: 2rem;
     width: 4.5rem;
     height: 3.5rem;
     border-radius: 4px;
     background-color: var(--bg-input);
-    justify-content: center;
+    text-align: center;
     align-items: center;
-    margin: 0 auto;
+    margin: auto;
   }
   label {
     font-size: 2rem;

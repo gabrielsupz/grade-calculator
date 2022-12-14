@@ -11,7 +11,7 @@ export function GradeInputs() {
         <S.NoteBox>
           {' '}
           <label htmlFor="nota1">Nota 1: </label>
-          <input id="nota1" type="number" />
+          <input maxLength={3} max={100} min={0} id="nota1" type="number" />
         </S.NoteBox>
         <S.NoteBox>
           {' '}
