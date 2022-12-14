@@ -21,7 +21,7 @@ export function GradeInputs() {
       <S.ResultDiv>
         <S.respH3>Resultado:</S.respH3>
 
-        <S.ResponseBox>10</S.ResponseBox>
+        <S.ResponseBox>100</S.ResponseBox>
       </S.ResultDiv>
     </S.GradeInputBox>
   )
