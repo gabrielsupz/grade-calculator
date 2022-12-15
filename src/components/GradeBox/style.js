@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const NoteBox = styled.div`
+export const GradeBox = styled.div`
   input[type='number']::-webkit-inner-spin-button,
   input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;

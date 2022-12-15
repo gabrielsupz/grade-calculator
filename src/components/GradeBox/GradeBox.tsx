@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import * as S from './style'
 
-export interface NoteBoxProps {
-  numberNote: string
+export interface GradeBoxProps {
+  numberGrade: string
+  devolveValor: any
 }
-export function NoteBox({ numberNote }: NoteBoxProps) {
+export function GradeBox({ devolveValor, numberGrade }: GradeBoxProps) {
   const min = 0
   const max = 100
   const [value, setValue] = useState(0)
@@ -12,18 +13,20 @@ export function NoteBox({ numberNote }: NoteBoxProps) {
   const handleChange = event => {
     const value = Math.max(min, Math.min(max, Number(event.target.value)))
     setValue(value)
+
+    devolveValor(value)
   }
 
   return (
-    <S.NoteBox>
+    <S.GradeBox>
       {' '}
-      <label htmlFor={'number' + numberNote}>Nota {numberNote}: </label>
+      <label htmlFor={'number' + numberGrade}>Nota {numberGrade}: </label>
       <input
         onChange={handleChange}
         value={value}
-        id={'number' + numberNote}
+        id={'number' + numberGrade}
         type="number"
       />
-    </S.NoteBox>
+    </S.GradeBox>
   )
 }
