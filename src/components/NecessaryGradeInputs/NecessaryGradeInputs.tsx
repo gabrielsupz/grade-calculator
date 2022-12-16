@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { GradeBox } from '../GradeBox/GradeBox'
-import { AverageResponseBox } from '../AverageResponseBox/AverageResponseBox'
-import * as S from './style'
+
+import * as S from './style.js'
+import { NecessaryGradeBox } from '../NecessaryGradeBox/NecessaryGradeBox'
 
 export interface gradeProps {
   grade: number
 }
 
-export function GradeInputs() {
+export function NecessaryGradeInputs() {
   const [value1, SetValue1] = useState()
   const [value2, SetValue2] = useState()
   const [value3, SetValue3] = useState()
-  const [value4, SetValue4] = useState()
 
   function GetValue1(value) {
     SetValue1(value)
@@ -22,29 +22,24 @@ export function GradeInputs() {
   function GetValue3(value) {
     SetValue3(value)
   }
-  function GetValue4(value) {
-    SetValue4(value)
-  }
 
   return (
     <S.GradeInputBox>
       {' '}
       <>
-        <h2>Nota Final </h2>
+        <h2>Nota necessária </h2>
 
         <GradeBox devolveValor={GetValue1} numberGrade="1" />
         <GradeBox devolveValor={GetValue2} numberGrade="2" />
         <GradeBox devolveValor={GetValue3} numberGrade="3" />
-        <GradeBox devolveValor={GetValue4} numberGrade="4" />
       </>
       <S.ResultDiv>
-        <S.respH3>Resultado:</S.respH3>
+        <S.respH3>Presisa de:</S.respH3>
 
-        <AverageResponseBox
+        <NecessaryGradeBox
           v1={Number(value1)}
           v2={Number(value2)}
           v3={Number(value3)}
-          v4={Number(value4)}
         />
       </S.ResultDiv>
     </S.GradeInputBox>

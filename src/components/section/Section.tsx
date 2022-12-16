@@ -1,13 +1,10 @@
 import React from 'react'
 import { Button } from '../Button/Button'
 import { GradeInputs } from '../GradeInputs/GradeInputs'
+import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInputs'
 import * as S from './style'
 
 export function Section() {
-
-
-
-
   return (
     <S.SectionStyled>
       <header>
@@ -22,7 +19,7 @@ export function Section() {
 
       <div className="divWithBackground">
         <GradeInputs />
-        <GradeInputs />
+        <NecessaryGradeInputs />
       </div>
     </S.SectionStyled>
   )

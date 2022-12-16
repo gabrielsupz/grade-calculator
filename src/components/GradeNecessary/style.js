@@ -23,12 +23,4 @@ export const ResultDiv = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-
-  p.blue {
-    color: var(--blue-response);
-  }
-
-  p.red {
-    color: var(--red-response);
-  }
 `
