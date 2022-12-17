@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const HomeStyled = styled.div`
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: 100vh;
+  height: max-content;
   padding: 2.6rem 2.6rem;
 `
 
@@ -19,7 +20,7 @@ export const CalcAndSignIn = styled.div`
 export const asideFlex = styled.aside`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 63rem;
   justify-content: space-between;
 
   div {

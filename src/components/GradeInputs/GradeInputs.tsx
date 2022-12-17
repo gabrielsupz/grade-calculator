@@ -29,14 +29,14 @@ export function GradeInputs() {
   return (
     <S.GradeInputBox>
       {' '}
-      <>
+      <S.InputsDiv>
         <h2>Nota Final </h2>
 
         <GradeBox devolveValor={GetValue1} numberGrade="1" />
         <GradeBox devolveValor={GetValue2} numberGrade="2" />
         <GradeBox devolveValor={GetValue3} numberGrade="3" />
         <GradeBox devolveValor={GetValue4} numberGrade="4" />
-      </>
+      </S.InputsDiv>
       <S.ResultDiv>
         <S.respH3>Resultado:</S.respH3>
 

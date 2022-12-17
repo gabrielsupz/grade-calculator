@@ -5,7 +5,7 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  height: 100%;
+  height: max-content;
   header {
     background-color: var(--bg-cards);
     display: flex;
@@ -38,7 +38,7 @@ export const SectionStyled = styled.section`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5rem 3.5rem;
+    padding: 5rem 3.5rem 2rem 3.5rem;
   }
 `
 export const NoteBox = styled.div`
