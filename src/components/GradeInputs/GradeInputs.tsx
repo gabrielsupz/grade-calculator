@@ -7,7 +7,11 @@ export interface gradeProps {
   grade: number
 }
 
-export function GradeInputs() {
+export interface PeriodProps {
+  PeriodOfTime: 'bi' | 'tri'
+}
+
+export function GradeInputs({ PeriodOfTime }: PeriodProps) {
   const [value1, SetValue1] = useState()
   const [value2, SetValue2] = useState()
   const [value3, SetValue3] = useState()
@@ -26,27 +30,55 @@ export function GradeInputs() {
     SetValue4(value)
   }
 
-  return (
-    <S.GradeInputBox>
-      {' '}
-      <S.InputsDiv>
-        <h2>Nota Final </h2>
+  if (PeriodOfTime === 'bi') {
+    return (
+      <S.GradeInputBox>
+        {' '}
+        <S.InputsDiv>
+          <h2>Nota Final </h2>
 
-        <GradeBox devolveValor={GetValue1} numberGrade="1" />
-        <GradeBox devolveValor={GetValue2} numberGrade="2" />
-        <GradeBox devolveValor={GetValue3} numberGrade="3" />
-        <GradeBox devolveValor={GetValue4} numberGrade="4" />
-      </S.InputsDiv>
-      <S.ResultDiv>
-        <S.respH3>Resultado:</S.respH3>
+          <GradeBox devolveValor={GetValue1} numberGrade="1" />
+          <GradeBox devolveValor={GetValue2} numberGrade="2" />
+          <GradeBox devolveValor={GetValue3} numberGrade="3" />
+          <GradeBox devolveValor={GetValue4} numberGrade="4" />
+        </S.InputsDiv>
+        <S.ResultDiv>
+          <S.respH3>Resultado:</S.respH3>
 
-        <AverageResponseBox
-          v1={Number(value1)}
-          v2={Number(value2)}
-          v3={Number(value3)}
-          v4={Number(value4)}
-        />
-      </S.ResultDiv>
-    </S.GradeInputBox>
-  )
+          <AverageResponseBox
+            v1={Number(value1)}
+            v2={Number(value2)}
+            v3={Number(value3)}
+            v4={Number(value4)}
+          />
+        </S.ResultDiv>
+      </S.GradeInputBox>
+    )
+  }
+
+  if (PeriodOfTime === 'tri') {
+    return (
+      <S.GradeInputBox>
+        {' '}
+        <S.InputsDiv>
+          <h2>Nota Final </h2>
+
+          <GradeBox devolveValor={GetValue1} numberGrade="1" />
+          <GradeBox devolveValor={GetValue2} numberGrade="2" />
+          <GradeBox devolveValor={GetValue3} numberGrade="3" />
+        </S.InputsDiv>
+        <S.ResultDiv>
+          <S.respH3>Resultado:</S.respH3>
+
+          <AverageResponseBox
+            v1={Number(value1)}
+            v2={Number(value2)}
+            v3={Number(value3)}
+          />
+        </S.ResultDiv>
+      </S.GradeInputBox>
+    )
+  }
+
+  return <></>
 }

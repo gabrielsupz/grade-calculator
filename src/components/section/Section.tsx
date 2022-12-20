@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../Button/Button'
-import { GradeInputs } from '../GradeInputs/GradeInputs'
+import { GradeInputs, PeriodProps } from '../GradeInputs/GradeInputs'
 import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInputs'
 import * as S from './style'
 
 export function Section() {
+  const [period, setPeriod] = useState('')
+
+  function handlePeriod({ PeriodOfTime }: PeriodProps) {
+    setPeriod(PeriodOfTime)
+  }
   return (
     <S.SectionStyled>
       <header>
@@ -18,8 +23,8 @@ export function Section() {
       </div>
 
       <div className="divWithBackground">
-        <GradeInputs />
-        <NecessaryGradeInputs />
+        <GradeInputs PeriodOfTime={'bi'} />
+        <NecessaryGradeInputs PeriodOfTime={'bi'} />
       </div>
     </S.SectionStyled>
   )

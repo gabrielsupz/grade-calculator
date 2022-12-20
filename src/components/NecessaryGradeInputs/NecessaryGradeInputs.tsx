@@ -3,12 +3,12 @@ import { GradeBox } from '../GradeBox/GradeBox'
 
 import * as S from './style.js'
 import { NecessaryGradeBox } from '../NecessaryGradeBox/NecessaryGradeBox'
-
+import { PeriodProps } from '../GradeInputs/GradeInputs'
 export interface gradeProps {
   grade: number
 }
 
-export function NecessaryGradeInputs() {
+export function NecessaryGradeInputs({ PeriodOfTime }: PeriodProps) {
   const [value1, SetValue1] = useState()
   const [value2, SetValue2] = useState()
   const [value3, SetValue3] = useState()
@@ -23,25 +23,47 @@ export function NecessaryGradeInputs() {
     SetValue3(value)
   }
 
-  return (
-    <S.GradeInputBox>
-      {' '}
-      <>
-        <h2>Nota necessária </h2>
+  if (PeriodOfTime === 'bi') {
+    return (
+      <S.GradeInputBox>
+        {' '}
+        <>
+          <h2>Nota necessária </h2>
 
-        <GradeBox devolveValor={GetValue1} numberGrade="1" />
-        <GradeBox devolveValor={GetValue2} numberGrade="2" />
-        <GradeBox devolveValor={GetValue3} numberGrade="3" />
-      </>
-      <S.ResultDiv>
-        <S.respH3>Presisa de:</S.respH3>
+          <GradeBox devolveValor={GetValue1} numberGrade="1" />
+          <GradeBox devolveValor={GetValue2} numberGrade="2" />
+          <GradeBox devolveValor={GetValue3} numberGrade="3" />
+        </>
+        <S.ResultDiv>
+          <S.respH3>Presisa de:</S.respH3>
 
-        <NecessaryGradeBox
-          v1={Number(value1)}
-          v2={Number(value2)}
-          v3={Number(value3)}
-        />
-      </S.ResultDiv>
-    </S.GradeInputBox>
-  )
+          <NecessaryGradeBox
+            v1={Number(value1)}
+            v2={Number(value2)}
+            v3={Number(value3)}
+          />
+        </S.ResultDiv>
+      </S.GradeInputBox>
+    )
+  }
+  if (PeriodOfTime === 'tri') {
+    return (
+      <S.GradeInputBox>
+        {' '}
+        <>
+          <h2>Nota necessária </h2>
+
+          <GradeBox devolveValor={GetValue1} numberGrade="1" />
+          <GradeBox devolveValor={GetValue2} numberGrade="2" />
+        </>
+        <S.ResultDiv>
+          <S.respH3>Presisa de:</S.respH3>
+
+          <NecessaryGradeBox v1={Number(value1)} v2={Number(value2)} />
+        </S.ResultDiv>
+      </S.GradeInputBox>
+    )
+  }
+
+  return <></>
 }
