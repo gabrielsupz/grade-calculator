@@ -2,31 +2,32 @@ import React, { useState } from 'react'
 import { GradeBox } from '../GradeBox/GradeBox'
 import { AverageResponseBox } from '../AverageResponseBox/AverageResponseBox'
 import * as S from './style'
+import { Period } from '../../types/'
 
-export interface gradeProps {
-  grade: number
+interface GradeInputsProps {
+  PeriodOfTime: Period
 }
 
 export interface PeriodProps {
-  PeriodOfTime: 'bi' | 'tri'
+  PeriodOfTime: Period
 }
 
-export function GradeInputs({ PeriodOfTime }: PeriodProps) {
-  const [value1, SetValue1] = useState()
-  const [value2, SetValue2] = useState()
-  const [value3, SetValue3] = useState()
-  const [value4, SetValue4] = useState()
+export function GradeInputs({ PeriodOfTime }: GradeInputsProps) {
+  const [value1, SetValue1] = useState<number>()
+  const [value2, SetValue2] = useState<number>()
+  const [value3, SetValue3] = useState<number>()
+  const [value4, SetValue4] = useState<number>()
 
-  function GetValue1(value) {
+  function GetValue1(value: number) {
     SetValue1(value)
   }
-  function GetValue2(value) {
+  function GetValue2(value: number) {
     SetValue2(value)
   }
-  function GetValue3(value) {
+  function GetValue3(value: number) {
     SetValue3(value)
   }
-  function GetValue4(value) {
+  function GetValue4(value: number) {
     SetValue4(value)
   }
 

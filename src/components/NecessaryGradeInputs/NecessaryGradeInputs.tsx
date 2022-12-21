@@ -4,23 +4,20 @@ import { GradeBox } from '../GradeBox/GradeBox'
 import * as S from './style.js'
 import { NecessaryGradeBox } from '../NecessaryGradeBox/NecessaryGradeBox'
 import { PeriodProps } from '../GradeInputs/GradeInputs'
-export interface gradeProps {
-  grade: number
-}
 
 export function NecessaryGradeInputs({ PeriodOfTime }: PeriodProps) {
-  const [value1, SetValue1] = useState()
-  const [value2, SetValue2] = useState()
-  const [value3, SetValue3] = useState()
+  const [value1, setValue1] = useState()
+  const [value2, setValue2] = useState()
+  const [value3, setValue3] = useState()
 
   function GetValue1(value) {
-    SetValue1(value)
+    setValue1(value)
   }
   function GetValue2(value) {
-    SetValue2(value)
+    setValue2(value)
   }
   function GetValue3(value) {
-    SetValue3(value)
+    setValue3(value)
   }
 
   if (PeriodOfTime === 'bi') {

@@ -1,7 +1,7 @@
 import { AlertMessage } from '../../components/AlertMessage/AlertMessage'
 import { Button } from '../../components/Button/Button'
 import { InfoMessage } from '../../components/InfoMessage/InfoMessage'
-import { Section } from '../../components/section/Section'
+import { Section } from '../../components/Section/Section'
 import * as S from './style'
 export function Home() {
   return (

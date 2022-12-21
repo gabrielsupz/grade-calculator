@@ -4,23 +4,19 @@ import { GradeBox } from '../GradeBox/GradeBox'
 
 import * as S from './style'
 
-export interface gradeProps {
-  grade: number
-}
-
 export function GradeNecessary() {
-  const [value1, SetValue1] = useState()
-  const [value2, SetValue2] = useState()
-  const [value3, SetValue3] = useState()
+  const [value1, setValue1] = useState<number>()
+  const [value2, setValue2] = useState<number>()
+  const [value3, setValue3] = useState<number>()
 
-  function GetValue1(value) {
-    SetValue1(value)
+  function GetValue1(value: number) {
+    setValue1(value)
   }
-  function GetValue2(value) {
-    SetValue2(value)
+  function GetValue2(value: number) {
+    setValue2(value)
   }
-  function GetValue3(value) {
-    SetValue3(value)
+  function GetValue3(value: number) {
+    setValue3(value)
   }
 
   return (

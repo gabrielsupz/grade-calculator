@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import * as S from './style'
 
 interface ButtonProps {
   title: string
+  onClick?: () => void
 }
 
-export function Button({ title }: ButtonProps) {
-  return <S.stylizedButton>{title}</S.stylizedButton>
+export function Button({ title, onClick }: ButtonProps) {
+  return <S.stylizedButton onClick={onClick}>{title}</S.stylizedButton>
 }

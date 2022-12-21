@@ -3,7 +3,7 @@ import * as S from './style'
 
 export interface GradeBoxProps {
   numberGrade: string
-  devolveValor: any
+  devolveValor: (value: number) => void
 }
 export function GradeBox({ devolveValor, numberGrade }: GradeBoxProps) {
   const min = 0
