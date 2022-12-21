@@ -8,10 +8,6 @@ interface GradeInputsProps {
   PeriodOfTime: Period
 }
 
-export interface PeriodProps {
-  PeriodOfTime: Period
-}
-
 export function GradeInputs({ PeriodOfTime }: GradeInputsProps) {
   const [value1, SetValue1] = useState<number>()
   const [value2, SetValue2] = useState<number>()

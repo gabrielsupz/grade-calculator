@@ -8,6 +8,15 @@ import * as S from './style'
 export function Section() {
   const [period, setPeriod] = useState<Period>('bi')
 
+  if (period === 'bi') {
+    document.getElementById('buttonBi')?.classList.add('active')
+    document.getElementById('buttonTri')?.classList.remove('active')
+  }
+  if (period === 'tri') {
+    document.getElementById('buttonTri')?.classList.add('active')
+    document.getElementById('buttonBi')?.classList.remove('active')
+  }
+
   return (
     <S.SectionStyled>
       <header>
@@ -15,9 +24,18 @@ export function Section() {
         <img src="src\assets\MathOperations.svg" alt="Ícone de operações" />
       </header>
 
-      <div className="buttonSpace">
-        <Button onClick={() => setPeriod('bi')} title="Calc. Bimestre" />
-        <Button onClick={() => setPeriod('tri')} title="Calc. Trimestre" />
+      <div id="buttonSpace">
+        <Button
+          className="active"
+          id="buttonBi"
+          onClick={() => setPeriod('bi')}
+          title="Calc. Bimestre"
+        />
+        <Button
+          id="buttonTri"
+          onClick={() => setPeriod('tri')}
+          title="Calc. Trimestre"
+        />
       </div>
 
       <div className="divWithBackground">

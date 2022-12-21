@@ -6,7 +6,7 @@ export const HomeStyled = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: max-content;
+  height: 100vh;
   padding: 2.6rem 2.6rem;
 `
 

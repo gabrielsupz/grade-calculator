@@ -3,34 +3,38 @@ import { GradeBox } from '../GradeBox/GradeBox'
 
 import * as S from './style.js'
 import { NecessaryGradeBox } from '../NecessaryGradeBox/NecessaryGradeBox'
-import { PeriodProps } from '../GradeInputs/GradeInputs'
+import { Period } from '../../types'
+interface NecessaryGradeInputsProps {
+  PeriodOfTime: Period
+}
 
-export function NecessaryGradeInputs({ PeriodOfTime }: PeriodProps) {
-  const [value1, setValue1] = useState()
-  const [value2, setValue2] = useState()
-  const [value3, setValue3] = useState()
+export function NecessaryGradeInputs({
+  PeriodOfTime
+}: NecessaryGradeInputsProps) {
+  const [value1, setValue1] = useState<number>()
+  const [value2, setValue2] = useState<number>()
+  const [value3, setValue3] = useState<number>()
 
-  function GetValue1(value) {
+  function GetValue1(value: number) {
     setValue1(value)
   }
-  function GetValue2(value) {
+  function GetValue2(value: number) {
     setValue2(value)
   }
-  function GetValue3(value) {
+  function GetValue3(value: number) {
     setValue3(value)
   }
 
   if (PeriodOfTime === 'bi') {
     return (
       <S.GradeInputBox>
-        {' '}
-        <>
+        <S.InputsDiv>
           <h2>Nota necessária </h2>
 
           <GradeBox devolveValor={GetValue1} numberGrade="1" />
           <GradeBox devolveValor={GetValue2} numberGrade="2" />
           <GradeBox devolveValor={GetValue3} numberGrade="3" />
-        </>
+        </S.InputsDiv>
         <S.ResultDiv>
           <S.respH3>Presisa de:</S.respH3>
 
@@ -47,12 +51,12 @@ export function NecessaryGradeInputs({ PeriodOfTime }: PeriodProps) {
     return (
       <S.GradeInputBox>
         {' '}
-        <>
+        <S.InputsDiv>
           <h2>Nota necessária </h2>
 
           <GradeBox devolveValor={GetValue1} numberGrade="1" />
           <GradeBox devolveValor={GetValue2} numberGrade="2" />
-        </>
+        </S.InputsDiv>
         <S.ResultDiv>
           <S.respH3>Presisa de:</S.respH3>
 

@@ -5,7 +5,7 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  height: max-content;
+  height: 67rem;
   header {
     background-color: var(--bg-cards);
     display: flex;
@@ -23,11 +23,17 @@ export const SectionStyled = styled.section`
     font-weight: 700;
   }
 
-  div.buttonSpace {
+  #buttonSpace {
     display: flex;
     width: 100%;
 
     justify-content: space-between;
+
+    button.active {
+      border: 1px solid var(--text-color);
+      background-color: var(--bg-active-button);
+      transition: 0.5s;
+    }
   }
 
   div.divWithBackground {
