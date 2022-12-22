@@ -8,6 +8,8 @@ interface NecessaryGradeInputsProps {
   PeriodOfTime: Period
 }
 
+//Inputs calculando a nota necessária para passar
+
 export function NecessaryGradeInputs({
   PeriodOfTime
 }: NecessaryGradeInputsProps) {
@@ -28,6 +30,7 @@ export function NecessaryGradeInputs({
   if (PeriodOfTime === 'bi') {
     return (
       <S.GradeInputBox>
+        {' '}
         <S.InputsDiv>
           <h2>Nota necessária </h2>
 

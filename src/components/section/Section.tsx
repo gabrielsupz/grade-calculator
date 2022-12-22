@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+
+import { useAuth } from '../../providers/hook'
 import { Period } from '../../types'
 import { Button } from '../Button/Button'
 import { GradeInputs } from '../GradeInputs/GradeInputs'
@@ -6,7 +8,7 @@ import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInpu
 import * as S from './style'
 
 export function Section() {
-  const [period, setPeriod] = useState<Period>('bi')
+  const { period, setPeriod } = useAuth()
 
   if (period === 'bi') {
     document.getElementById('buttonBi')?.classList.add('active')

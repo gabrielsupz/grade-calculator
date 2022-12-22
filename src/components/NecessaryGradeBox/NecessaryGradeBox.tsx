@@ -1,5 +1,5 @@
 import * as S from './style'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export interface valuesProps {
   v1: number
