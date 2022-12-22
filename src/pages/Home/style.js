@@ -44,6 +44,7 @@ export const NoticeDiv = styled.div`
   text-shadow: 1px 1px 2px red, 0 0 1em var(--body-bg-color);
 `
 export const leftMessages = styled.div`
+  min-height: 40rem;
   height: 100%;
   display: flex;
   flex-direction: column;
