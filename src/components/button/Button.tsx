@@ -4,7 +4,7 @@ import * as S from './style'
 interface ButtonProps {
   title: string
   onClick?: () => void
-  id: string
+  id?: string
   className?: string
 }
 
