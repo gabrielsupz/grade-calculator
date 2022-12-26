@@ -33,7 +33,7 @@ export const GradeInputBox = styled.section`
 export const InputsDiv = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
 
   div {
     animation: ${fromLeft} 0.7s backwards;

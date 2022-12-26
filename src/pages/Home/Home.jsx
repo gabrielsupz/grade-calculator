@@ -1,4 +1,5 @@
 import { AlertMessage } from '../../components/AlertMessage/AlertMessage'
+import { Aside } from '../../components/Aside/Aside'
 import { Button } from '../../components/Button/Button'
 import { InfoMessage } from '../../components/InfoMessage/InfoMessage'
 import { Section } from '../../components/Section/Section'
@@ -20,19 +21,7 @@ export function Home() {
 
       <Section />
 
-      <S.asideFlex>
-        <div>
-          <Button title="Entre" />
-          <Button title="Registre-se" />
-        </div>
-
-        <div>
-          {' '}
-          <S.NoticeDiv>Logue para mais funcionalidades.</S.NoticeDiv>
-          <Button title="Veja seus modelos" />{' '}
-          <Button title="Crie seu modelo" />
-        </div>
-      </S.asideFlex>
+      <Aside />
     </S.HomeStyled>
   )
 }

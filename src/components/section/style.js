@@ -5,7 +5,8 @@ export const SectionStyled = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-  height: 67rem;
+  height: 100%;
+  max-height: 67rem;
   header {
     background-color: var(--bg-cards);
     display: flex;
