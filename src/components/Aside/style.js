@@ -12,6 +12,18 @@ export const AsideFlex = styled.aside`
     display: flex;
     flex-direction: column;
     max-width: 24rem;
+    width: 100%;
+    align-items: center;
+  }
+  button {
+    width: 100%;
+  }
+
+  img.userImage {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 100%;
+    border: 2px solid var(--text-color);
   }
 `
 

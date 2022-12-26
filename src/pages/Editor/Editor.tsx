@@ -19,7 +19,7 @@ export function Editor() {
 
       <Section />
 
-      <Aside />
+      <Aside logged={true} />
     </S.HomeStyled>
   )
 }
