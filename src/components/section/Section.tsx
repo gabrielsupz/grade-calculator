@@ -1,44 +1,48 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 
 import { useAuth } from '../../providers/hook'
-import { Period } from '../../types'
-import { Button } from '../Button/Button'
+
 import { GradeInputs } from '../GradeInputs/GradeInputs'
+import { Header } from '../Header/Header'
+import { NavButtons } from '../NavButtons/NavButtons'
+
 import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInputs'
 import * as S from './style'
 
 export function Section() {
-  const { period, setPeriod } = useAuth()
+  const { period, inPage } = useAuth()
 
-  if (period === 'bi') {
-    document.getElementById('buttonBi')?.classList.add('active')
-    document.getElementById('buttonTri')?.classList.remove('active')
+  if (inPage === 'início') {
+    return (
+      <S.SectionStyled>
+        <Header />
+
+        <NavButtons />
+
+        <div className="divWithBackground">
+          <GradeInputs PeriodOfTime={period} />
+          <NecessaryGradeInputs PeriodOfTime={period} />
+        </div>
+      </S.SectionStyled>
+    )
   }
-  if (period === 'tri') {
-    document.getElementById('buttonTri')?.classList.add('active')
-    document.getElementById('buttonBi')?.classList.remove('active')
+  if (inPage === 'workshop') {
+    return (
+      <S.SectionStyled>
+        <Header />
+
+        <NavButtons />
+
+        <div className="divWithBackground"></div>
+      </S.SectionStyled>
+    )
   }
 
   return (
     <S.SectionStyled>
-      <header>
-        <h1>Calculadora de Notas</h1>
-        <img src="src\assets\MathOperations.svg" alt="Ícone de operações" />
-      </header>
+      <Header />
 
-      <div id="buttonSpace">
-        <Button
-          className="active"
-          id="buttonBi"
-          onClick={() => setPeriod('bi')}
-          title="Calc. Bimestre"
-        />
-        <Button
-          id="buttonTri"
-          onClick={() => setPeriod('tri')}
-          title="Calc. Trimestre"
-        />
-      </div>
+      <NavButtons />
 
       <div className="divWithBackground">
         <GradeInputs PeriodOfTime={period} />

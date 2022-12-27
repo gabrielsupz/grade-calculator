@@ -7,6 +7,7 @@ export function SocialLinks() {
         <img src="src\assets\InstagramLogo.svg" alt="Instagram logo" />
         <img src="src\assets\LinkedinLogo.svg" alt="Logo do Linkedin" />
         <img src="src\assets\Mail.svg" alt="Icone de E-mail" />
+        <img src="src\assets\Github.svg" alt="Icone do Github" />
       </div>
     </S.SocialBox>
   )
