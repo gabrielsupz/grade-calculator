@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useAuth } from '../../providers/hook'
+import { EditorInputs } from '../EditorInputs/EditorInputs'
 
 import { GradeInputs } from '../GradeInputs/GradeInputs'
 import { Header } from '../Header/Header'
@@ -33,7 +34,9 @@ export function Section() {
 
         <NavButtons />
 
-        <div className="divWithBackground"></div>
+        <div className="divWithBackground">
+          <EditorInputs />
+        </div>
       </S.SectionStyled>
     )
   }
