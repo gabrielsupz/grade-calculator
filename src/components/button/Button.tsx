@@ -6,11 +6,17 @@ interface ButtonProps {
   onClick?: () => void
   id?: string
   className?: string
+  type?: 'button' | 'submit' | 'reset' | undefined
 }
 
-export function Button({ title, onClick, id, className }: ButtonProps) {
+export function Button({ type, title, onClick, id, className }: ButtonProps) {
   return (
-    <S.stylizedButton className={className} id={id} onClick={onClick}>
+    <S.stylizedButton
+      type={type}
+      className={className}
+      id={id}
+      onClick={onClick}
+    >
       {title}
     </S.stylizedButton>
   )
