@@ -12,12 +12,12 @@ export function Editor() {
   return (
     <S.HomeStyled>
       <S.leftMessages>
-        <InfoMessage period={period} />
+        <InfoMessage text="A menssagem de informação será gerada automaticamente" />
 
         <AlertMessage text="Crie seu modelo de notas, coloque o peso ( vezes que será multiplicado) e se será bimestral ou trimestral" />
       </S.leftMessages>
 
-      <Section />
+      <Section inWorkshop={true} />
 
       <Aside logged={true} />
     </S.HomeStyled>

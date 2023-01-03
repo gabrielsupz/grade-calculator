@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useAuth } from '../../providers/hook'
+
 import { EditorInputs } from '../EditorInputs/EditorInputs'
 
 import { GradeInputs } from '../GradeInputs/GradeInputs'
@@ -10,29 +11,19 @@ import { NavButtons } from '../NavButtons/NavButtons'
 import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInputs'
 import * as S from './style'
 
-export function Section() {
-  const { period, inPage } = useAuth()
+interface SectionProps {
+  inWorkshop?: boolean
+}
 
-  if (inPage === 'início') {
+export function Section({ inWorkshop }: SectionProps) {
+  const { period } = useAuth()
+
+  if (inWorkshop === true) {
     return (
       <S.SectionStyled>
         <Header />
 
-        <NavButtons />
-
-        <div className="divWithBackground">
-          <GradeInputs PeriodOfTime={period} />
-          <NecessaryGradeInputs PeriodOfTime={period} />
-        </div>
-      </S.SectionStyled>
-    )
-  }
-  if (inPage === 'workshop') {
-    return (
-      <S.SectionStyled>
-        <Header />
-
-        <NavButtons />
+        <NavButtons inWorkshop={true} />
 
         <div className="divWithBackground">
           <EditorInputs />

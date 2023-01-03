@@ -17,13 +17,15 @@ export function GradeWeightBox({ numberGrade }: GradeWeightBoxProps) {
   return (
     <S.GradeWeightBox>
       {' '}
-      <label htmlFor={'weight' + numberGrade}>Nota {numberGrade}: </label>
-      <input
-        onChange={handleChange}
-        value={value}
-        id={'weight' + numberGrade}
-        type="number"
-      />
+      <label>
+        Nota {numberGrade}:{' '}
+        <input
+          onChange={handleChange}
+          value={value}
+          id={'numberWeight' + numberGrade}
+          type="number"
+        />
+      </label>
     </S.GradeWeightBox>
   )
 }

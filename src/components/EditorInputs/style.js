@@ -9,10 +9,6 @@ export const EverythingBox = styled.div`
   color: var(--text-color);
 
   align-items: center;
-  h2 {
-    font-size: 3.2rem;
-    font-weight: bold;
-  }
 
   #submitModelButton {
     color: var(--response-color);
@@ -58,7 +54,21 @@ export const FormBox = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  fieldset {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
 
+  legend {
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
   h3 {
     font-size: 2rem;
     font-weight: 500;
