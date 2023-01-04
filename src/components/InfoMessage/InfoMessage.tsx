@@ -61,7 +61,7 @@ export function InfoMessage({ text }: InfoMessafeProps) {
         <S.InfoBox>
           <p>
             São contadas as notas dos 3 trimestres, sendo que a segunda nota tem
-            seu peso dobrado e a terceira tem seu peso triplicado
+            seu valor dobrado e a terceira tem seu valor triplicado
           </p>
           <svg
             width="32"

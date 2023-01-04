@@ -22,6 +22,25 @@ export const EverythingBox = styled.div`
     background-color: var(--bg-active-button);
   }
 `
+export const GradeWeightLabel = styled.label`
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  input {
+    font-size: 2rem;
+    width: 4rem;
+    height: 3.5rem;
+    border-radius: 10px;
+    background-color: var(--bg-input);
+    text-align: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  font-size: 1.8rem;
+  font-weight: 400;
+`
 
 export const FormInputsBox = styled.div`
   width: 100%;

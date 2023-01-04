@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form/dist/useForm'
 import * as S from './style'
 
 export interface GradeWeightBoxProps {
   numberGrade: string
 }
 export function GradeWeightBox({ numberGrade }: GradeWeightBoxProps) {
+  const { register } = useForm()
   const min = 1
   const max = 9
   const [value, setValue] = useState(1)
@@ -16,13 +18,13 @@ export function GradeWeightBox({ numberGrade }: GradeWeightBoxProps) {
 
   return (
     <S.GradeWeightBox>
-      {' '}
       <label>
-        Nota {numberGrade}:{' '}
+        Nota :{numberGrade}
         <input
+          {...register(numberGrade)}
           onChange={handleChange}
           value={value}
-          id={'numberWeight' + numberGrade}
+          id={numberGrade}
           type="number"
         />
       </label>

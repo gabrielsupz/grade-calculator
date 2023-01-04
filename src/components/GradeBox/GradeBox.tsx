@@ -3,9 +3,9 @@ import * as S from './style'
 
 export interface GradeBoxProps {
   numberGrade: string
-  devolveValor: (value: number) => void
+  returnValue: (value: number) => void
 }
-export function GradeBox({ devolveValor, numberGrade }: GradeBoxProps) {
+export function GradeBox({ returnValue, numberGrade }: GradeBoxProps) {
   const min = 0
   const max = 100
   const [value, setValue] = useState(0)
@@ -14,7 +14,7 @@ export function GradeBox({ devolveValor, numberGrade }: GradeBoxProps) {
     const value = Math.max(min, Math.min(max, Number(event.target.value)))
     setValue(value)
 
-    devolveValor(value)
+    returnValue(value)
   }
 
   return (
