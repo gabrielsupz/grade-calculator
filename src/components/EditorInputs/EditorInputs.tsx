@@ -32,6 +32,12 @@ export function EditorInputs() {
     console.log(e)
   }
 
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    let select = e.currentTarget.value
+
+    console.log(select)
+  }
+
   return (
     <S.EverythingBox>
       <S.FormBox onSubmit={handleSubmit(onSubmit)}>
@@ -40,6 +46,7 @@ export function EditorInputs() {
           <S.FormInputsBox>
             <S.GradeWeightBox>
               <h3>Peso das notas</h3>
+
               <S.GradeWeightLabel>
                 Nota :1
                 <input
@@ -81,7 +88,7 @@ export function EditorInputs() {
             <S.ModelAndName>
               <div>
                 <h3>Modelo</h3>
-                <select {...register('model')}>
+                <select onChange={handleSelect} id="modelSelect">
                   <option value="bimestre">Bimestre</option>
                   <option value="trimestre">Trimestre</option>
                 </select>
