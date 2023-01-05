@@ -1,6 +1,5 @@
 import React from 'react'
 import { useAuth } from '../../providers/hook'
-import { Pages } from '../../types'
 
 import { Button } from '../Button/Button'
 import * as S from './style'

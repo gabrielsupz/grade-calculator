@@ -1,5 +1,5 @@
 import React, { SetStateAction, useState } from 'react'
-import { Period, IsEditor, Pages } from '../types'
+import { Period, IsEditor } from '../types'
 
 type UserCOntextType = {
   period: Period
