@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { count } from 'console'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button } from '../Button/Button'
 
@@ -33,7 +34,7 @@ export function EditorInputs() {
   }
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    let select = e.currentTarget.value
+    const select = e.currentTarget.value
 
     console.log(select)
   }
@@ -84,11 +85,10 @@ export function EditorInputs() {
                 />
               </S.GradeWeightLabel>
             </S.GradeWeightBox>
-
             <S.ModelAndName>
               <div>
                 <h3>Modelo</h3>
-                <select onChange={handleSelect} id="modelSelect">
+                <select {...register('model')} id="modelSelect">
                   <option value="bimestre">Bimestre</option>
                   <option value="trimestre">Trimestre</option>
                 </select>
