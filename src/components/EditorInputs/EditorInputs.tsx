@@ -4,9 +4,23 @@ import { useAuth } from '../../providers/hook'
 import { Button } from '../Button/Button'
 
 import * as S from './style'
+
+interface pessoalModelContents {
+  weight1: number
+  weight2: number
+  weight3: number
+  weight4?: number
+  nameModel: string
+}
+
 export function EditorInputs() {
   const { inEditor } = useAuth()
-
+  const [pessoalModel, setPessoalModel] = useState({
+    nameModel: '',
+    weight1: 1,
+    weight2: 1,
+    weight3: 1
+  } as pessoalModelContents)
   if (inEditor === 'Editor') {
     const { register, handleSubmit } = useForm()
     const min = 1
@@ -32,10 +46,29 @@ export function EditorInputs() {
       const value = Math.max(min, Math.min(max, Number(event.target.value)))
       setValue4(value)
     }
-    const onSubmit = e => {
-      console.log(e)
-    }
+
     type modelStateProps = 'bimestre' | 'trimestre'
+    const onSubmit = data => {
+      if (model === 'bimestre') {
+        setPessoalModel({
+          nameModel: data.modelName,
+          weight1: data.weight1,
+          weight2: data.weight2,
+          weight3: data.weight3,
+          weight4: data.weight4
+        })
+        console.log(pessoalModel)
+      }
+      if (model === 'trimestre') {
+        setPessoalModel({
+          nameModel: data.modelName,
+          weight1: data.weight1,
+          weight2: data.weight2,
+          weight3: data.weight3
+        })
+        console.log(pessoalModel)
+      }
+    }
 
     const [model, setModel] = useState<modelStateProps>('bimestre')
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -167,11 +200,7 @@ export function EditorInputs() {
     )
   }
   if (inEditor === 'Modelos') {
-    return (
-      <S.EverythingBox>
-        <div>Modelo 1</div>
-      </S.EverythingBox>
-    )
+    return <S.EverythingBox></S.EverythingBox>
   }
 
   return <></>
