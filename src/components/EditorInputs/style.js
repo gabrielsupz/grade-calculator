@@ -111,7 +111,10 @@ export const FormBox = styled.form`
 `
 export const NameInput = styled.input`
   border: 1px solid black;
-
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-input) inset;
+  -webkit-text-fill-color: var(--text-color);
+  transition: background-color 5000s ease-in-out 0s;
   border-radius: 4px;
   width: 17rem;
   font-size: 1.6rem;
