@@ -7,7 +7,6 @@ export const EverythingBox = styled.div`
   display: flex;
   flex-direction: column;
   color: var(--text-color);
-
   align-items: center;
 
   #submitModelButton {
@@ -20,6 +19,7 @@ export const EverythingBox = styled.div`
     color: var(--response-click-color);
     border-color: var(--response-click-color);
     background-color: var(--bg-active-button);
+    position: bottom;
   }
 `
 export const GradeWeightLabel = styled.label`
@@ -52,6 +52,7 @@ export const GradeWeightBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  min-height: 23.3rem;
 `
 export const ModelAndName = styled.div`
   display: flex;
