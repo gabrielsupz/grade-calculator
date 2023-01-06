@@ -1,6 +1,6 @@
 import React, { ReactNode, useContext, useState } from 'react'
 import { AuthContext } from '.'
-import { IsEditor, Pages, Period } from '../types'
+import { IsEditor, Period } from '../types'
 
 interface IProps {
   children: ReactNode

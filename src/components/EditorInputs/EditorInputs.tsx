@@ -4,7 +4,6 @@ import { useAuth } from '../../providers/hook'
 import { Button } from '../Button/Button'
 
 import * as S from './style'
-
 interface pessoalModelContents {
   weight1: number
   weight2: number
@@ -12,7 +11,6 @@ interface pessoalModelContents {
   weight4?: number
   nameModel: string
 }
-
 export function EditorInputs() {
   const { inEditor } = useAuth()
   const [pessoalModel, setPessoalModel] = useState({
