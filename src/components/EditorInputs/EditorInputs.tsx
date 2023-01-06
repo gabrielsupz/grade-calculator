@@ -1,4 +1,3 @@
-import { count } from 'console'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../../providers/hook'
@@ -36,11 +35,102 @@ export function EditorInputs() {
     const onSubmit = e => {
       console.log(e)
     }
+    type modelStateProps = 'bimestre' | 'trimestre'
 
+    const [model, setModel] = useState<modelStateProps>('bimestre')
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const select = e.currentTarget.value
 
-      console.log(select)
+      if (select === 'bimestre') {
+        setModel('bimestre')
+      }
+
+      if (select === 'trimestre') {
+        setModel('trimestre')
+      }
+    }
+
+    function gradeWeightInputs() {
+      if (model === 'bimestre') {
+        return (
+          <S.GradeWeightBox>
+            <h3>Peso das notas</h3>
+
+            <S.GradeWeightLabel>
+              Nota :1
+              <input
+                {...register('weight1')}
+                onChange={handleChange1}
+                value={value1}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+            <S.GradeWeightLabel>
+              Nota: 2
+              <input
+                {...register('weight2')}
+                onChange={handleChange2}
+                value={value2}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+            <S.GradeWeightLabel>
+              Nota: 3
+              <input
+                {...register('weight3')}
+                onChange={handleChange3}
+                value={value3}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+            <S.GradeWeightLabel>
+              Nota: 4
+              <input
+                {...register('weight4')}
+                onChange={handleChange4}
+                value={value4}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+          </S.GradeWeightBox>
+        )
+      }
+      if (model === 'trimestre') {
+        return (
+          <S.GradeWeightBox>
+            <h3>Peso das notas</h3>
+
+            <S.GradeWeightLabel>
+              Nota :1
+              <input
+                {...register('weight1')}
+                onChange={handleChange1}
+                value={value1}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+            <S.GradeWeightLabel>
+              Nota: 2
+              <input
+                {...register('weight2')}
+                onChange={handleChange2}
+                value={value2}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+            <S.GradeWeightLabel>
+              Nota: 3
+              <input
+                {...register('weight3')}
+                onChange={handleChange3}
+                value={value3}
+                type="number"
+              />
+            </S.GradeWeightLabel>
+          </S.GradeWeightBox>
+        )
+      }
+      return <></>
     }
 
     return (
@@ -49,50 +139,11 @@ export function EditorInputs() {
           <fieldset>
             <legend>Crie seu modelo</legend>
             <S.FormInputsBox>
-              <S.GradeWeightBox>
-                <h3>Peso das notas</h3>
-
-                <S.GradeWeightLabel>
-                  Nota :1
-                  <input
-                    {...register('weight1')}
-                    onChange={handleChange1}
-                    value={value1}
-                    type="number"
-                  />
-                </S.GradeWeightLabel>
-                <S.GradeWeightLabel>
-                  Nota: 2
-                  <input
-                    {...register('weight2')}
-                    onChange={handleChange2}
-                    value={value2}
-                    type="number"
-                  />
-                </S.GradeWeightLabel>
-                <S.GradeWeightLabel>
-                  Nota: 3
-                  <input
-                    {...register('weight3')}
-                    onChange={handleChange3}
-                    value={value3}
-                    type="number"
-                  />
-                </S.GradeWeightLabel>
-                <S.GradeWeightLabel>
-                  Nota: 4
-                  <input
-                    {...register('weight4')}
-                    onChange={handleChange4}
-                    value={value4}
-                    type="number"
-                  />
-                </S.GradeWeightLabel>
-              </S.GradeWeightBox>
+              {gradeWeightInputs()}
               <S.ModelAndName>
                 <div>
                   <h3>Modelo</h3>
-                  <select {...register('model')} id="modelSelect">
+                  <select onChange={handleSelect} id="modelSelect">
                     <option value="bimestre">Bimestre</option>
                     <option value="trimestre">Trimestre</option>
                   </select>
