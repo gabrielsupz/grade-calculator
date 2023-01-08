@@ -25,6 +25,9 @@ export const AsideFlex = styled.aside`
     border-radius: 100%;
     border: 2px solid var(--text-color);
   }
+  a {
+    width: 100%;
+  }
 `
 
 export const NoticeDiv = styled.div`

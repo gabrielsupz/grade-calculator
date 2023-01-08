@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button } from '../Button/Button'
 import { SocialLinks } from '../SocialLinks/SocialLinks'
 import * as S from './style'
@@ -18,7 +19,9 @@ export function Aside({ logged }: AsideProps) {
             alt=""
           />
           <Button title="Início" />
-          <Button title="Sair" />
+          <Link to={'/'}>
+            <Button title="sair" />
+          </Link>
         </div>
 
         <div>
@@ -34,15 +37,16 @@ export function Aside({ logged }: AsideProps) {
     return (
       <S.AsideFlex>
         <div>
-          <Button title="Entre" />
+          <Link to={'/editor'}>
+            <Button title="Entrar" />
+          </Link>
           <Button title="Registre-se" />
         </div>
 
         <div>
           {' '}
-          <S.NoticeDiv>Logue para mais funcionalidades.</S.NoticeDiv>
-          <Button title="Veja seus modelos" />{' '}
-          <Button title="Crie seu modelo" />
+          <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
+          <Button title="Editor" /> <Button title="Modelos pesonalizados" />
         </div>
       </S.AsideFlex>
     )

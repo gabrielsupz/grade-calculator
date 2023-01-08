@@ -9,25 +9,25 @@ interface pessoalModelContents {
   weight2: number
   weight3: number
   weight4?: number
-  nameModel: string
+  modelName: string
 }
+type modelStateProps = 'bimestre' | 'trimestre'
+
 export function EditorInputs() {
   const { inEditor } = useAuth()
   const [pessoalModel, setPessoalModel] = useState({
-    nameModel: '',
-    weight1: 1,
-    weight2: 1,
-    weight3: 1
+    modelName: 'Crie seu modelo primeiro'
   } as pessoalModelContents)
-  if (inEditor === 'Editor') {
-    const { register, handleSubmit } = useForm()
-    const min = 1
-    const max = 9
-    const [value1, setValue1] = useState(1)
-    const [value2, setValue2] = useState(1)
-    const [value3, setValue3] = useState(1)
-    const [value4, setValue4] = useState(1)
 
+  const { register, handleSubmit } = useForm()
+  const min = 1
+  const max = 9
+  const [value1, setValue1] = useState(1)
+  const [value2, setValue2] = useState(1)
+  const [value3, setValue3] = useState(1)
+  const [value4, setValue4] = useState(1)
+  const [model, setModel] = useState<modelStateProps>('bimestre')
+  if (inEditor === 'Editor') {
     const handleChange1 = event => {
       const value = Math.max(min, Math.min(max, Number(event.target.value)))
       setValue1(value)
@@ -45,30 +45,28 @@ export function EditorInputs() {
       setValue4(value)
     }
 
-    type modelStateProps = 'bimestre' | 'trimestre'
     const onSubmit = data => {
       if (model === 'bimestre') {
         setPessoalModel({
-          nameModel: data.modelName,
+          modelName: data.modelName,
           weight1: data.weight1,
           weight2: data.weight2,
           weight3: data.weight3,
           weight4: data.weight4
         })
-        console.log(pessoalModel)
       }
       if (model === 'trimestre') {
         setPessoalModel({
-          nameModel: data.modelName,
+          modelName: data.modelName,
           weight1: data.weight1,
           weight2: data.weight2,
           weight3: data.weight3
         })
-        console.log(pessoalModel)
       }
+
+      console.log(pessoalModel)
     }
 
-    const [model, setModel] = useState<modelStateProps>('bimestre')
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
       const select = e.currentTarget.value
 
@@ -198,8 +196,10 @@ export function EditorInputs() {
     )
   }
   if (inEditor === 'Modelos') {
-    return <S.EverythingBox></S.EverythingBox>
+    if (model === 'trimestre') {
+      setModel('bimestre')
+    }
+    return <S.EverythingBox>{pessoalModel.modelName}</S.EverythingBox>
   }
-
   return <></>
 }

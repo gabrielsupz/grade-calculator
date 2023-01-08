@@ -1,4 +1,25 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const fromLeft = keyframes`
+from {
+  opacity: 0;
+  transform: translatex(-100px);
+}
+to {
+  opacity: 1;
+  transform: translatex(0);
+}
+`
+const fromRight = keyframes`
+from {
+  opacity: 0;
+  transform: translatex(100px);
+}
+to {
+  opacity: 1;
+  transform: translatex(0);
+}
+`
 
 export const EverythingBox = styled.div`
   width: 100%;
@@ -53,6 +74,7 @@ export const GradeWeightBox = styled.div`
   flex-direction: column;
   gap: 1rem;
   min-height: 23.3rem;
+  animation: ${fromLeft} 0.7s backwards;
 `
 export const ModelAndName = styled.div`
   display: flex;
@@ -60,7 +82,7 @@ export const ModelAndName = styled.div`
   justify-content: top;
   gap: 2rem;
   align-items: center;
-
+  animation: ${fromRight} 0.7s backwards;
   div {
     display: flex;
     flex-direction: column;
@@ -125,4 +147,5 @@ export const NameInput = styled.input`
     1px 0px 0px black;
   background-color: var(--bg-input);
   padding: 0.8rem 2rem;
+  animation: ${fromRight} 0.7s backwards;
 `
