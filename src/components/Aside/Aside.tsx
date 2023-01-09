@@ -1,5 +1,7 @@
-import React from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { auth, createUser } from '../../services'
 import { Button } from '../Button/Button'
 import { SocialLinks } from '../SocialLinks/SocialLinks'
 import * as S from './style'
@@ -9,6 +11,21 @@ interface AsideProps {
 }
 
 export function Aside({ logged }: AsideProps) {
+  function login() {
+    createUser()
+      .then(() => alert('Logado com sucesso!'))
+      .catch(error => alert(error))
+  }
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        const uid = user.uid
+      } else {
+      }
+    })
+  }, [])
+
   if (logged === true) {
     return (
       <S.AsideFlex>
@@ -37,9 +54,8 @@ export function Aside({ logged }: AsideProps) {
     return (
       <S.AsideFlex>
         <div>
-          <Link to={'/editor'}>
-            <Button title="Entrar" />
-          </Link>
+          <Button title="Entrar" onClick={login} />
+
           <Button title="Registre-se" />
         </div>
 

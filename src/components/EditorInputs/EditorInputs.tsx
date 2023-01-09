@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
+import * as S from './style'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../../providers/hook'
 import { Button } from '../Button/Button'
+import { UserModel } from '../UserModel/UserModel'
 
-import * as S from './style'
-interface pessoalModelContents {
+export interface pessoalModelContents {
   weight1: number
   weight2: number
   weight3: number
@@ -199,7 +200,16 @@ export function EditorInputs() {
     if (model === 'trimestre') {
       setModel('bimestre')
     }
-    return <S.EverythingBox>{pessoalModel.modelName}</S.EverythingBox>
+    return (
+      <S.EverythingBox>
+        <h2>
+          Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
+        </h2>
+        <ul>
+          <li>{pessoalModel.modelName}</li>
+        </ul>
+      </S.EverythingBox>
+    )
   }
   return <></>
 }

@@ -32,6 +32,14 @@ to {
 `
 
 export const EverythingBox = styled.div`
+  ul {
+    width: 100%;
+    height: 100%;
+  }
+  li {
+    list-style: none;
+  }
+
   width: 100%;
   background-color: var(--bg-cards);
   border: none;
@@ -39,6 +47,15 @@ export const EverythingBox = styled.div`
   flex-direction: column;
   color: var(--text-color);
   align-items: center;
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
   #submitModelButton {
     color: var(--response-color);
