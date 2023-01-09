@@ -10,6 +10,16 @@ to {
   transform: translatex(0);
 }
 `
+const fromBotton = keyframes`
+from {
+  opacity: 0;
+  transform: translatey(100px);
+}
+to {
+  opacity: 1;
+  transform: translatey(0);
+}
+`
 const fromRight = keyframes`
 from {
   opacity: 0;
@@ -35,6 +45,8 @@ export const EverythingBox = styled.div`
     border-color: var(--response-color);
     transition: 0.2s;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
+    animation: ${fromBotton} 0.7s backwards;
+    animation-delay: 1.4s;
   }
   #submitModelButton:active {
     color: var(--response-click-color);
@@ -130,6 +142,32 @@ export const FormBox = styled.form`
     border: 1.5px solid var(--body-bg-color);
     padding-left: 1rem;
     font-size: 1.6rem;
+  }
+
+  h3:nth-child(1) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 0.2s;
+  }
+
+  label:nth-child(5) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 0.4s;
+  }
+  label:nth-child(4) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 0.6s;
+  }
+  label:nth-child(3) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 0.8s;
+  }
+  label:nth-child(2) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 1s;
+  }
+  label:nth-child(1) {
+    animation: ${fromLeft} 0.7s backwards;
+    animation-delay: 1.2s;
   }
 `
 export const NameInput = styled.input`

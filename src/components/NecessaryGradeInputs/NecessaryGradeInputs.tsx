@@ -34,9 +34,9 @@ export function NecessaryGradeInputs({
         <S.InputsDiv>
           <h2>Nota necessária </h2>
 
-          <GradeBox devolveValor={GetValue1} numberGrade="1" />
-          <GradeBox devolveValor={GetValue2} numberGrade="2" />
-          <GradeBox devolveValor={GetValue3} numberGrade="3" />
+          <GradeBox returnValue={GetValue1} numberGrade="1" />
+          <GradeBox returnValue={GetValue2} numberGrade="2" />
+          <GradeBox returnValue={GetValue3} numberGrade="3" />
         </S.InputsDiv>
         <S.ResultDiv>
           <S.respH3>Presisa de:</S.respH3>
@@ -57,8 +57,8 @@ export function NecessaryGradeInputs({
         <S.InputsDiv>
           <h2>Nota necessária </h2>
 
-          <GradeBox devolveValor={GetValue1} numberGrade="1" />
-          <GradeBox devolveValor={GetValue2} numberGrade="2" />
+          <GradeBox returnValue={GetValue1} numberGrade="1" />
+          <GradeBox returnValue={GetValue2} numberGrade="2" />
         </S.InputsDiv>
         <S.ResultDiv>
           <S.respH3>Presisa de:</S.respH3>
