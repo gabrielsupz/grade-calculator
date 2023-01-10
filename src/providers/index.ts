@@ -16,4 +16,4 @@ const initialValue = {
   inEditor: inEditor,
   setInEditor: () => {}
 }
-export const AuthContext = React.createContext<UserCOntextType>(initialValue)
+export const TabsContext = React.createContext<UserCOntextType>(initialValue)

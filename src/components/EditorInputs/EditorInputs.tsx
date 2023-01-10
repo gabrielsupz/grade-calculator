@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import * as S from './style'
 import { useForm } from 'react-hook-form'
-import { useAuth } from '../../providers/hook'
+import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
-import { UserModel } from '../UserModel/UserModel'
 
 export interface pessoalModelContents {
   weight1: number
@@ -15,7 +14,7 @@ export interface pessoalModelContents {
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
-  const { inEditor } = useAuth()
+  const { inEditor } = useTabs()
   const [pessoalModel, setPessoalModel] = useState({
     modelName: 'Crie seu modelo primeiro'
   } as pessoalModelContents)

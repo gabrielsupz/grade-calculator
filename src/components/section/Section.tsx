@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useAuth } from '../../providers/hook'
+import { useTabs } from '../../providers/hook'
 
 import { EditorInputs } from '../EditorInputs/EditorInputs'
 
@@ -16,7 +16,7 @@ interface SectionProps {
 }
 
 export function Section({ inWorkshop }: SectionProps) {
-  const { period } = useAuth()
+  const { period } = useTabs()
 
   if (inWorkshop === true) {
     return (

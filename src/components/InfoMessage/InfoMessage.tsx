@@ -1,14 +1,14 @@
 import React from 'react'
 import * as S from './style'
 import { Period } from '../../types'
-import { useAuth } from '../../providers/hook'
+import { useTabs } from '../../providers/hook'
 
 interface InfoMessafeProps {
   text?: string | undefined
 }
 
 export function InfoMessage({ text }: InfoMessafeProps) {
-  const { period } = useAuth()
+  const { period } = useTabs()
   if (text === undefined) {
     if (period === 'bi') {
       return (

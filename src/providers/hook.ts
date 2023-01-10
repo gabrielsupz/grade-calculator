@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { AuthContext } from '.'
+import { TabsContext } from '.'
 
-export const useAuth = () => {
-  const context = useContext(AuthContext)
+export const useTabs = () => {
+  const context = useContext(TabsContext)
   return context
 }

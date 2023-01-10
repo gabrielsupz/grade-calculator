@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../../providers/hook'
+import { useTabs } from '../../providers/hook'
 
 import { Button } from '../Button/Button'
 import * as S from './style'
@@ -9,7 +9,7 @@ interface NavProps {
 }
 
 export function NavButtons({ inWorkshop }: NavProps) {
-  const { period, setPeriod, inEditor, setInEditor } = useAuth()
+  const { period, setPeriod, inEditor, setInEditor } = useTabs()
 
   if (inWorkshop) {
     if (inEditor === 'Editor') {
