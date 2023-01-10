@@ -3,10 +3,10 @@ import { Aside } from '../../components/Aside/Aside'
 import { Button } from '../../components/Button/Button'
 import { InfoMessage } from '../../components/InfoMessage/InfoMessage'
 import { Section } from '../../components/Section/Section'
-import { useAuth } from '../../providers/hook'
+import { useTabs } from '../../providers/hook'
 import * as S from './style'
 export function Home() {
-  const { period } = useAuth()
+  const { period } = useTabs()
 
   return (
     <S.HomeStyled>

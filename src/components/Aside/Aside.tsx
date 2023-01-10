@@ -1,9 +1,11 @@
 import { onAuthStateChanged } from 'firebase/auth'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { auth, createUser } from '../../services'
+
 import { Button } from '../Button/Button'
 import { SocialLinks } from '../SocialLinks/SocialLinks'
+import { UserAuth } from '../../context/AuthContext'
+
 import * as S from './style'
 
 interface AsideProps {
@@ -11,33 +13,36 @@ interface AsideProps {
 }
 
 export function Aside({ logged }: AsideProps) {
-  function login() {
-    createUser()
-      .then(() => alert('Logado com sucesso!'))
-      .catch(error => alert(error))
+  const { googleSignIn, user, logOut } = UserAuth()
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn()
+    } catch (error) {
+      console.log(error)
+    }
   }
 
-  useEffect(() => {
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        const uid = user.uid
-      } else {
-      }
-    })
-  }, [])
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+      alert('Deslogado com sucesso!')
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
-  if (logged === true) {
+  if (user != null) {
     return (
       <S.AsideFlex>
         <div>
-          <img
-            className="userImage"
-            src="https://avatars.githubusercontent.com/u/102992996?s=400&u=80dfdee29368bfbd801dd0d3d6f27a84009a10f1&v=4"
-            alt=""
-          />
-          <Button title="Início" />
+          <img className="userImage" src={user.photoURL} alt="" />
           <Link to={'/'}>
-            <Button title="sair" />
+            <Button title="Início" />
+          </Link>
+          <Button title="Sair" onClick={handleSignOut} />
+          <Link to={'/editor'}>
+            <Button title="Editor" />
           </Link>
         </div>
 
@@ -48,15 +53,11 @@ export function Aside({ logged }: AsideProps) {
         </div>
       </S.AsideFlex>
     )
-  }
-
-  if (logged === false) {
+  } else {
     return (
       <S.AsideFlex>
         <div>
-          <Button title="Entrar" onClick={login} />
-
-          <Button title="Registre-se" />
+          <Button title="Entrar" onClick={handleGoogleSignIn} />
         </div>
 
         <div>

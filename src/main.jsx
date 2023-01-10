@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Home } from './pages/Home/Home'
-import { AuthProvider } from './providers/auth'
-import { Editor } from './pages/Editor/Editor'
+import { TabsProvider } from './providers/tabs'
+
 import './styles/global.css'
 import { Router } from './router'
+import { AuthContextProvider } from './context/AuthContext'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <Router />
-    </AuthProvider>
+    <AuthContextProvider>
+      <TabsProvider>
+        <Router />
+      </TabsProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 )
