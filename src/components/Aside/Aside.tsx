@@ -1,4 +1,3 @@
-import { onAuthStateChanged } from 'firebase/auth'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -10,6 +9,7 @@ import { InfoMessage } from '../InfoMessage/InfoMessage'
 import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
+import { IoLogoGoogle } from 'react-icons/io5'
 
 export function Aside() {
   const { googleSignIn, user, logOut } = UserAuth()
@@ -70,7 +70,7 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
         <MenuMobile />
         <S.AsideFlex>
           <div>
-            <Button title="Entrar" onClick={handleGoogleSignIn} />
+            <Button icon title="Entrar" onClick={handleGoogleSignIn} />
           </div>
 
           <div>
