@@ -35,8 +35,8 @@ export function Aside() {
     return (
       <S.AsideMenu>
         {' '}
-        <MenuMobile />
         <S.AsideTablet>
+          <MenuMobile />
           <InfoMessage />
 
           <AlertMessage
@@ -67,14 +67,22 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
   } else {
     return (
       <S.AsideMenu>
-        <MenuMobile />
+        <S.AsideTablet>
+          <MenuMobile />
+
+          <InfoMessage />
+
+          <AlertMessage
+            text="Calcule a sua nota final ou a nota que precisa tirar para atingir a
+média, o peso define quantas vezes será contada a nota e o total da soma será dividido pela quantidade de notas somadas"
+          />
+        </S.AsideTablet>
         <S.AsideFlex>
           <div>
             <Button icon title="Entrar" onClick={handleGoogleSignIn} />
           </div>
 
           <div>
-            {' '}
             <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
             <Button title="Editor" /> <Button title="Modelos pesonalizados" />
           </div>

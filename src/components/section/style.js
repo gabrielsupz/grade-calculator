@@ -16,12 +16,25 @@ export const SectionStyled = styled.section`
     font-size: 3.4rem;
     font-weight: 700;
   }
+  @media screen and (max-width: 500px) {
+    max-width: 45rem;
+  }
+  @media screen and (max-width: 425px) {
+    max-width: 40rem;
+  }
+  @media screen and (max-width: 400px) {
+    max-width: 37rem;
+  }
+  @media screen and (max-width: 375px) {
+    max-width: 35rem;
+  }
+  @media screen and (max-width: 350px) {
+    max-width: 31rem;
+  }
 
   div.divWithBackground {
-    @media screen and (max-width: 610px) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    @media screen and (max-width: 375px) {
+      padding: 5rem 1.5rem 2rem 1.5rem;
     }
     background-color: var(--bg-cards);
 

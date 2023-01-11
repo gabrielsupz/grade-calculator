@@ -4,7 +4,7 @@ import * as S from './style'
 export function MenuMobile() {
   return (
     <S.MenuMoBileBox>
-      <IoReorderFourSharp size={60} color="var(--text-color)" />
+      <IoReorderFourSharp size={55} color="var(--text-color)" />
     </S.MenuMoBileBox>
   )
 }

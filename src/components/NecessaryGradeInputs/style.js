@@ -12,11 +12,13 @@ to {
 `
 
 export const GradeInputBox = styled.section`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   h2 {
+    text-align: center;
     font-size: 2.4rem;
     font-weight: 700;
   }
@@ -28,6 +30,7 @@ export const GradeInputBox = styled.section`
   }
 `
 export const InputsDiv = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -47,6 +50,7 @@ export const InputsDiv = styled.div`
   }
 `
 export const respH3 = styled.h3`
+  text-align: center;
   font-size: 2.4rem;
   font-weight: 500;
   color: var(--response-color);

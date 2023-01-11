@@ -8,19 +8,21 @@ export const AsideMenu = styled.div`
     flex-direction: column;
     gap: 4rem;
   }
-  @media screen and (max-width: 500px) {
-  }
 `
 export const AsideTablet = styled.div`
   height: 100%;
   width: 100%;
   display: none;
+  align-items: center;
 
   @media screen and (max-width: 875px) {
     display: flex;
     flex-direction: column;
     gap: 4rem;
     align-items: flex-end;
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: row;
   }
 `
 
@@ -32,6 +34,11 @@ export const AsideFlex = styled.aside`
     max-width: 20rem;
     height: 67rem;
   }
+  @media screen and (max-width: 600px) {
+    height: max-content;
+    width: 100vw;
+  }
+
   display: flex;
   flex-direction: column;
   height: 100%;
