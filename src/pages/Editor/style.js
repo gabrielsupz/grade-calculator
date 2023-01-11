@@ -8,8 +8,23 @@ export const EditorStyled = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 2.6rem 2.6rem;
+
   @media screen and (max-width: 1065px) {
     height: 100%;
+  }
+  @media screen and (max-width: 785px) {
+    min-height: 67rem;
+    justify-content: center;
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 0;
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
   }
 `
 
