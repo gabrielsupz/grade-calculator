@@ -8,11 +8,7 @@ import { UserAuth } from '../../context/AuthContext'
 
 import * as S from './style'
 
-interface AsideProps {
-  logged: boolean
-}
-
-export function Aside({ logged }: AsideProps) {
+export function Aside() {
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {

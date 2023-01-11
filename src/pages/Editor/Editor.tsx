@@ -19,7 +19,7 @@ export function Editor() {
     }
   }, [user])
   return (
-    <S.HomeStyled>
+    <S.EditorStyled>
       <S.leftMessages>
         <InfoMessage text="A menssagem de informação será gerada automaticamente" />
 
@@ -28,7 +28,7 @@ export function Editor() {
 
       <Section inWorkshop={true} />
 
-      <Aside logged={true} />
-    </S.HomeStyled>
+      <Aside />
+    </S.EditorStyled>
   )
 }

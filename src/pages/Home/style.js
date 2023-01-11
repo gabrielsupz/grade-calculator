@@ -10,13 +10,6 @@ export const HomeStyled = styled.div`
   padding: 2.6rem 2.6rem;
 `
 
-export const CalcAndSignIn = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-`
-
 export const leftMessages = styled.div`
   min-height: 40rem;
   height: 100%;

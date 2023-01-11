@@ -6,6 +6,7 @@ export const SectionStyled = styled.section`
   flex-direction: column;
   gap: 2rem;
   height: 100%;
+
   max-height: 67rem;
 
   h1 {

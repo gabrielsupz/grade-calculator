@@ -13,7 +13,7 @@ to {
 const fromBotton = keyframes`
 from {
   opacity: 0;
-  transform: translatey(100px);
+  transform: translatey(50px);
 }
 to {
   opacity: 1;

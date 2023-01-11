@@ -21,7 +21,7 @@ export function Home() {
 
       <Section />
 
-      <Aside logged={false} />
+      <Aside />
     </S.HomeStyled>
   )
 }
