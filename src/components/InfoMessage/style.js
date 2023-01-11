@@ -1,6 +1,16 @@
 import styled from 'styled-components'
 
+export const Info = styled.div``
+export const InfoRetract = styled.div`
+  display: none;
+  @media screen and (max-width: 785px) {
+    display: flex;
+  }
+`
 export const InfoBox = styled.div`
+  @media screen and (max-width: 785px) {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem 1rem 2rem;

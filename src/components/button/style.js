@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const stylizedButton = styled.button`
+  @media screen and (max-width: 1065px) {
+  }
   background-color: var(--bg-cards);
   width: 22rem;
   padding: 1.5rem 5rem;

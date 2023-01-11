@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
 export const SectionStyled = styled.section`
+  @media screen and (max-width: 1065px) {
+    height: 67rem;
+  }
   background-color: var(--body-bg-color);
   display: flex;
   flex-direction: column;
@@ -15,6 +18,11 @@ export const SectionStyled = styled.section`
   }
 
   div.divWithBackground {
+    @media screen and (max-width: 610px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     background-color: var(--bg-cards);
 
     height: 100%;

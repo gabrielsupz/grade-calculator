@@ -8,9 +8,15 @@ export const EditorStyled = styled.div`
   width: 100vw;
   height: 100vh;
   padding: 2.6rem 2.6rem;
+  @media screen and (max-width: 1065px) {
+    height: 100%;
+  }
 `
 
 export const leftMessages = styled.div`
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
   min-height: 40rem;
   height: 100%;
   display: flex;

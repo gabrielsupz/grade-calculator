@@ -1,6 +1,37 @@
 import styled from 'styled-components'
 
+export const AsideMenu = styled.div`
+  height: 100%;
+  max-height: 67rem;
+  @media screen and (max-width: 875px) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  @media screen and (max-width: 500px) {
+  }
+`
+export const AsideTablet = styled.div`
+  height: 100%;
+  width: 100%;
+  display: none;
+
+  @media screen and (max-width: 875px) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-end;
+  }
+`
+
 export const AsideFlex = styled.aside`
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+  @media screen and (max-width: 1065px) {
+    max-width: 20rem;
+    height: 67rem;
+  }
   display: flex;
   flex-direction: column;
   height: 100%;

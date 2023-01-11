@@ -1,6 +1,17 @@
 import styled from 'styled-components'
 
-export const AlertBox = styled.div`
+export const Alert = styled.div``
+export const AlertRetract = styled.div`
+  display: none;
+  @media screen and (max-width: 785px) {
+    display: flex;
+  }
+`
+
+export const AlertShow = styled.div`
+  @media screen and (max-width: 785px) {
+    display: none;
+  }
   display: flex;
   flex-direction: column;
   background-color: var(--bg-cards);

@@ -51,13 +51,9 @@ export function NavButtons({ inWorkshop }: NavProps) {
         className="active"
         id="button1"
         onClick={() => setPeriod('bi')}
-        title="Calc. Bimestre"
+        title="Bimestre"
       />
-      <Button
-        id="button2"
-        onClick={() => setPeriod('tri')}
-        title="Calc. Trimestre"
-      />
+      <Button id="button2" onClick={() => setPeriod('tri')} title="Trimestre" />
     </S.NavButtons>
   )
 }
