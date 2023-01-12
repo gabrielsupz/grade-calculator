@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '../Button/Button'
@@ -9,7 +9,6 @@ import { InfoMessage } from '../InfoMessage/InfoMessage'
 import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
-import { IoLogoGoogle } from 'react-icons/io5'
 
 export function Aside() {
   const { googleSignIn, user, logOut } = UserAuth()

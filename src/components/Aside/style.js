@@ -15,7 +15,7 @@ export const AsideTablet = styled.div`
   display: none;
   align-items: center;
 
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 1023px) {
     display: flex;
     flex-direction: column;
     gap: 4rem;

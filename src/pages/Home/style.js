@@ -29,7 +29,7 @@ export const HomeStyled = styled.div`
 `
 
 export const leftMessages = styled.div`
-  @media screen and (max-width: 875px) {
+  @media screen and (max-width: 1000px) {
     display: none;
   }
   min-height: 40rem;
