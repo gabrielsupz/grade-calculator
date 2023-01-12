@@ -39,7 +39,11 @@ export function MenuMobile() {
             color="#4d4d56"
           />
           <div className="contentMenu">
-            <img className="userImage" src={user.photoURL} alt="" />
+            <img
+              className="userImage"
+              src={user.photoURL}
+              alt="Foto do usuário"
+            />
             <Link to={'/'}>
               <Button title="Início" />
             </Link>
@@ -50,7 +54,6 @@ export function MenuMobile() {
           </div>
 
           <div className="contentMenu">
-            {' '}
             <S.NoticeDiv>Redes sociais do criador</S.NoticeDiv>
             <SocialLinks />
           </div>
