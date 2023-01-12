@@ -15,7 +15,7 @@ export const MenuMoBileBox = styled.div`
 `
 
 interface ShowMenuProps {
-  isVisible: boolean
+  isVisible: boolean | undefined
 }
 
 export const ShowMenu = styled.div<ShowMenuProps>`
