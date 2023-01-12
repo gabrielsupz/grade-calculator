@@ -84,7 +84,7 @@ export const ShowMenu = styled.div<ShowMenuProps>`
     }
   }
 
-  svg {
+  svg.closeMenu {
     position: absolute;
     top: 2rem;
     right: 2rem;

@@ -33,6 +33,7 @@ export function MenuMobile() {
       return (
         <S.ShowMenu isVisible={menuIsVisible}>
           <AiOutlineCloseCircle
+            className="closeMenu"
             onClick={() => setMenuIsVisible(false)}
             size={40}
             color="#4d4d56"
@@ -59,6 +60,7 @@ export function MenuMobile() {
       return (
         <S.ShowMenu isVisible={menuIsVisible}>
           <AiOutlineCloseCircle
+            className="closeMenu"
             onClick={() => setMenuIsVisible(false)}
             size={40}
           />
