@@ -41,7 +41,7 @@ export const EverythingBox = styled.div`
   }
 
   width: 100%;
-  background-color: var(--bg-cards);
+
   border: none;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,15 @@ export const EverythingBox = styled.div`
   }
 
   #submitModelButton {
+    transition: 0.3s;
     color: var(--response-color);
+    background: rgb(44, 44, 49);
+    background: linear-gradient(
+      54deg,
+      rgba(44, 44, 49, 1) 8%,
+      rgba(32, 32, 36, 1) 51%,
+      rgba(18, 18, 20, 1) 100%
+    );
     border-color: var(--response-color);
     transition: 0.2s;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));
@@ -66,9 +74,10 @@ export const EverythingBox = styled.div`
     animation-delay: 1.4s;
   }
   #submitModelButton:active {
-    color: var(--response-click-color);
-    border-color: var(--response-click-color);
-    background-color: var(--bg-active-button);
+    transition: 0.3s;
+    color: var(--text-color);
+    border-color: var(--text-color);
+    background: var(--bg-active-button);
     position: bottom;
   }
 `
@@ -82,7 +91,13 @@ export const GradeWeightLabel = styled.label`
     width: 4rem;
     height: 3.5rem;
     border-radius: 10px;
-    background-color: var(--bg-input);
+    background: rgb(44, 44, 49);
+    background: linear-gradient(
+      54deg,
+      rgba(44, 44, 49, 1) 0%,
+      rgba(72, 72, 76, 1) 38%,
+      rgba(108, 108, 111, 1) 100%
+    );
     text-align: center;
     align-items: center;
     margin: auto;

@@ -27,6 +27,9 @@ export const AsideTablet = styled.div`
 `
 
 export const AsideFlex = styled.aside`
+  #fakeButton {
+    background: var(--bg-cards);
+  }
   @media screen and (max-width: 1023px) {
     display: none;
   }
@@ -64,6 +67,7 @@ export const AsideFlex = styled.aside`
       stroke: var(--googleIcon-hover);
     }
   }
+
   button {
     width: 100%;
     transition: 0.5s;

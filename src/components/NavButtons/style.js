@@ -11,10 +11,22 @@ export const NavButtons = styled.div`
 
   button.active {
     border: 1px solid var(--text-color);
-    background-color: var(--bg-active-button);
-    transition: 1s;
+
+    background: rgb(66, 66, 71);
+    background: radial-gradient(
+      circle,
+      rgba(66, 66, 71, 1) 16%,
+      rgba(44, 44, 49, 1) 76%
+    );
+    transition: 0.7s;
   }
   button {
+    background: rgb(44, 44, 49);
+    background: radial-gradient(
+      circle,
+      rgba(44, 44, 49, 1) 7%,
+      rgba(31, 31, 34, 1) 96%
+    );
     @media screen and (max-width: 320px) {
       width: 15rem;
       padding: 1.5rem 1rem;

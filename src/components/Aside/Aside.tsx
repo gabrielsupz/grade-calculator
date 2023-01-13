@@ -83,7 +83,8 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
 
           <div>
             <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
-            <Button title="Editor" /> <Button title="Modelos pesonalizados" />
+            <Button id="fakeButton" title="Editor" />{' '}
+            <Button id="fakeButton" title="Modelos pesonalizados" />
           </div>
         </S.AsideFlex>
       </S.AsideMenu>

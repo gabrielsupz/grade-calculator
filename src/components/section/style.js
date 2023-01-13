@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
 export const SectionStyled = styled.section`
-  @media screen and (max-width: 1065px) {
-    height: 67rem;
-  }
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -16,6 +12,11 @@ export const SectionStyled = styled.section`
     font-size: 3.4rem;
     font-weight: 700;
   }
+
+  @media screen and (max-width: 1065px) {
+    height: 67rem;
+  }
+
   @media screen and (max-width: 500px) {
     max-width: 45rem;
   }
@@ -36,8 +37,14 @@ export const SectionStyled = styled.section`
     @media screen and (max-width: 375px) {
       padding: 5rem 1.5rem 2rem 1.5rem;
     }
-    background-color: var(--bg-cards);
+    /* background-color: var(--bg-cards); */
 
+    background: rgb(44, 44, 49);
+    background: radial-gradient(
+      circle,
+      rgba(44, 44, 49, 1) 7%,
+      rgba(31, 31, 34, 1) 96%
+    );
     height: 100%;
     border-radius: 4px;
     display: flex;

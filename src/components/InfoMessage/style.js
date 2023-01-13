@@ -22,7 +22,14 @@ export const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem 1rem 2rem;
-  background-color: var(--bg-cards);
+  background: rgb(71, 71, 79);
+  background: linear-gradient(
+    306deg,
+    rgba(71, 71, 79, 1) 0%,
+    rgba(58, 58, 65, 1) 4%,
+    rgba(35, 35, 39, 1) 94%,
+    rgba(28, 28, 31, 1) 100%
+  );
   width: 22rem;
   border-radius: 10px;
   border: 2px solid var(--text-color);

@@ -12,7 +12,13 @@ export const GradeBox = styled.div`
     width: 4.5rem;
     height: 3.5rem;
     border-radius: 4px;
-    background-color: var(--bg-input);
+    background: rgb(44, 44, 49);
+    background: linear-gradient(
+      54deg,
+      rgba(44, 44, 49, 1) 0%,
+      rgba(72, 72, 76, 1) 38%,
+      rgba(108, 108, 111, 1) 100%
+    );
     text-align: center;
     align-items: center;
     margin: auto;
