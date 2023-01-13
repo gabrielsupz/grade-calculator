@@ -10,6 +10,9 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined
   icon?: boolean
 }
+const style = {
+  color: '#bfb0ed'
+}
 
 export function Button({
   type,
@@ -27,7 +30,7 @@ export function Button({
       onClick={onClick}
     >
       {title}
-      {icon === true ? <TbBrandGoogle size={25} /> : ''}
+      {icon === true ? <TbBrandGoogle style={style} size={25} /> : ''}
     </S.stylizedButton>
   )
 }

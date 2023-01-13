@@ -4,6 +4,7 @@
   --bg-cards: #2c2c31;
   --bg-input: #4d4d56;
   --response-color: #67f436;
+  --googleIcon-hover: #3f9921;
   --response-click-color: #9ef581;
   --blue-response: #bea0f5;
   --red-response: #ff0000fe;
@@ -18,11 +19,29 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+}
+
+h2,
+h1,
+h3,
+p,
+div,
+input,
+button,
+select {
   color: var(--text-color);
 }
 
 body {
-  background-color: var(--body-bg-color);
+  background: rgb(44, 44, 49);
+  background: linear-gradient(
+    0deg,
+    rgba(44, 44, 49, 1) 0%,
+    rgba(32, 32, 36, 1) 0%,
+    rgba(27, 27, 30, 1) 41%,
+    rgba(22, 22, 25, 1) 62%,
+    rgba(18, 18, 20, 1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;

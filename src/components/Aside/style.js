@@ -58,13 +58,27 @@ export const AsideFlex = styled.aside`
     border: 1px solid var(--response-color);
     background-color: var(--bg-cards);
     transition: 0.5s;
+
+    svg {
+      transition: 0.5s;
+      stroke: var(--googleIcon-hover);
+    }
   }
   button {
     width: 100%;
     transition: 0.5s;
+    svg {
+      transition: 0.5s;
+    }
   }
 
+  img.userImage:hover {
+    border-color: var(--response-color);
+
+    transition: 0.5s;
+  }
   img.userImage {
+    transition: 0.5s;
     height: 7.5rem;
     width: 7.5rem;
     border-radius: 100%;
