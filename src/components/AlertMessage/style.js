@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
-export const Alert = styled.div``
+export const Alert = styled.div`
+  div:hover {
+    scale: 1.05;
+    transition: 0.5s;
+  }
+  div {
+    transition: 0.5s;
+  }
+`
 export const AlertRetract = styled.div`
   display: none;
   @media screen and (max-width: 785px) {

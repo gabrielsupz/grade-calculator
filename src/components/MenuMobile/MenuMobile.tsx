@@ -11,6 +11,7 @@ import * as S from './style'
 export function MenuMobile() {
   const { googleSignIn, user, logOut } = UserAuth()
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>()
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn()
@@ -45,11 +46,11 @@ export function MenuMobile() {
               alt="Foto do usuário"
             />
             <Link to={'/'}>
-              <Button title="Início" />
+              <Button title="Início" onClick={() => setMenuIsVisible(false)} />
             </Link>
             <Button title="Sair" onClick={handleSignOut} />
             <Link to={'/editor'}>
-              <Button title="Editor" />
+              <Button title="Editor" onClick={() => setMenuIsVisible(false)} />
             </Link>
           </div>
 

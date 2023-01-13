@@ -12,6 +12,8 @@ export const MenuMoBileBox = styled.div`
     display: flex;
     justify-content: end;
   }
+
+  transition: 0.5s;
 `
 
 interface ShowMenuProps {
@@ -19,15 +21,30 @@ interface ShowMenuProps {
 }
 
 export const ShowMenu = styled.div<ShowMenuProps>`
+  transition: 0.8s;
+
   ${({ isVisible }) =>
     isVisible
       ? css`
+          div {
+            scale: 1;
+            transition: all 0.5s;
+          }
+
           opacity: 1;
           pointer-events: auto;
+          transform: translateX(0);
+          transform: translateY(0px);
         `
       : css`
+          div {
+            transition: all 0.5s;
+            scale: 0.7;
+          }
+
           opacity: 0;
           pointer-events: none;
+          transform: translateX(-50px);
         `}
 
   backdrop-filter: blur(3px);
@@ -66,6 +83,12 @@ export const ShowMenu = styled.div<ShowMenuProps>`
     gap: 2rem;
   }
 
+  button:hover {
+    border: 1px solid var(--text-color);
+    background-color: var(--bg-active-button);
+    transition: 0.1s;
+  }
+
   button {
     @media screen and (max-width: 1023px) {
       font-size: 2.2rem;
@@ -83,11 +106,15 @@ export const ShowMenu = styled.div<ShowMenuProps>`
       height: 6rem;
     }
   }
-
+  > svg.closeMenu:hover {
+    transform: rotateY(90deg);
+  }
   svg.closeMenu {
     position: absolute;
     top: 2rem;
     right: 2rem;
+
+    transition: 0.7s;
   }
 `
 export const NoticeDiv = styled.div`

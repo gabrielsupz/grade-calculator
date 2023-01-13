@@ -25,7 +25,13 @@ export const SocialBox = styled.div`
     padding: 1rem;
     align-items: center;
   }
+  a:hover {
+    scale: 1.2;
+    transition: 0.5s;
+  }
+
   a {
+    transition: 0.5s;
     img {
       @media screen and (max-width: 1023px) {
         width: 40px;

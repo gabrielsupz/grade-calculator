@@ -53,8 +53,15 @@ export const AsideFlex = styled.aside`
     width: 100%;
     align-items: center;
   }
+  button:hover {
+    color: var(--response-color);
+    border: 1px solid var(--response-color);
+    background-color: var(--bg-cards);
+    transition: 0.5s;
+  }
   button {
     width: 100%;
+    transition: 0.5s;
   }
 
   img.userImage {
