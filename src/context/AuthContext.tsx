@@ -8,7 +8,8 @@ import {
   signInWithPopup,
   onAuthStateChanged
 } from 'firebase/auth'
-import { auth } from './firebase'
+import { auth } from '../services/firebase'
+import { getModels } from '../services/model'
 const AuthContext = createContext(undefined as any)
 
 export const AuthContextProvider = ({ children }) => {
@@ -32,6 +33,9 @@ export const AuthContextProvider = ({ children }) => {
     return () => {
       unsubscribe()
     }
+  }, [])
+  useEffect(() => {
+    getModels()
   }, [])
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>

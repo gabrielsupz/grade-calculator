@@ -39,7 +39,7 @@ export function NecessaryGradeInputs({
           <GradeBox returnValue={GetValue3} numberGrade="3" />
         </S.InputsDiv>
         <S.ResultDiv>
-          <S.respH3>Presisa de:</S.respH3>
+          <S.respH3>Precisa de:</S.respH3>
 
           <NecessaryGradeBox
             v1={Number(value1)}
@@ -61,7 +61,7 @@ export function NecessaryGradeInputs({
           <GradeBox returnValue={GetValue2} numberGrade="2" />
         </S.InputsDiv>
         <S.ResultDiv>
-          <S.respH3>Presisa de:</S.respH3>
+          <S.respH3>Precisa de:</S.respH3>
 
           <NecessaryGradeBox v1={Number(value1)} v2={Number(value2)} />
         </S.ResultDiv>
