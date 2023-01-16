@@ -10,7 +10,11 @@ import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
 
-export function Aside() {
+interface AsideProps {
+  inEditor: boolean
+}
+
+export function Aside({ inEditor }: AsideProps) {
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {
@@ -39,8 +43,8 @@ export function Aside() {
           <InfoMessage />
 
           <AlertMessage
-            text="Calcule a sua nota final ou a nota que precisa tirar para atingir a
-média, o peso define quantas vezes será contada a nota e o total da soma será dividido pela quantidade de notas somadas"
+            text="Calcule sua nota final ou a nota que precisa tirar para atingir a média, o peso define quantas vezes será contada a nota e o total da soma será dividido pela quantidade de notas somadas!"
+            inEditor
           />
         </S.AsideTablet>
         <S.AsideFlex>

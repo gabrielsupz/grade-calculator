@@ -23,12 +23,12 @@ export function Editor() {
       <S.leftMessages>
         <InfoMessage text="A menssagem de informação será gerada automaticamente" />
 
-        <AlertMessage text="Crie seu modelo de notas, coloque o peso ( vezes que será multiplicado) e se será bimestral ou trimestral" />
+        <AlertMessage inEditor={true} />
       </S.leftMessages>
 
       <Section inWorkshop={true} />
 
-      <Aside />
+      <Aside inEditor />
     </S.EditorStyled>
   )
 }
