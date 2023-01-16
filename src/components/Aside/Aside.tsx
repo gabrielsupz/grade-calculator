@@ -40,12 +40,12 @@ export function Aside({ inEditor }: AsideProps) {
         {' '}
         <S.AsideTablet>
           <MenuMobile />
-          <InfoMessage />
 
           <AlertMessage
             text="Calcule sua nota final ou a nota que precisa tirar para atingir a média, o peso define quantas vezes será contada a nota e o total da soma será dividido pela quantidade de notas somadas!"
             inEditor
           />
+          <InfoMessage />
         </S.AsideTablet>
         <S.AsideFlex>
           <div>
@@ -73,12 +73,12 @@ export function Aside({ inEditor }: AsideProps) {
         <S.AsideTablet>
           <MenuMobile />
 
-          <InfoMessage />
-
           <AlertMessage
             text="Calcule a sua nota final ou a nota que precisa tirar para atingir a
 média, o peso define quantas vezes será contada a nota e o total da soma será dividido pela quantidade de notas somadas"
           />
+
+          <InfoMessage />
         </S.AsideTablet>
         <S.AsideFlex>
           <div>

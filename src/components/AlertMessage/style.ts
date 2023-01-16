@@ -79,8 +79,8 @@ export const AlertShowMobile = styled.div<ShowMenuProps>`
         `}
   right:17rem;
   @media screen and (max-width: 600px) {
-    bottom: -7rem;
-    right: 10%;
+    bottom: 3rem;
+    right: 20%;
   }
   z-index: 3;
   display: flex;
