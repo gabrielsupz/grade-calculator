@@ -8,7 +8,7 @@ export interface GradeBoxProps {
 export function GradeBox({ returnValue, numberGrade }: GradeBoxProps) {
   const min = 0
   const max = 100
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState<number | string>('')
 
   const handleChange = event => {
     const value = Math.max(min, Math.min(max, Number(event.target.value)))
@@ -22,8 +22,9 @@ export function GradeBox({ returnValue, numberGrade }: GradeBoxProps) {
       {' '}
       <label htmlFor={'number' + numberGrade}>Nota {numberGrade}: </label>
       <input
+        placeholder="0"
         onChange={handleChange}
-        value={value}
+        value={value === 0 ? '' : value}
         id={'number' + numberGrade}
         type="number"
       />

@@ -7,7 +7,9 @@ import { UserAuth } from '../../context/AuthContext'
 
 import { Button } from '../Button/Button'
 import { SocialLinks } from '../SocialLinks/SocialLinks'
+
 import * as S from './style'
+
 export function MenuMobile() {
   const { googleSignIn, user, logOut } = UserAuth()
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>()

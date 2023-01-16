@@ -22,10 +22,10 @@ export function EditorInputs() {
   const { register, handleSubmit } = useForm()
   const min = 1
   const max = 9
-  const [value1, setValue1] = useState(1)
-  const [value2, setValue2] = useState(1)
-  const [value3, setValue3] = useState(1)
-  const [value4, setValue4] = useState(1)
+  const [value1, setValue1] = useState<number | string>('')
+  const [value2, setValue2] = useState<number | string>('')
+  const [value3, setValue3] = useState<number | string>('')
+  const [value4, setValue4] = useState<number | string>('')
   const [model, setModel] = useState<modelStateProps>('bimestre')
   if (inEditor === 'Editor') {
     const handleChange1 = event => {
@@ -88,36 +88,40 @@ export function EditorInputs() {
             <S.GradeWeightLabel>
               Nota :1
               <input
+                placeholder="0"
                 {...register('weight1')}
                 onChange={handleChange1}
-                value={value1}
+                value={value1 === 0 ? '' : value1}
                 type="number"
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
               Nota: 2
               <input
+                placeholder="0"
                 {...register('weight2')}
                 onChange={handleChange2}
-                value={value2}
+                value={value2 === 0 ? '' : value2}
                 type="number"
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
               Nota: 3
               <input
+                placeholder="0"
                 {...register('weight3')}
                 onChange={handleChange3}
-                value={value3}
+                value={value3 === 0 ? '' : value3}
                 type="number"
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
               Nota: 4
               <input
+                placeholder="0"
                 {...register('weight4')}
                 onChange={handleChange4}
-                value={value4}
+                value={value4 === 0 ? '' : value4}
                 type="number"
               />
             </S.GradeWeightLabel>
@@ -132,27 +136,30 @@ export function EditorInputs() {
             <S.GradeWeightLabel>
               Nota :1
               <input
+                placeholder="0"
                 {...register('weight1')}
                 onChange={handleChange1}
-                value={value1}
+                value={value1 === 0 ? '' : value1}
                 type="number"
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
               Nota: 2
               <input
+                placeholder="0"
                 {...register('weight2')}
                 onChange={handleChange2}
-                value={value2}
+                value={value2 === 0 ? '' : value2}
                 type="number"
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
               Nota: 3
               <input
+                placeholder="0"
                 {...register('weight3')}
                 onChange={handleChange3}
-                value={value3}
+                value={value3 === 0 ? '' : value3}
                 type="number"
               />
             </S.GradeWeightLabel>
