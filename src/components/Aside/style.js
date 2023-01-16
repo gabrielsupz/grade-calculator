@@ -10,7 +10,7 @@ export const AsideMenu = styled.div`
   }
 `
 export const AsideTablet = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: none;
   align-items: center;
@@ -23,6 +23,7 @@ export const AsideTablet = styled.div`
   }
   @media screen and (max-width: 600px) {
     flex-direction: row;
+    height: max-content;
   }
 `
 

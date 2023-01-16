@@ -50,7 +50,8 @@ export const ShowMenu = styled.div<ShowMenuProps>`
   backdrop-filter: blur(3px);
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-height: 768px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -61,7 +62,6 @@ export const ShowMenu = styled.div<ShowMenuProps>`
   align-items: center;
   flex-direction: column;
   justify-content: space-around;
-
   background: rgb(77, 77, 86);
   background: linear-gradient(
     0deg,
@@ -72,6 +72,9 @@ export const ShowMenu = styled.div<ShowMenuProps>`
     rgba(37, 37, 42, 1) 53%,
     rgba(18, 18, 20, 1) 85%
   );
+
+  background-size: cover;
+
   div.contentMenu {
     display: flex;
     flex-direction: column;
