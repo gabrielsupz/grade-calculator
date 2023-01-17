@@ -90,13 +90,12 @@ export const InfoShow = styled.div<ShowMenuProps>`
   display: flex;
   flex-direction: column;
   padding: 3rem 2rem 1rem 2rem;
-  background: rgb(71, 71, 79);
+  background: rgb(44, 44, 49);
   background: linear-gradient(
-    306deg,
-    rgba(71, 71, 79, 1) 0%,
-    rgba(58, 58, 65, 1) 4%,
-    rgba(35, 35, 39, 1) 94%,
-    rgba(28, 28, 31, 1) 100%
+    54deg,
+    rgba(44, 44, 49, 1) 8%,
+    rgba(32, 32, 36, 1) 51%,
+    rgba(18, 18, 20, 1) 100%
   );
   width: 22rem;
   border-radius: 10px;
