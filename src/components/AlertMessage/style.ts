@@ -77,11 +77,16 @@ export const AlertShowMobile = styled.div<ShowMenuProps>`
           opacity: 0;
           pointer-events: none;
         `}
-  right:17rem;
+
   @media screen and (max-width: 600px) {
+    bottom: 3rem;
+    right: 30%;
+  }
+  @media screen and (max-width: 425px) {
     bottom: 3rem;
     right: 20%;
   }
+  right: 17rem;
   z-index: 3;
   display: flex;
   flex-direction: column;

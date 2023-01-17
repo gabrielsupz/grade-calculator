@@ -77,11 +77,15 @@ export const InfoShow = styled.div<ShowMenuProps>`
         `}
 
   right:17rem;
-
   @media screen and (max-width: 600px) {
+    bottom: 3rem;
+    right: 15%;
+  }
+  @media screen and (max-width: 425px) {
     bottom: 3rem;
     right: 3%;
   }
+
   z-index: 4;
   display: flex;
   flex-direction: column;
