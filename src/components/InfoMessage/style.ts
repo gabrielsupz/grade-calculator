@@ -85,6 +85,10 @@ export const InfoShow = styled.div<ShowMenuProps>`
     bottom: 3rem;
     right: 3%;
   }
+  @media screen and (max-width: 320px) {
+    bottom: 3rem;
+    right: 10%;
+  }
 
   z-index: 4;
   display: flex;
