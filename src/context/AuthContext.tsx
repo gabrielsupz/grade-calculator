@@ -9,7 +9,7 @@ import {
   onAuthStateChanged
 } from 'firebase/auth'
 import { auth } from '../services/firebase'
-import { getModels } from '../services/model'
+import { createModels, CreateModelsProps, getModels } from '../services/model'
 const AuthContext = createContext(undefined as any)
 
 export const AuthContextProvider = ({ children }) => {
@@ -35,7 +35,22 @@ export const AuthContextProvider = ({ children }) => {
     }
   }, [])
   useEffect(() => {
+    // ----PEGANDO MODELOS (BEM EXPLICATIVO KKK)
+
     getModels()
+
+    // ----Criando Modelos
+
+    const model: CreateModelsProps = {
+      modelName: 'Modelo teste',
+      modelType: 'bimestre',
+      weight1: 1,
+      weight2: 2,
+      weight3: 3,
+      weight4: 4
+    }
+
+    // createModels(model)
   }, [])
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user }}>

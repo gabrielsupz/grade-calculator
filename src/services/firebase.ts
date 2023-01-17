@@ -21,4 +21,4 @@ export const auth = getAuth(app)
 
 // Acesso ao banco de dados do app
 
-export const firestore = getFirestore(app)
+export const firestore = getFirestore(app) //db

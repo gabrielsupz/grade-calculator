@@ -3,21 +3,14 @@ import * as S from './style'
 import { useForm } from 'react-hook-form'
 import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
+import { createModels, CreateModelsProps } from '../../services/model'
+import { UserAuth } from '../../context/AuthContext'
 
-export interface pessoalModelContents {
-  weight1: number
-  weight2: number
-  weight3: number
-  weight4?: number
-  modelName: string
-}
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
   const { inEditor } = useTabs()
-  const [pessoalModel, setPessoalModel] = useState({
-    modelName: 'Crie seu modelo primeiro'
-  } as pessoalModelContents)
+  const [pessoalModel, setPessoalModel] = useState({} as CreateModelsProps)
 
   const { register, handleSubmit } = useForm()
   const min = 1
@@ -45,26 +38,36 @@ export function EditorInputs() {
       setValue4(value)
     }
 
-    const onSubmit = data => {
+    const onSubmit = async data => {
       if (model === 'bimestre') {
-        setPessoalModel({
-          modelName: data.modelName,
-          weight1: data.weight1,
-          weight2: data.weight2,
-          weight3: data.weight3,
-          weight4: data.weight4
-        })
+        try {
+          await createModels({
+            modelName: data.modelName,
+            modelType: 'bimestre',
+            weight1: data.weight1,
+            weight2: data.weight2,
+            weight3: data.weight3,
+            weight4: data.weight4
+          })
+        } catch (e) {
+          console.error('Error:', e)
+        }
       }
       if (model === 'trimestre') {
-        setPessoalModel({
-          modelName: data.modelName,
-          weight1: data.weight1,
-          weight2: data.weight2,
-          weight3: data.weight3
-        })
+        try {
+          await createModels({
+            modelName: data.modelName,
+            modelType: 'trimestre',
+            weight1: data.weight1,
+            weight2: data.weight2,
+            weight3: data.weight3
+          })
+        } catch (e) {
+          console.error('Error:', e)
+        }
       }
 
-      console.log(pessoalModel)
+      // await createModels(pessoalModel)
     }
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
