@@ -11,7 +11,7 @@ interface NecessaryGradeInputsProps {
 
 //Inputs calculando a nota necessária para passar
 
-export function NecessaryGradeInputs({
+export function PMNecessaryGradeInputs({
   PeriodOfTime
 }: NecessaryGradeInputsProps) {
   const [value1, setValue1] = useState<number>()

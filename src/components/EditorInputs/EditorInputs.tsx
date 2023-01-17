@@ -5,12 +5,12 @@ import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
 import { createModels, CreateModelsProps } from '../../services/model'
 import { UserAuth } from '../../context/AuthContext'
+import { PMGradeInputs } from '../PessoalModels/PMGradeInputs'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
   const { inEditor } = useTabs()
-  const [pessoalModel, setPessoalModel] = useState({} as CreateModelsProps)
 
   const { register, handleSubmit } = useForm()
   const min = 1
@@ -20,6 +20,7 @@ export function EditorInputs() {
   const [value3, setValue3] = useState<number | string>('')
   const [value4, setValue4] = useState<number | string>('')
   const [model, setModel] = useState<modelStateProps>('bimestre')
+
   if (inEditor === 'Editor') {
     const handleChange1 = event => {
       const value = Math.max(min, Math.min(max, Number(event.target.value)))
@@ -209,14 +210,30 @@ export function EditorInputs() {
     if (model === 'trimestre') {
       setModel('bimestre')
     }
+    const modelTeste: CreateModelsProps = {
+      modelName: 'Teste',
+      modelType: 'bimestre',
+      weight1: 1,
+      weight2: 2,
+      weight3: 3,
+      weight4: 4
+    }
+
     return (
       <S.EverythingBox>
         <h2>
           Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
         </h2>
-        <ul>
-          <li>{pessoalModel.modelName}</li>
-        </ul>
+        <div>
+          <PMGradeInputs
+            modelName="Teste"
+            modelType="bimestre"
+            weight1={1}
+            weight2={1}
+            weight3={1}
+            weight4={2}
+          />
+        </div>
       </S.EverythingBox>
     )
   }
