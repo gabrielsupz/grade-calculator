@@ -6,6 +6,7 @@ import { Button } from '../Button/Button'
 import { createModels, CreateModelsProps } from '../../services/model'
 import { UserAuth } from '../../context/AuthContext'
 import { PMGradeInputs } from '../PessoalModels/PMGradeInputs'
+import { PMNecessaryGradeInputs } from '../PessoalModels/PMNecessaryGradeInputs'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
@@ -48,7 +49,8 @@ export function EditorInputs() {
             weight1: data.weight1,
             weight2: data.weight2,
             weight3: data.weight3,
-            weight4: data.weight4
+            weight4: data.weight4,
+            average: 60
           })
         } catch (e) {
           console.error('Error:', e)
@@ -61,7 +63,8 @@ export function EditorInputs() {
             modelType: 'trimestre',
             weight1: data.weight1,
             weight2: data.weight2,
-            weight3: data.weight3
+            weight3: data.weight3,
+            average: 60
           })
         } catch (e) {
           console.error('Error:', e)
@@ -210,21 +213,13 @@ export function EditorInputs() {
     if (model === 'trimestre') {
       setModel('bimestre')
     }
-    const modelTeste: CreateModelsProps = {
-      modelName: 'Teste',
-      modelType: 'bimestre',
-      weight1: 1,
-      weight2: 2,
-      weight3: 3,
-      weight4: 4
-    }
 
     return (
       <S.EverythingBox>
         <h2>
           Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
         </h2>
-        <div>
+        <div className="pessoalModelInputs">
           <PMGradeInputs
             modelName="Teste"
             modelType="bimestre"
@@ -232,6 +227,16 @@ export function EditorInputs() {
             weight2={1}
             weight3={1}
             weight4={2}
+            average={60}
+          />
+          <PMNecessaryGradeInputs
+            modelName="Teste"
+            modelType="bimestre"
+            weight1={1}
+            weight2={1}
+            weight3={1}
+            weight4={2}
+            average={60}
           />
         </div>
       </S.EverythingBox>

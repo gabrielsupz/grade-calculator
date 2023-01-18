@@ -1,19 +1,15 @@
 import React, { useState } from 'react'
+import { CreateModelsProps } from '../../../services/model.js'
 import { Period } from '../../../types/index.js'
 import { GradeBox } from '../../GradeBox/GradeBox'
 import { NecessaryGradeBox } from '../../NecessaryGradeBox/NecessaryGradeBox.js'
+import { PMNecessaryGradeBox } from '../PMNecessaryGradeBox/PMNecessaryGradeBox.js'
 
 import * as S from './style.js'
 
-interface NecessaryGradeInputsProps {
-  PeriodOfTime: Period
-}
-
 //Inputs calculando a nota necessária para passar
 
-export function PMNecessaryGradeInputs({
-  PeriodOfTime
-}: NecessaryGradeInputsProps) {
+export function PMNecessaryGradeInputs(model: CreateModelsProps) {
   const [value1, setValue1] = useState<number>()
   const [value2, setValue2] = useState<number>()
   const [value3, setValue3] = useState<number>()
@@ -28,7 +24,7 @@ export function PMNecessaryGradeInputs({
     setValue3(value)
   }
 
-  if (PeriodOfTime === 'bi') {
+  if (model.modelType === 'bimestre') {
     return (
       <S.GradeInputBox>
         {' '}
@@ -42,16 +38,21 @@ export function PMNecessaryGradeInputs({
         <S.ResultDiv>
           <S.respH3>Precisa de:</S.respH3>
 
-          <NecessaryGradeBox
+          <PMNecessaryGradeBox
             v1={Number(value1)}
             v2={Number(value2)}
             v3={Number(value3)}
+            weight1={model.weight1}
+            weight2={model.weight2}
+            weight3={model.weight3}
+            weight4={model.weight4}
+            average={60}
           />
         </S.ResultDiv>
       </S.GradeInputBox>
     )
   }
-  if (PeriodOfTime === 'tri') {
+  if (model.modelType === 'trimestre') {
     return (
       <S.GradeInputBox>
         {' '}
@@ -64,7 +65,14 @@ export function PMNecessaryGradeInputs({
         <S.ResultDiv>
           <S.respH3>Precisa de:</S.respH3>
 
-          <NecessaryGradeBox v1={Number(value1)} v2={Number(value2)} />
+          <PMNecessaryGradeBox
+            v1={Number(value1)}
+            v2={Number(value2)}
+            weight1={model.weight1}
+            weight2={model.weight2}
+            weight3={model.weight3}
+            average={60}
+          />
         </S.ResultDiv>
       </S.GradeInputBox>
     )

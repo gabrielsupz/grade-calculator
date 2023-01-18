@@ -24,6 +24,7 @@ export interface CreateModelsProps {
   weight2: number
   weight3: number
   weight4?: number | undefined
+  average: number
 }
 
 export async function createModels(
@@ -33,7 +34,8 @@ export async function createModels(
     weight1,
     weight2,
     weight3,
-    weight4
+    weight4,
+    average
   }: CreateModelsProps,
   UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2'
 ) {

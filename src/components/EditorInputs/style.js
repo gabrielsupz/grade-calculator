@@ -45,6 +45,11 @@ export const EverythingBox = styled.div`
     list-style: none;
   }
 
+  div.pessoalModelInputs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
   width: 100%;
 
   border: none;
