@@ -66,7 +66,8 @@ export async function createModels(
           weight1: weight1,
           weight2: weight2,
           weight3: weight3,
-          weight4: weight4
+          weight4: weight4,
+          average: average
         }
       )
       console.log('Document written with ID: ', docRef.id)
