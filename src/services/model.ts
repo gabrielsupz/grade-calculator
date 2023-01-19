@@ -48,7 +48,8 @@ export async function createModels(
           modelType: modelType,
           weight1: weight1,
           weight2: weight2,
-          weight3: weight3
+          weight3: weight3,
+          average: average
         }
       )
       console.log('Document written with ID: ', docRef.id)

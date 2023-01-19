@@ -122,6 +122,7 @@ export const FormInputsBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `
 export const GradeWeightBox = styled.div`
   display: flex;
@@ -129,6 +130,7 @@ export const GradeWeightBox = styled.div`
   gap: 1rem;
   min-height: 23.3rem;
   animation: ${fromLeft} 0.7s backwards;
+  justify-content: center;
 `
 export const ModelAndName = styled.div`
   display: flex;
@@ -140,7 +142,7 @@ export const ModelAndName = styled.div`
   div {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
   }
 `
 export const FormBox = styled.form`
@@ -166,7 +168,7 @@ export const FormBox = styled.form`
     text-align: center;
   }
   h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: var(--text-color);
     text-align: center;
@@ -179,7 +181,14 @@ export const FormBox = styled.form`
   width: 100%;
 
   select {
-    background-color: #846a6a;
+    background: rgb(44, 44, 49);
+    background: linear-gradient(
+      317deg,
+      rgba(44, 44, 49, 1) 0%,
+      rgba(98, 46, 48, 1) 21%,
+      rgba(119, 51, 51, 1) 100%
+    );
+    background-color: rgb(44, 44, 49);
     border-radius: 4px;
     border: 1.5px solid var(--body-bg-color);
     padding-left: 1rem;

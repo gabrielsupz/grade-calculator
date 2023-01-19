@@ -191,7 +191,14 @@ export function EditorInputs() {
                     <option value="trimestre">Trimestre</option>
                   </select>
                 </div>
-
+                <div>
+                  <h3>Média</h3>
+                  <select {...register('average')}>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                  </select>
+                </div>
                 <div>
                   <h3>Nome do modelo</h3>
                   <S.NameInput
