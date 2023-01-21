@@ -68,7 +68,10 @@ export function InfoMessage({ text, inEditor }: InfoMessafeProps) {
           />
         </S.InfoRetract>
         <S.InfoBox>
-          <p>{text}</p>
+          <p>
+            A mensagem de informação será gerado automaticamente dependendo do
+            modelo criado.
+          </p>
           <svg
             width="32"
             height="32"
