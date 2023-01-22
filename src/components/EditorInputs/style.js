@@ -66,6 +66,13 @@ export const EverythingBox = styled.div`
     align-items: center;
     gap: 1rem;
   }
+  h3 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
 
   #submitModelButton {
     transition: 0.3s;

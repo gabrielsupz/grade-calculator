@@ -5,14 +5,17 @@ import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
 import { createModels, CreateModelsProps } from '../../services/model'
 import { UserAuth } from '../../context/AuthContext'
-import { PMGradeInputs } from '../PessoalModels/PMGradeInputs'
-import { PMNecessaryGradeInputs } from '../PessoalModels/PMNecessaryGradeInputs'
+import { PMGradeInputs } from '../PersonalModels/PMGradeInputs'
+import { PMNecessaryGradeInputs } from '../PersonalModels/PMNecessaryGradeInputs'
+import { PMInputs } from '../PersonalModels/PMInputs'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
   const { inEditor } = useTabs()
-
+  const [inPersonalModel, setInPersonalModel] = useState<boolean | undefined>(
+    true
+  )
   const { register, handleSubmit } = useForm()
   const min = 1
   const max = 9
@@ -221,33 +224,42 @@ export function EditorInputs() {
       setModel('bimestre')
     }
 
-    return (
-      <S.EverythingBox>
-        <h2>
-          Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
-        </h2>
-        <div className="pessoalModelInputs">
-          <PMGradeInputs
-            modelName="Teste"
-            modelType="bimestre"
-            weight1={1}
-            weight2={1}
-            weight3={1}
-            weight4={2}
-            average={60}
-          />
-          <PMNecessaryGradeInputs
-            modelName="Teste"
-            modelType="bimestre"
-            weight1={1}
-            weight2={1}
-            weight3={1}
-            weight4={2}
-            average={60}
-          />
-        </div>
-      </S.EverythingBox>
-    )
+    if (inPersonalModel) {
+      return (
+        <S.EverythingBox>
+          <h3>Modelo Destreza média</h3>
+          <div className="pessoalModelInputs">
+            <PMInputs
+              average={60}
+              modelName="Modelo 1"
+              modelType="bimestre"
+              weight1={1}
+              weight2={1}
+              weight3={1}
+              weight4={2}
+            />
+          </div>
+        </S.EverythingBox>
+      )
+    }
+    if (inPersonalModel === false) {
+      return (
+        <S.EverythingBox>
+          <h2>
+            Meus Modelos{' '}
+            <img src="src\assets\Folder.svg" alt="ícone de pasta" />
+          </h2>
+          <div className="pessoalModelInputs">
+            <ul>
+              <li>Modelo 1</li>
+              <li>Modelo 1</li>
+              <li>Modelo 1</li>
+              <li>Modelo 1</li>
+            </ul>
+          </div>
+        </S.EverythingBox>
+      )
+    }
   }
   return <></>
 }

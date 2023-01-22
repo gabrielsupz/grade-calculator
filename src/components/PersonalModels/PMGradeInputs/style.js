@@ -18,7 +18,7 @@ export const GradeInputBox = styled.section`
 
   height: 100%;
   h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
   }
 
