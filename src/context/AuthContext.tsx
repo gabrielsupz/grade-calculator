@@ -41,15 +41,6 @@ export const AuthContextProvider = ({ children }) => {
 
     // ----Criando Modelos
 
-    const model: CreateModelsProps = {
-      modelName: 'Modelo teste',
-      modelType: 'bimestre',
-      weight1: 1,
-      weight2: 2,
-      weight3: 3,
-      weight4: 4
-    }
-
     // createModels(model)
   }, [])
   return (

@@ -3,19 +3,29 @@ import * as S from './style'
 import { useForm } from 'react-hook-form'
 import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
-import { createModels, CreateModelsProps } from '../../services/model'
+import {
+  createModels,
+  CreateModelsProps,
+  getModels
+} from '../../services/model'
 import { UserAuth } from '../../context/AuthContext'
 import { PMGradeInputs } from '../PersonalModels/PMGradeInputs'
 import { PMNecessaryGradeInputs } from '../PersonalModels/PMNecessaryGradeInputs'
 import { PMInputs } from '../PersonalModels/PMInputs'
+import { PMItemList } from '../PersonalModels/PMItemList'
+import { collection, getDocs } from 'firebase/firestore'
+import { firestore } from '../../services/firebase'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
   const { inEditor } = useTabs()
   const [inPersonalModel, setInPersonalModel] = useState<boolean | undefined>(
-    true
+    false
   )
+  const [atualPersonalModel, setAtualPersonalMOdel] =
+    useState<CreateModelsProps>({} as CreateModelsProps)
+
   const { register, handleSubmit } = useForm()
   const min = 1
   const max = 9
@@ -227,22 +237,26 @@ export function EditorInputs() {
     if (inPersonalModel) {
       return (
         <S.EverythingBox>
-          <h3>Modelo Destreza média</h3>
+          <h3>{atualPersonalModel.modelName}</h3>
           <div className="pessoalModelInputs">
             <PMInputs
-              average={60}
-              modelName="Modelo 1"
-              modelType="bimestre"
-              weight1={1}
-              weight2={1}
-              weight3={1}
-              weight4={2}
+              average={atualPersonalModel.average}
+              modelName={atualPersonalModel.modelName}
+              modelType={atualPersonalModel.modelType}
+              weight1={atualPersonalModel.weight1}
+              weight2={atualPersonalModel.weight2}
+              weight3={atualPersonalModel.weight3}
+              weight4={atualPersonalModel.weight4}
             />
           </div>
         </S.EverythingBox>
       )
     }
     if (inPersonalModel === false) {
+      function setPersonalModel(model: CreateModelsProps) {
+        setAtualPersonalMOdel(model)
+        setInPersonalModel(true)
+      }
       return (
         <S.EverythingBox>
           <h2>
@@ -251,10 +265,19 @@ export function EditorInputs() {
           </h2>
           <div className="pessoalModelInputs">
             <ul>
-              <li>Modelo 1</li>
-              <li>Modelo 1</li>
-              <li>Modelo 1</li>
-              <li>Modelo 1</li>
+              <Button
+                onClick={() =>
+                  setPersonalModel({
+                    average: 60,
+                    modelName: 'Gabriel',
+                    weight1: 1,
+                    modelType: 'trimestre',
+                    weight2: 1,
+                    weight3: 2
+                  })
+                }
+                title={'Modelos 1'}
+              ></Button>
             </ul>
           </div>
         </S.EverythingBox>
