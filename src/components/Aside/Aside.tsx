@@ -9,12 +9,14 @@ import { InfoMessage } from '../InfoMessage/InfoMessage'
 import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
+import { useTabs } from '../../providers/hook'
 
 interface AsideProps {
   inEditor: boolean
 }
 
 export function Aside({ inEditor }: AsideProps) {
+  const { setPeriod, setInEditor } = useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {
@@ -51,11 +53,11 @@ export function Aside({ inEditor }: AsideProps) {
           <div>
             <img className="userImage" src={user.photoURL} alt="" />
             <Link to={'/'}>
-              <Button title="Início" />
+              <Button title="Início" onClick={() => setPeriod('bi')} />
             </Link>
             <Button title="Sair" onClick={handleSignOut} />
             <Link to={'/editor'}>
-              <Button title="Editor" />
+              <Button title="Editor" onClick={() => setInEditor('Editor')} />
             </Link>
           </div>
 
