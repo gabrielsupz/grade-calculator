@@ -38,9 +38,14 @@ export const EverythingBox = styled.div`
     margin: 0;
   }
   ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
     width: 100%;
     height: 100%;
   }
+
   li {
     list-style: none;
   }
@@ -51,7 +56,7 @@ export const EverythingBox = styled.div`
     flex-direction: row;
   }
   width: 100%;
-
+  gap: 1rem;
   border: none;
   display: flex;
   flex-direction: column;
@@ -72,6 +77,30 @@ export const EverythingBox = styled.div`
     text-align: center;
     display: flex;
     align-items: center;
+  }
+  h3.closeAndNamePersonalModel {
+    display: flex;
+    background-image: linear-gradient(
+      320deg,
+      rgba(75, 75, 84, 1) 0%,
+      rgba(114, 97, 104, 1) 0%,
+      rgba(126, 104, 110, 1) 33%,
+      rgba(145, 116, 120, 1) 44%,
+      rgba(165, 128, 130, 1) 73%,
+      rgba(194, 145, 145, 1) 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: black;
+    justify-content: space-around;
+    width: 100%;
+  }
+  svg {
+    color: var(--text-color);
   }
 
   #submitModelButton {
@@ -96,6 +125,32 @@ export const EverythingBox = styled.div`
     border-color: var(--text-color);
     background: var(--bg-active-button);
     position: bottom;
+  }
+
+  #selectPersonalModel {
+    gap: 1rem;
+    justify-content: center;
+    background: rgb(75, 75, 84);
+    background: linear-gradient(
+      320deg,
+      rgba(75, 75, 84, 1) 3%,
+      rgba(75, 75, 84, 1) 4%,
+      rgba(58, 58, 65, 1) 11%,
+      rgba(45, 45, 51, 1) 18%,
+      rgba(40, 40, 46, 1) 24%,
+      rgba(40, 40, 46, 1) 28%,
+      rgba(41, 41, 47, 1) 37%,
+      rgba(41, 41, 47, 1) 76%,
+      rgba(63, 48, 48, 1) 91%,
+      rgba(77, 52, 52, 1) 100%
+    );
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    border-radius: 4px;
+    border: 1px solid rgb(75, 75, 84);
   }
 `
 export const GradeWeightLabel = styled.label`
@@ -244,4 +299,9 @@ export const NameInput = styled.input`
   background-color: var(--bg-input);
   padding: 0.8rem 2rem;
   animation: ${fromRight} 0.7s backwards;
+`
+export const ClosePersonalModel = styled.div`
+  display: flex;
+  justify-content: end;
+  width: 100%;
 `

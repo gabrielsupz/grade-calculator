@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import * as S from './style'
+
 import { useForm } from 'react-hook-form'
 import { useTabs } from '../../providers/hook'
 import { Button } from '../Button/Button'
@@ -15,6 +15,9 @@ import { PMInputs } from '../PersonalModels/PMInputs'
 import { PMItemList } from '../PersonalModels/PMItemList'
 import { collection, getDocs } from 'firebase/firestore'
 import { firestore } from '../../services/firebase'
+import { IoReturnDownBackOutline } from 'react-icons/io5'
+
+import * as S from './style'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
@@ -237,7 +240,13 @@ export function EditorInputs() {
     if (inPersonalModel) {
       return (
         <S.EverythingBox>
-          <h3>{atualPersonalModel.modelName}</h3>
+          <h3 className="closeAndNamePersonalModel">
+            <strong>{atualPersonalModel.modelName}</strong>{' '}
+            <IoReturnDownBackOutline
+              size={30}
+              onClick={() => setInPersonalModel(false)}
+            />
+          </h3>
           <div className="pessoalModelInputs">
             <PMInputs
               average={atualPersonalModel.average}
@@ -266,17 +275,49 @@ export function EditorInputs() {
           <div className="pessoalModelInputs">
             <ul>
               <Button
+                id="selectPersonalModel"
+                onClick={() =>
+                  setPersonalModel({
+                    average: 60,
+                    modelName: 'Modelo da casa da mae joana',
+                    weight1: 1,
+                    modelType: 'bimestre',
+                    weight2: 1,
+                    weight3: 2,
+                    weight4: 2
+                  })
+                }
+                title={'Modelo 1'}
+              ></Button>
+              <Button
+                id="selectPersonalModel"
                 onClick={() =>
                   setPersonalModel({
                     average: 60,
                     modelName: 'Gabriel',
                     weight1: 1,
-                    modelType: 'trimestre',
+                    modelType: 'bimestre',
                     weight2: 1,
-                    weight3: 2
+                    weight3: 2,
+                    weight4: 2
                   })
                 }
-                title={'Modelos 1'}
+                title={'Modelo 1'}
+              ></Button>
+              <Button
+                id="selectPersonalModel"
+                onClick={() =>
+                  setPersonalModel({
+                    average: 60,
+                    modelName: 'Gabriel',
+                    weight1: 1,
+                    modelType: 'bimestre',
+                    weight2: 1,
+                    weight3: 2,
+                    weight4: 2
+                  })
+                }
+                title={'Modelo 1'}
               ></Button>
             </ul>
           </div>

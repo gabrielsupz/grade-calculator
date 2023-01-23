@@ -31,7 +31,7 @@ export function PMGradeInputs(model: CreateModelsProps) {
       <S.GradeInputBox>
         {' '}
         <S.InputsDiv>
-          <h2>Nota Final </h2>
+          <h3>Nota Final </h3>
 
           <GradeBox returnValue={GetValue1} numberGrade="1" />
           <GradeBox returnValue={GetValue2} numberGrade="2" />
@@ -61,7 +61,7 @@ export function PMGradeInputs(model: CreateModelsProps) {
       <S.GradeInputBox>
         {' '}
         <S.InputsDiv>
-          <h2>Nota Final </h2>
+          <h3>Nota Final </h3>
 
           <GradeBox returnValue={GetValue1} numberGrade="1" />
           <GradeBox returnValue={GetValue2} numberGrade="2" />

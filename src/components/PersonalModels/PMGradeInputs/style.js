@@ -14,8 +14,7 @@ export const GradeInputBox = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: max-content;
-
+  gap: 3rem;
   height: 100%;
   h2 {
     font-size: 2rem;
@@ -33,7 +32,7 @@ export const GradeInputBox = styled.section`
 export const InputsDiv = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 
   div {
     animation: ${fromLeft} 0.7s backwards;
