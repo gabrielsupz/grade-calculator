@@ -12,7 +12,6 @@ export async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
         let docData = { id: doc.id, ...doc.data() }
         return models.push(docData)
       })
-      console.log(models)
     })
   })
 }

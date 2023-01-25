@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useForm } from 'react-hook-form'
 import { useTabs } from '../../providers/hook'
@@ -8,11 +8,9 @@ import {
   CreateModelsProps,
   getModels
 } from '../../services/model'
-import { UserAuth } from '../../context/AuthContext'
-import { PMGradeInputs } from '../PersonalModels/PMGradeInputs'
-import { PMNecessaryGradeInputs } from '../PersonalModels/PMNecessaryGradeInputs'
+
 import { PMInputs } from '../PersonalModels/PMInputs'
-import { PMItemList } from '../PersonalModels/PMItemList'
+
 import { collection, getDocs } from 'firebase/firestore'
 import { firestore } from '../../services/firebase'
 import { IoReturnDownBackOutline } from 'react-icons/io5'
@@ -26,7 +24,7 @@ export function EditorInputs() {
   const [inPersonalModel, setInPersonalModel] = useState<boolean | undefined>(
     false
   )
-  const [atualPersonalModel, setAtualPersonalMOdel] =
+  const [atualPersonalModel, setAtualPersonalModel] =
     useState<CreateModelsProps>({} as CreateModelsProps)
 
   const { register, handleSubmit } = useForm()
@@ -37,6 +35,29 @@ export function EditorInputs() {
   const [value3, setValue3] = useState<number | string>('')
   const [value4, setValue4] = useState<number | string>('')
   const [model, setModel] = useState<modelStateProps>('bimestre')
+  const [personalModels, setPersonalModels] = useState([
+    {} as CreateModelsProps
+  ])
+  useEffect(() => {
+    async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
+      return new Promise((resolve, reject) => {
+        const modelsCollection = collection(firestore, `users/${UId}/models`)
+        getDocs(modelsCollection)
+          .then(data => {
+            let models = [] as any
+
+            data.forEach(doc => {
+              let docData = { id: doc.id, ...doc.data() }
+              return models.push(docData)
+            })
+
+            return models
+          })
+          .then(data => setPersonalModels(data))
+      })
+    }
+    getModels()
+  }, [inEditor])
 
   if (inEditor === 'Editor') {
     const handleChange1 = event => {
@@ -236,94 +257,69 @@ export function EditorInputs() {
     if (model === 'trimestre') {
       setModel('bimestre')
     }
-
-    if (inPersonalModel) {
-      return (
-        <S.EverythingBox>
-          <h3 className="closeAndNamePersonalModel">
-            <strong>{atualPersonalModel.modelName}</strong>{' '}
-            <IoReturnDownBackOutline
-              size={30}
-              onClick={() => setInPersonalModel(false)}
-            />
-          </h3>
-          <div className="pessoalModelInputs">
-            <PMInputs
-              average={atualPersonalModel.average}
-              modelName={atualPersonalModel.modelName}
-              modelType={atualPersonalModel.modelType}
-              weight1={atualPersonalModel.weight1}
-              weight2={atualPersonalModel.weight2}
-              weight3={atualPersonalModel.weight3}
-              weight4={atualPersonalModel.weight4}
-            />
-          </div>
-        </S.EverythingBox>
-      )
+  }
+  if (inPersonalModel) {
+    return (
+      <S.EverythingBox>
+        <h3 className="closeAndNamePersonalModel">
+          <strong>{atualPersonalModel.modelName}</strong>{' '}
+          <IoReturnDownBackOutline
+            size={30}
+            onClick={() => setInPersonalModel(false)}
+          />
+        </h3>
+        <div className="pessoalModelInputs">
+          <PMInputs
+            average={atualPersonalModel.average}
+            modelName={atualPersonalModel.modelName}
+            modelType={atualPersonalModel.modelType}
+            weight1={atualPersonalModel.weight1}
+            weight2={atualPersonalModel.weight2}
+            weight3={atualPersonalModel.weight3}
+            weight4={atualPersonalModel.weight4}
+          />
+        </div>
+      </S.EverythingBox>
+    )
+  }
+  if (inPersonalModel === false) {
+    function setPersonalModel(model: CreateModelsProps) {
+      setAtualPersonalModel(model)
+      setInPersonalModel(true)
+      getModels()
     }
-    if (inPersonalModel === false) {
-      function setPersonalModel(model: CreateModelsProps) {
-        setAtualPersonalMOdel(model)
-        setInPersonalModel(true)
-      }
-      return (
-        <S.EverythingBox>
-          <h2>
-            Meus Modelos{' '}
-            <img src="src\assets\Folder.svg" alt="ícone de pasta" />
-          </h2>
-          <div className="pessoalModelInputs">
-            <ul>
-              <Button
-                id="selectPersonalModel"
-                onClick={() =>
-                  setPersonalModel({
-                    average: 60,
-                    modelName: 'Modelo da casa da mae joana',
-                    weight1: 1,
-                    modelType: 'bimestre',
-                    weight2: 1,
-                    weight3: 2,
-                    weight4: 2
-                  })
-                }
-                title={'Modelo 1'}
-              ></Button>
-              <Button
-                id="selectPersonalModel"
-                onClick={() =>
-                  setPersonalModel({
-                    average: 60,
-                    modelName: 'Gabriel',
-                    weight1: 1,
-                    modelType: 'bimestre',
-                    weight2: 1,
-                    weight3: 2,
-                    weight4: 2
-                  })
-                }
-                title={'Modelo 1'}
-              ></Button>
-              <Button
-                id="selectPersonalModel"
-                onClick={() =>
-                  setPersonalModel({
-                    average: 60,
-                    modelName: 'Gabriel',
-                    weight1: 1,
-                    modelType: 'bimestre',
-                    weight2: 1,
-                    weight3: 2,
-                    weight4: 2
-                  })
-                }
-                title={'Modelo 1'}
-              ></Button>
-            </ul>
-          </div>
-        </S.EverythingBox>
-      )
-    }
+    return (
+      <S.EverythingBox>
+        <h2>
+          Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
+        </h2>
+        <div className="pessoalModelInputs">
+          <ul>
+            {' '}
+            {personalModels.map((data: CreateModelsProps, id) => {
+              return (
+                <Button
+                  key={id}
+                  id="selectPersonalModel"
+                  onClick={() =>
+                    setPersonalModel({
+                      average: data.average,
+                      modelName: data.modelName,
+                      weight1: data.weight1,
+                      modelType: data.modelType,
+                      weight2: data.weight2,
+                      weight3: data.weight3,
+                      weight4: data.weight4
+                    })
+                  }
+                  title={data.modelName}
+                ></Button>
+              )
+            })}
+          </ul>
+        </div>
+      </S.EverythingBox>
+    )
   }
   return <></>
 }

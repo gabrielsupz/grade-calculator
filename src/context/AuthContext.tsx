@@ -36,11 +36,8 @@ export const AuthContextProvider = ({ children }) => {
   }, [])
   useEffect(() => {
     // ----PEGANDO MODELOS (BEM EXPLICATIVO KKK)
-
-    getModels()
-
+    //getModels()
     // ----Criando Modelos
-
     // createModels(model)
   }, [])
   return (
