@@ -46,10 +46,10 @@ export function PMGradeInputs(model: CreateModelsProps) {
             v2={Number(value2)}
             v3={Number(value3)}
             v4={Number(value4)}
-            weight1={model.weight1}
-            weight2={model.weight2}
-            weight3={model.weight3}
-            weight4={model.weight4}
+            weight1={Number(model.weight1)}
+            weight2={Number(model.weight2)}
+            weight3={Number(model.weight3)}
+            weight4={Number(model.weight4)}
           />
         </S.ResultDiv>
       </S.GradeInputBox>
@@ -74,9 +74,9 @@ export function PMGradeInputs(model: CreateModelsProps) {
             v1={Number(value1)}
             v2={Number(value2)}
             v3={Number(value3)}
-            weight1={model.weight1}
-            weight2={model.weight2}
-            weight3={model.weight3}
+            weight1={Number(model.weight1)}
+            weight2={Number(model.weight2)}
+            weight3={Number(model.weight3)}
           />
         </S.ResultDiv>
       </S.GradeInputBox>

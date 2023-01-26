@@ -32,8 +32,8 @@ export function PMNecessaryGradeBox({
       average * weight4
     var response = averageWithWeight - total
 
-    var avarage = response / (weight1 + weight2 + weight3 + weight4)
-    var NotNaN = avarage > 0 ? avarage : 0
+    var resposeAverage = response / weight4
+    var NotNaN = resposeAverage > 0 ? resposeAverage : 0
 
     var responseCorrect = Number.isInteger(NotNaN) ? NotNaN : NotNaN.toFixed(1)
   } else {
@@ -42,8 +42,8 @@ export function PMNecessaryGradeBox({
       average * weight1 + average * weight2 + average * weight3
     var response = averageWithWeight - total
 
-    var avarage = response / (weight1 + weight2 + weight3)
-    var NotNaN = avarage > 0 ? avarage : 0
+    var resposeAverage = response / weight3
+    var NotNaN = resposeAverage > 0 ? resposeAverage : 0
 
     var responseCorrect = Number.isInteger(NotNaN) ? NotNaN : NotNaN.toFixed(1)
   }

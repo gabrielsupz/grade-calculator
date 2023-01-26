@@ -30,21 +30,23 @@ export function PMAverageResponseBox({
     var responseCorrect = Number.isInteger(response)
       ? response
       : response.toFixed(1)
-    if (responseCorrect > 59) {
-      document.getElementById('response')?.classList.remove('red')
-      document.getElementById('response')?.classList.add('blue')
-    } else {
-      document.getElementById('response')?.classList.remove('blue')
-      document.getElementById('response')?.classList.add('red')
-    }
   } else {
-    const total = v1 * weight1 + v2 * weight2 + v3 * weight3
-    var avarage = total / (weight1 + weight2 + weight3)
-    var response = avarage > 0 ? avarage : 0
+    if (weight3 != undefined) {
+      const valor1 = v1 * weight1
+      const valor2 = v2 * weight2
+      const valor3 = v3 * weight3
 
-    var responseCorrect = Number.isInteger(response)
-      ? response
-      : response.toFixed(1)
+      const total = valor1 + valor2 + valor3
+
+      var avarage = total / (weight1 + weight2 + weight3)
+      var response = avarage > 0 ? avarage : 0
+      console.log(v1, weight1)
+      var responseCorrect = Number.isInteger(response)
+        ? response
+        : response.toFixed(2)
+    } else {
+      responseCorrect = 0
+    }
   }
 
   return <S.ResponseBox id="response">{responseCorrect}</S.ResponseBox>

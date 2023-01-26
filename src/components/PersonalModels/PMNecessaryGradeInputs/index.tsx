@@ -42,11 +42,11 @@ export function PMNecessaryGradeInputs(model: CreateModelsProps) {
             v1={Number(value1)}
             v2={Number(value2)}
             v3={Number(value3)}
-            weight1={model.weight1}
-            weight2={model.weight2}
-            weight3={model.weight3}
-            weight4={model.weight4}
-            average={60}
+            weight1={Number(model.weight1)}
+            weight2={Number(model.weight2)}
+            weight3={Number(model.weight3)}
+            weight4={Number(model.weight4)}
+            average={Number(model.average)}
           />
         </S.ResultDiv>
       </S.GradeInputBox>
@@ -68,10 +68,10 @@ export function PMNecessaryGradeInputs(model: CreateModelsProps) {
           <PMNecessaryGradeBox
             v1={Number(value1)}
             v2={Number(value2)}
-            weight1={model.weight1}
-            weight2={model.weight2}
-            weight3={model.weight3}
-            average={60}
+            weight1={Number(model.weight1)}
+            weight2={Number(model.weight2)}
+            weight3={Number(model.weight3)}
+            average={Number(model.average)}
           />
         </S.ResultDiv>
       </S.GradeInputBox>

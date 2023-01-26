@@ -29,7 +29,7 @@ export function EditorInputs() {
     useState<CreateModelsProps>({} as CreateModelsProps)
 
   const { register, handleSubmit } = useForm()
-  const min = 1
+  const min = 0
   const max = 9
   const [value1, setValue1] = useState<number | string>('')
   const [value2, setValue2] = useState<number | string>('')
@@ -306,7 +306,6 @@ export function EditorInputs() {
           <ul>
             {' '}
             {personalModels.map((data: CreateModelsProps, index) => {
-              console.log(data)
               return (
                 <S.personalModel>
                   <Button
