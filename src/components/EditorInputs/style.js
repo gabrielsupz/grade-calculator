@@ -38,12 +38,54 @@ export const EverythingBox = styled.div`
     margin: 0;
   }
   ul {
+    p {
+      display: flex;
+      background-image: linear-gradient(
+        320deg,
+        rgba(148, 129, 141, 1) 8%,
+        rgba(227, 126, 135, 1) 50%,
+        rgba(221, 86, 93, 1) 82%
+      );
+
+      background-clip: text;
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
+
+      color: black;
+
+      width: 100%;
+      font-size: 1.6rem;
+
+      text-align: center;
+
+      justify-content: center;
+    }
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     gap: 1rem;
     width: 100%;
     height: 100%;
+    div button:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    div:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+    div:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+    div:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+    div:nth-child(6) {
+      animation-delay: 0.6s;
+    }
   }
 
   li {
@@ -287,8 +329,11 @@ export const personalModel = styled.div`
   align-items: center;
   gap: 1rem;
   padding-left: 1rem;
+  transition: 0.5s;
 
   svg {
+    transition: 0.5s;
+    animation: ${fromRight} 0.7s backwards;
     color: var(--text-color);
 
     background: rgb(26, 26, 29);
@@ -305,7 +350,10 @@ export const personalModel = styled.div`
     );
     border-radius: 100%;
   }
+  animation: ${fromLeft} 0.7s backwards;
   #selectPersonalModel {
+    transition: 0.5s;
+
     gap: 1rem;
     justify-content: center;
     background: rgb(75, 75, 84);

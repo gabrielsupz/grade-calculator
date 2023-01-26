@@ -80,33 +80,37 @@ export function EditorInputs() {
     }
 
     const onSubmit = async data => {
-      if (model === 'bimestre') {
-        try {
-          await createModels({
-            modelName: data.modelName,
-            modelType: 'bimestre',
-            weight1: data.weight1,
-            weight2: data.weight2,
-            weight3: data.weight3,
-            weight4: data.weight4,
-            average: 60
-          })
-        } catch (e) {
-          console.error('Error:', e)
+      if (personalModels[5] != undefined) {
+        alert('O máximo de modelos por usuário foi atingido!')
+      } else {
+        if (model === 'bimestre') {
+          try {
+            await createModels({
+              modelName: data.modelName,
+              modelType: 'bimestre',
+              weight1: data.weight1,
+              weight2: data.weight2,
+              weight3: data.weight3,
+              weight4: data.weight4,
+              average: data.average
+            })
+          } catch (e) {
+            console.error('Error:', e)
+          }
         }
-      }
-      if (model === 'trimestre') {
-        try {
-          await createModels({
-            modelName: data.modelName,
-            modelType: 'trimestre',
-            weight1: data.weight1,
-            weight2: data.weight2,
-            weight3: data.weight3,
-            average: 60
-          })
-        } catch (e) {
-          console.error('Error:', e)
+        if (model === 'trimestre') {
+          try {
+            await createModels({
+              modelName: data.modelName,
+              modelType: 'trimestre',
+              weight1: data.weight1,
+              weight2: data.weight2,
+              weight3: data.weight3,
+              average: data.average
+            })
+          } catch (e) {
+            console.error('Error:', e)
+          }
         }
       }
 
@@ -297,48 +301,55 @@ export function EditorInputs() {
       setInPersonalModel(true)
       getModels()
     }
+    function personalModelList() {
+      {
+        if (personalModels[0] === undefined) {
+          return <p>Ainda não há modelos criados </p>
+        } else {
+          return personalModels.map((data: CreateModelsProps, index) => {
+            return (
+              <S.personalModel>
+                <Button
+                  key={index}
+                  id="selectPersonalModel"
+                  onClick={() =>
+                    setPersonalModel({
+                      average: data.average,
+                      modelName: data.modelName,
+                      weight1: data.weight1,
+                      modelType: data.modelType,
+                      weight2: data.weight2,
+                      weight3: data.weight3,
+                      weight4: data.weight4
+                    })
+                  }
+                  title={data.modelName}
+                ></Button>
+                <IoCloseOutline
+                  size={25}
+                  onClick={() => {
+                    if (refresh === false) {
+                      setRefresh(true)
+                    } else {
+                      setRefresh(false)
+                    }
+                    deleteModel('ga4bP7s0d1WOnEJeIRp1P0N40qx2', data.id)
+                  }}
+                />
+              </S.personalModel>
+            )
+          })
+        }
+      }
+    }
+
     return (
       <S.EverythingBox>
         <h2>
           Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
         </h2>
         <div className="pessoalModelInputs">
-          <ul>
-            {' '}
-            {personalModels.map((data: CreateModelsProps, index) => {
-              return (
-                <S.personalModel>
-                  <Button
-                    key={index}
-                    id="selectPersonalModel"
-                    onClick={() =>
-                      setPersonalModel({
-                        average: data.average,
-                        modelName: data.modelName,
-                        weight1: data.weight1,
-                        modelType: data.modelType,
-                        weight2: data.weight2,
-                        weight3: data.weight3,
-                        weight4: data.weight4
-                      })
-                    }
-                    title={data.modelName}
-                  ></Button>
-                  <IoCloseOutline
-                    size={25}
-                    onClick={() => {
-                      if (refresh === false) {
-                        setRefresh(true)
-                      } else {
-                        setRefresh(false)
-                      }
-                      deleteModel('ga4bP7s0d1WOnEJeIRp1P0N40qx2', data.id)
-                    }}
-                  />
-                </S.personalModel>
-              )
-            })}
-          </ul>
+          <ul>{personalModelList()}</ul>
         </div>
       </S.EverythingBox>
     )
