@@ -39,7 +39,7 @@ export function EditorInputs() {
   const [personalModels, setPersonalModels] = useState([
     {} as CreateModelsProps
   ])
-  const [refresh, setRefrech] = useState<boolean>(false)
+  const [refresh, setRefresh] = useState<boolean>(false)
   useEffect(() => {
     async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
       return new Promise((resolve, reject) => {
@@ -321,7 +321,11 @@ export function EditorInputs() {
                   <IoCloseOutline
                     size={25}
                     onClick={() => {
-                      setRefrech(true)
+                      if (refresh === false) {
+                        setRefresh(true)
+                      } else {
+                        setRefresh(false)
+                      }
                       deleteModel('ga4bP7s0d1WOnEJeIRp1P0N40qx2', data.id)
                     }}
                   />
