@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc } from 'firebase/firestore'
+import { collection, getDocs, addDoc, doc, deleteDoc } from 'firebase/firestore'
 
 import { firestore } from './firebase'
 
@@ -12,8 +12,18 @@ export async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
         let docData = { id: doc.id, ...doc.data() }
         return models.push(docData)
       })
+      console.log(models)
     })
   })
+}
+
+export async function deleteModel(
+  UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2',
+  idModel: string | undefined
+) {
+  if (idModel != undefined && UId != undefined) {
+    await deleteDoc(doc(firestore, `users/${UId}/models`, idModel))
+  }
 }
 
 export interface CreateModelsProps {
@@ -24,6 +34,7 @@ export interface CreateModelsProps {
   weight3: number
   weight4?: number | undefined
   average: number
+  id?: string
 }
 
 export async function createModels(

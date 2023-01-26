@@ -126,32 +126,6 @@ export const EverythingBox = styled.div`
     background: var(--bg-active-button);
     position: bottom;
   }
-
-  #selectPersonalModel {
-    gap: 1rem;
-    justify-content: center;
-    background: rgb(75, 75, 84);
-    background: linear-gradient(
-      320deg,
-      rgba(75, 75, 84, 1) 3%,
-      rgba(75, 75, 84, 1) 4%,
-      rgba(58, 58, 65, 1) 11%,
-      rgba(45, 45, 51, 1) 18%,
-      rgba(40, 40, 46, 1) 24%,
-      rgba(40, 40, 46, 1) 28%,
-      rgba(41, 41, 47, 1) 37%,
-      rgba(41, 41, 47, 1) 76%,
-      rgba(63, 48, 48, 1) 91%,
-      rgba(77, 52, 52, 1) 100%
-    );
-    width: 100%;
-    padding: 1.2rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-
-    border-radius: 4px;
-    border: 1px solid rgb(75, 75, 84);
-  }
 `
 export const GradeWeightLabel = styled.label`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -304,4 +278,56 @@ export const ClosePersonalModel = styled.div`
   display: flex;
   justify-content: end;
   width: 100%;
+`
+
+export const personalModel = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+
+  svg {
+    color: var(--text-color);
+
+    background: rgb(26, 26, 29);
+    background: linear-gradient(
+      320deg,
+      rgba(26, 26, 29, 1) 0%,
+      rgba(64, 57, 62, 1) 33%,
+      rgba(77, 68, 74, 1) 44%,
+      rgba(88, 77, 84, 1) 54%,
+      rgba(107, 93, 101, 1) 63%,
+      rgba(127, 105, 111, 1) 69%,
+      rgba(131, 107, 113, 1) 85%,
+      rgba(165, 128, 130, 1) 99%
+    );
+    border-radius: 100%;
+  }
+  #selectPersonalModel {
+    gap: 1rem;
+    justify-content: center;
+    background: rgb(75, 75, 84);
+    background: linear-gradient(
+      320deg,
+      rgba(75, 75, 84, 1) 3%,
+      rgba(75, 75, 84, 1) 4%,
+      rgba(58, 58, 65, 1) 11%,
+      rgba(45, 45, 51, 1) 18%,
+      rgba(40, 40, 46, 1) 24%,
+      rgba(40, 40, 46, 1) 28%,
+      rgba(41, 41, 47, 1) 37%,
+      rgba(41, 41, 47, 1) 76%,
+      rgba(63, 48, 48, 1) 91%,
+      rgba(77, 52, 52, 1) 100%
+    );
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    border-radius: 4px;
+    border: 1px solid rgb(75, 75, 84);
+  }
 `

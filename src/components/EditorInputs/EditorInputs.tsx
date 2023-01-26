@@ -6,6 +6,7 @@ import { Button } from '../Button/Button'
 import {
   createModels,
   CreateModelsProps,
+  deleteModel,
   getModels
 } from '../../services/model'
 
@@ -13,14 +14,14 @@ import { PMInputs } from '../PersonalModels/PMInputs'
 
 import { collection, getDocs } from 'firebase/firestore'
 import { firestore } from '../../services/firebase'
-import { IoReturnDownBackOutline } from 'react-icons/io5'
+import { IoReturnDownBackOutline, IoCloseOutline } from 'react-icons/io5'
 
 import * as S from './style'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
-  const { inEditor } = useTabs()
+  const { inEditor, setInEditor } = useTabs()
   const [inPersonalModel, setInPersonalModel] = useState<boolean | undefined>(
     false
   )
@@ -38,6 +39,7 @@ export function EditorInputs() {
   const [personalModels, setPersonalModels] = useState([
     {} as CreateModelsProps
   ])
+  const [refresh, setRefrech] = useState<boolean>(false)
   useEffect(() => {
     async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
       return new Promise((resolve, reject) => {
@@ -57,7 +59,7 @@ export function EditorInputs() {
       })
     }
     getModels()
-  }, [inEditor])
+  }, [inEditor, refresh])
 
   if (inEditor === 'Editor') {
     const handleChange1 = event => {
@@ -296,24 +298,34 @@ export function EditorInputs() {
         <div className="pessoalModelInputs">
           <ul>
             {' '}
-            {personalModels.map((data: CreateModelsProps, id) => {
+            {personalModels.map((data: CreateModelsProps, index) => {
+              console.log(data)
               return (
-                <Button
-                  key={id}
-                  id="selectPersonalModel"
-                  onClick={() =>
-                    setPersonalModel({
-                      average: data.average,
-                      modelName: data.modelName,
-                      weight1: data.weight1,
-                      modelType: data.modelType,
-                      weight2: data.weight2,
-                      weight3: data.weight3,
-                      weight4: data.weight4
-                    })
-                  }
-                  title={data.modelName}
-                ></Button>
+                <S.personalModel>
+                  <Button
+                    key={index}
+                    id="selectPersonalModel"
+                    onClick={() =>
+                      setPersonalModel({
+                        average: data.average,
+                        modelName: data.modelName,
+                        weight1: data.weight1,
+                        modelType: data.modelType,
+                        weight2: data.weight2,
+                        weight3: data.weight3,
+                        weight4: data.weight4
+                      })
+                    }
+                    title={data.modelName}
+                  ></Button>
+                  <IoCloseOutline
+                    size={25}
+                    onClick={() => {
+                      setRefrech(true)
+                      deleteModel('ga4bP7s0d1WOnEJeIRp1P0N40qx2', data.id)
+                    }}
+                  />
+                </S.personalModel>
               )
             })}
           </ul>
