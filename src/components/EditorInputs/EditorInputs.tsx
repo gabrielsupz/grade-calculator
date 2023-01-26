@@ -139,6 +139,7 @@ export function EditorInputs() {
                 onChange={handleChange1}
                 value={value1 === 0 ? '' : value1}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
@@ -149,6 +150,7 @@ export function EditorInputs() {
                 onChange={handleChange2}
                 value={value2 === 0 ? '' : value2}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
@@ -159,6 +161,7 @@ export function EditorInputs() {
                 onChange={handleChange3}
                 value={value3 === 0 ? '' : value3}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
@@ -169,6 +172,7 @@ export function EditorInputs() {
                 onChange={handleChange4}
                 value={value4 === 0 ? '' : value4}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
           </S.GradeWeightBox>
@@ -187,6 +191,7 @@ export function EditorInputs() {
                 onChange={handleChange1}
                 value={value1 === 0 ? '' : value1}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
@@ -197,6 +202,7 @@ export function EditorInputs() {
                 onChange={handleChange2}
                 value={value2 === 0 ? '' : value2}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
             <S.GradeWeightLabel>
@@ -207,6 +213,7 @@ export function EditorInputs() {
                 onChange={handleChange3}
                 value={value3 === 0 ? '' : value3}
                 type="number"
+                required
               />
             </S.GradeWeightLabel>
           </S.GradeWeightBox>
