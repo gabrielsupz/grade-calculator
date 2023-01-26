@@ -39,7 +39,7 @@ export function EditorInputs() {
   const [personalModels, setPersonalModels] = useState([
     {} as CreateModelsProps
   ])
-  const [refresh, setRefresh] = useState<boolean>(false)
+  const [refresh, setRefresh] = useState<boolean>(true)
   useEffect(() => {
     async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
       return new Promise((resolve, reject) => {
@@ -327,13 +327,17 @@ export function EditorInputs() {
                 ></Button>
                 <IoCloseOutline
                   size={25}
-                  onClick={() => {
-                    if (refresh === false) {
-                      setRefresh(true)
-                    } else {
-                      setRefresh(false)
-                    }
-                    deleteModel('ga4bP7s0d1WOnEJeIRp1P0N40qx2', data.id)
+                  onClick={async () => {
+                    await deleteModel(
+                      'ga4bP7s0d1WOnEJeIRp1P0N40qx2',
+                      data.id
+                    ).then(() => {
+                      if (refresh === false) {
+                        setRefresh(true)
+                      } else {
+                        setRefresh(false)
+                      }
+                    })
                   }}
                 />
               </S.personalModel>

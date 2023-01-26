@@ -46,19 +46,13 @@ export const EverythingBox = styled.div`
         rgba(227, 126, 135, 1) 50%,
         rgba(221, 86, 93, 1) 82%
       );
-
       background-clip: text;
       -webkit-background-clip: text;
-
       -webkit-text-fill-color: transparent;
-
       color: black;
-
       width: 100%;
       font-size: 1.6rem;
-
       text-align: center;
-
       justify-content: center;
     }
     display: flex;
