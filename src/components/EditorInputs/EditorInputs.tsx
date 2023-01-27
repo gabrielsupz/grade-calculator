@@ -17,6 +17,7 @@ import { firestore } from '../../services/firebase'
 import { IoReturnDownBackOutline, IoCloseOutline } from 'react-icons/io5'
 
 import * as S from './style'
+import { UserAuth } from '../../context/AuthContext'
 
 type modelStateProps = 'bimestre' | 'trimestre'
 
@@ -40,8 +41,11 @@ export function EditorInputs() {
     {} as CreateModelsProps
   ])
   const [refresh, setRefresh] = useState<boolean>(true)
+
+  const { uid } = UserAuth()
+
   useEffect(() => {
-    async function getModels(UId = 'ga4bP7s0d1WOnEJeIRp1P0N40qx2') {
+    async function getModels(UId) {
       return new Promise((resolve, reject) => {
         const modelsCollection = collection(firestore, `users/${UId}/models`)
         getDocs(modelsCollection)
@@ -55,10 +59,12 @@ export function EditorInputs() {
 
             return models
           })
-          .then(data => setPersonalModels(data))
+          .then(data => {
+            setPersonalModels(data)
+          })
       })
     }
-    getModels()
+    getModels(uid)
   }, [inEditor, refresh])
 
   if (inEditor === 'Editor') {
@@ -85,7 +91,7 @@ export function EditorInputs() {
       } else {
         if (model === 'bimestre') {
           try {
-            await createModels({
+            await createModels(uid, {
               modelName: data.modelName,
               modelType: 'bimestre',
               weight1: data.weight1,
@@ -100,7 +106,7 @@ export function EditorInputs() {
         }
         if (model === 'trimestre') {
           try {
-            await createModels({
+            await createModels(uid, {
               modelName: data.modelName,
               modelType: 'trimestre',
               weight1: data.weight1,
@@ -299,18 +305,17 @@ export function EditorInputs() {
     function setPersonalModel(model: CreateModelsProps) {
       setAtualPersonalModel(model)
       setInPersonalModel(true)
-      getModels()
+      getModels(uid)
     }
     function personalModelList() {
       {
         if (personalModels[0] === undefined) {
-          return <p>Ainda não há modelos criados </p>
+          return <p key={100000}>Ainda não há modelos criados </p>
         } else {
-          return personalModels.map((data: CreateModelsProps, index) => {
+          return personalModels.map((data: CreateModelsProps) => {
             return (
-              <S.personalModel>
+              <S.personalModel key={data.id}>
                 <Button
-                  key={index}
                   id="selectPersonalModel"
                   onClick={() =>
                     setPersonalModel({
@@ -328,10 +333,7 @@ export function EditorInputs() {
                 <IoCloseOutline
                   size={25}
                   onClick={async () => {
-                    await deleteModel(
-                      'ga4bP7s0d1WOnEJeIRp1P0N40qx2',
-                      data.id
-                    ).then(() => {
+                    await deleteModel(uid, data.id).then(() => {
                       if (refresh === false) {
                         setRefresh(true)
                       } else {

@@ -19,6 +19,7 @@ const AuthContext = createContext(undefined as any)
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState<any | null>(null)
+  const [uid, setUid] = useState<string>()
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider()
@@ -33,21 +34,28 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
+
+      if (currentUser !== null) {
+        setUid(currentUser.uid)
+      }
       console.log('User:', currentUser)
     })
     return () => {
       unsubscribe()
     }
   }, [])
+
   useEffect(() => {
+    //--Pegando o uid
+
     // ----PEGANDO MODELOS (BEM EXPLICATIVO KKK)
-    getModels()
+    getModels(uid)
 
     // ----Criando Modelos
     // createModels(model)
   }, [])
   return (
-    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+    <AuthContext.Provider value={{ googleSignIn, logOut, user, uid }}>
       {children}
     </AuthContext.Provider>
   )
