@@ -46,13 +46,8 @@ export const AuthContextProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    //--Pegando o uid
-
-    // ----PEGANDO MODELOS (BEM EXPLICATIVO KKK)
-    getModels(uid)
-
-    // ----Criando Modelos
-    // createModels(model)
+    // ----Para pegar os modelos em console (BEM EXPLICATIVO KKK)
+    //getModels(uid)
   }, [])
   return (
     <AuthContext.Provider value={{ googleSignIn, logOut, user, uid }}>

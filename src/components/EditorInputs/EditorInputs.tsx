@@ -310,7 +310,7 @@ export function EditorInputs() {
     function personalModelList() {
       {
         if (personalModels[0] === undefined) {
-          return <p key={100000}>Ainda não há modelos criados </p>
+          return <p>Ainda não há modelos criados </p>
         } else {
           return personalModels.map((data: CreateModelsProps) => {
             return (
