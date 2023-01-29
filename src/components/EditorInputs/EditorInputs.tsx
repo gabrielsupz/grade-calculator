@@ -263,6 +263,7 @@ export function EditorInputs() {
                     type="text"
                     placeholder="Nome do modelo"
                     required
+                    maxLength={17}
                   />
                 </div>
               </S.ModelAndName>
@@ -277,96 +278,98 @@ export function EditorInputs() {
     if (model === 'trimestre') {
       setModel('bimestre')
     }
-  }
-  if (inPersonalModel) {
-    return (
-      <S.EverythingBox>
-        <h3 className="closeAndNamePersonalModel">
-          <strong>{atualPersonalModel.modelName}</strong>{' '}
-          <IoReturnDownBackOutline
-            size={30}
-            onClick={() => {
-              setInPersonalModel(false)
-            }}
-          />
-        </h3>
-        <div className="pessoalModelInputs">
-          <PMInputs
-            average={atualPersonalModel.average}
-            modelName={atualPersonalModel.modelName}
-            modelType={atualPersonalModel.modelType}
-            weight1={atualPersonalModel.weight1}
-            weight2={atualPersonalModel.weight2}
-            weight3={atualPersonalModel.weight3}
-            weight4={atualPersonalModel.weight4}
-          />
-        </div>
-      </S.EverythingBox>
-    )
-  }
-  if (inPersonalModel === false) {
-    function setPersonalModel(model: CreateModelsProps) {
-      //Setando config do modelo escolhido
-      setAtualPersonalModel(model)
-
-      // Passando as informoções do modelo para a mensagem de info
-      setPersonalModelForInfo(model)
-
-      //Ativando a renderização do info personalizado
-      setInPersonalModel(true)
+    if (inPersonalModel) {
+      return (
+        <S.EverythingBox>
+          <h3 className="closeAndNamePersonalModel">
+            <strong>{atualPersonalModel.modelName}</strong>{' '}
+            <IoReturnDownBackOutline
+              size={30}
+              onClick={() => {
+                setInPersonalModel(false)
+              }}
+            />
+          </h3>
+          <div className="pessoalModelInputs">
+            <PMInputs
+              average={atualPersonalModel.average}
+              modelName={atualPersonalModel.modelName}
+              modelType={atualPersonalModel.modelType}
+              weight1={atualPersonalModel.weight1}
+              weight2={atualPersonalModel.weight2}
+              weight3={atualPersonalModel.weight3}
+              weight4={atualPersonalModel.weight4}
+            />
+          </div>
+        </S.EverythingBox>
+      )
     }
-    function personalModelList() {
-      {
-        if (personalModels[0] === undefined) {
-          return <p>Ainda não há modelos criados </p>
-        } else {
-          return personalModels.map((data: CreateModelsProps) => {
-            return (
-              <S.personalModel key={data.id}>
-                <Button
-                  id="selectPersonalModel"
-                  onClick={async () => {
-                    setPersonalModel({
-                      average: data.average,
-                      modelName: data.modelName,
-                      weight1: data.weight1,
-                      modelType: data.modelType,
-                      weight2: data.weight2,
-                      weight3: data.weight3,
-                      weight4: data.weight4
-                    })
-                  }}
-                  title={data.modelName}
-                ></Button>
-                <IoCloseOutline
-                  size={25}
-                  onClick={async () => {
-                    await deleteModel(uid, data.id).then(() => {
-                      if (refresh === false) {
-                        setRefresh(true)
-                      } else {
-                        setRefresh(false)
-                      }
-                    })
-                  }}
-                />
-              </S.personalModel>
-            )
-          })
+    if (inPersonalModel === false) {
+      function setPersonalModel(model: CreateModelsProps) {
+        //Setando config do modelo escolhido
+        setAtualPersonalModel(model)
+
+        // Passando as informoções do modelo para a mensagem de info
+        setPersonalModelForInfo(model)
+
+        //Ativando a renderização do info personalizado
+        setInPersonalModel(true)
+      }
+      function personalModelList() {
+        {
+          if (personalModels[0] === undefined) {
+            return <p>Ainda não há modelos criados </p>
+          } else {
+            return personalModels.map((data: CreateModelsProps) => {
+              return (
+                <S.personalModel key={data.id}>
+                  <Button
+                    id="selectPersonalModel"
+                    onClick={async () => {
+                      setPersonalModel({
+                        average: data.average,
+                        modelName: data.modelName,
+                        weight1: data.weight1,
+                        modelType: data.modelType,
+                        weight2: data.weight2,
+                        weight3: data.weight3,
+                        weight4: data.weight4
+                      })
+                    }}
+                    title={data.modelName}
+                  ></Button>
+                  <IoCloseOutline
+                    size={25}
+                    onClick={async () => {
+                      await deleteModel(uid, data.id).then(() => {
+                        if (refresh === false) {
+                          setRefresh(true)
+                        } else {
+                          setRefresh(false)
+                        }
+                      })
+                    }}
+                  />
+                </S.personalModel>
+              )
+            })
+          }
         }
       }
-    }
 
-    return (
-      <S.EverythingBox>
-        <h2>
-          Meus Modelos <img src="src\assets\Folder.svg" alt="ícone de pasta" />
-        </h2>
-        <div className="pessoalModelInputs">
-          <ul>{personalModelList()}</ul>
-        </div>
-      </S.EverythingBox>
-    )
+      return (
+        <S.EverythingBox>
+          <h2>
+            Meus Modelos{' '}
+            <img src="src\assets\Folder.svg" alt="ícone de pasta" />
+          </h2>
+          <div className="pessoalModelInputs">
+            <ul>{personalModelList()}</ul>
+          </div>
+        </S.EverythingBox>
+      )
+    }
   }
+
   return <></>
 }
