@@ -22,10 +22,13 @@ import { UserAuth } from '../../context/AuthContext'
 type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
-  const { inEditor, setInEditor } = useTabs()
-  const [inPersonalModel, setInPersonalModel] = useState<boolean | undefined>(
-    false
-  )
+  const {
+    inEditor,
+    setInPersonalModel,
+    setPersonalModelForInfo,
+    inPersonalModel
+  } = useTabs()
+
   const [atualPersonalModel, setAtualPersonalModel] =
     useState<CreateModelsProps>({} as CreateModelsProps)
 
@@ -119,8 +122,6 @@ export function EditorInputs() {
           }
         }
       }
-
-      // await createModels(pessoalModel)
     }
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -284,7 +285,9 @@ export function EditorInputs() {
           <strong>{atualPersonalModel.modelName}</strong>{' '}
           <IoReturnDownBackOutline
             size={30}
-            onClick={() => setInPersonalModel(false)}
+            onClick={() => {
+              setInPersonalModel(false)
+            }}
           />
         </h3>
         <div className="pessoalModelInputs">
@@ -303,9 +306,14 @@ export function EditorInputs() {
   }
   if (inPersonalModel === false) {
     function setPersonalModel(model: CreateModelsProps) {
+      //Setando config do modelo escolhido
       setAtualPersonalModel(model)
+
+      // Passando as informoções do modelo para a mensagem de info
+      setPersonalModelForInfo(model)
+
+      //Ativando a renderização do info personalizado
       setInPersonalModel(true)
-      getModels(uid)
     }
     function personalModelList() {
       {
@@ -317,7 +325,7 @@ export function EditorInputs() {
               <S.personalModel key={data.id}>
                 <Button
                   id="selectPersonalModel"
-                  onClick={() =>
+                  onClick={async () => {
                     setPersonalModel({
                       average: data.average,
                       modelName: data.modelName,
@@ -327,7 +335,7 @@ export function EditorInputs() {
                       weight3: data.weight3,
                       weight4: data.weight4
                     })
-                  }
+                  }}
                   title={data.modelName}
                 ></Button>
                 <IoCloseOutline

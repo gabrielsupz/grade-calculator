@@ -3,12 +3,8 @@ import * as S from './style'
 
 import { MdArticle } from 'react-icons/md'
 import { useTabs } from '../../../providers/hook'
-interface InfoMessafeProps {
-  text?: string | undefined
-  inEditor?: boolean
-}
 
-export function PMInfoMessage({ text }: InfoMessafeProps) {
+export function PMInfoMessage() {
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
   const { personalModelForInfo } = useTabs()
 
@@ -19,8 +15,13 @@ export function PMInfoMessage({ text }: InfoMessafeProps) {
         <S.InfoRetract>
           <S.InfoShow isVisible={menuIsVisible}>
             <p>
-              São contadas as notas dos 3 trimestres, sendo que a segunda nota
-              tem seu valor dobrado e a terceira tem seu valor triplicado
+              São contadas as notas dos 4 bimestres sendo a média
+              <strong> {personalModelForInfo.average}</strong>, a primeira nota
+              tem seu valor multiplicado por
+              <strong> {personalModelForInfo.weight1}</strong> , a segunda por
+              <strong> {personalModelForInfo.weight2}</strong> , a terceira por
+              <strong> {personalModelForInfo.weight3}</strong> e a quarta por
+              <strong> {personalModelForInfo.weight4}</strong>.
             </p>
             <img src="src\assets\Info.svg" alt="ícone de informação" />
           </S.InfoShow>
@@ -34,7 +35,15 @@ export function PMInfoMessage({ text }: InfoMessafeProps) {
           />
         </S.InfoRetract>
         <S.InfoBox>
-          <p>{text}</p>
+          <p>
+            São contadas as notas dos 4 bimestres sendo a média
+            <strong> {personalModelForInfo.average}</strong>, a primeira nota
+            tem seu valor multiplicado por
+            <strong> {personalModelForInfo.weight1}</strong> , a segunda por
+            <strong> {personalModelForInfo.weight2}</strong> , a terceira por
+            <strong> {personalModelForInfo.weight3}</strong> e a quarta por
+            <strong> {personalModelForInfo.weight4}</strong>.
+          </p>
           <img src="src\assets\Info.svg" alt="ícone de informação" />
         </S.InfoBox>
       </S.Info>
@@ -47,8 +56,12 @@ export function PMInfoMessage({ text }: InfoMessafeProps) {
         <S.InfoRetract>
           <S.InfoShow isVisible={menuIsVisible}>
             <p>
-              São contadas as notas dos 3 trimestres, sendo que a segunda nota
-              tem seu valor dobrado e a terceira tem seu valor triplicado
+              São contadas as notas dos 3 trimestres com a média
+              <strong> {personalModelForInfo.average}</strong> , sendo que a
+              primeira nota tem seu valor multiplicado por{' '}
+              <strong> {personalModelForInfo.weight1}</strong>, a segunda por{' '}
+              <strong> {personalModelForInfo.weight2}</strong> e a terceira por
+              <strong> {personalModelForInfo.weight2}</strong>.
             </p>
             <img src="src\assets\Info.svg" alt="ícone de informação" />
           </S.InfoShow>
@@ -62,10 +75,23 @@ export function PMInfoMessage({ text }: InfoMessafeProps) {
           />
         </S.InfoRetract>
         <S.InfoBox>
-          <p>{text}</p>
+          <p>
+            São contadas as notas dos 3 trimestres com a média
+            <strong> {personalModelForInfo.average}</strong> , sendo que a
+            primeira nota tem seu valor multiplicado por{' '}
+            <strong> {personalModelForInfo.weight1}</strong>, a segunda por{' '}
+            <strong> {personalModelForInfo.weight2}</strong> e a terceira por
+            <strong> {personalModelForInfo.weight2}</strong>.
+          </p>
           <img src="src\assets\Info.svg" alt="ícone de informação" />
         </S.InfoBox>
       </S.Info>
+    )
+  } else {
+    return (
+      <>
+        <p>Ou</p>
+      </>
     )
   }
 }

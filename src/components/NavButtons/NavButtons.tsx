@@ -9,7 +9,8 @@ interface NavProps {
 }
 
 export function NavButtons({ inWorkshop }: NavProps) {
-  const { period, setPeriod, inEditor, setInEditor } = useTabs()
+  const { period, setPeriod, inEditor, setInEditor, setInPersonalModel } =
+    useTabs()
 
   if (inWorkshop) {
     if (inEditor === 'Editor') {
@@ -25,7 +26,10 @@ export function NavButtons({ inWorkshop }: NavProps) {
         <Button
           className="active"
           id="button1"
-          onClick={() => setInEditor('Editor')}
+          onClick={() => {
+            setInEditor('Editor')
+            setInPersonalModel(false)
+          }}
           title="Editor"
         />
         <Button

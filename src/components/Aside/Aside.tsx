@@ -10,13 +10,15 @@ import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
 import { useTabs } from '../../providers/hook'
+import { PMInfoMessage } from '../PersonalModels/PMInfoMessage'
 
 interface AsideProps {
   inEditor: boolean
 }
 
 export function Aside({ inEditor }: AsideProps) {
-  const { setPeriod, setInEditor } = useTabs()
+  const { setPeriod, setInEditor, inPersonalModel, setInPersonalModel } =
+    useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {
@@ -29,6 +31,7 @@ export function Aside({ inEditor }: AsideProps) {
 
   const handleSignOut = async () => {
     try {
+      setInPersonalModel(false)
       await logOut()
       alert('Deslogado com sucesso!')
     } catch (error) {
@@ -53,11 +56,23 @@ export function Aside({ inEditor }: AsideProps) {
           <div>
             <img className="userImage" src={user.photoURL} alt="" />
             <Link to={'/'}>
-              <Button title="Início" onClick={() => setPeriod('bi')} />
+              <Button
+                title="Início"
+                onClick={() => {
+                  setPeriod('bi')
+                  setInPersonalModel(false)
+                }}
+              />
             </Link>
             <Button title="Sair" onClick={handleSignOut} />
             <Link to={'/editor'}>
-              <Button title="Editor" onClick={() => setInEditor('Editor')} />
+              <Button
+                title="Editor"
+                onClick={() => {
+                  setInEditor('Editor')
+                  setInPersonalModel(false)
+                }}
+              />
             </Link>
           </div>
 

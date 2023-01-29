@@ -9,6 +9,7 @@ import { Section } from '../../components/Section/Section'
 import { UserAuth } from '../../context/AuthContext'
 import { useTabs } from '../../providers/hook'
 import * as S from './style'
+
 export function Editor() {
   const { period } = useTabs()
   const { user } = UserAuth()
@@ -18,10 +19,11 @@ export function Editor() {
       navigate('/')
     }
   }, [user])
+
   return (
     <S.EditorStyled>
       <S.leftMessages>
-        <InfoMessage text="A menssagem de informação será gerada automaticamente" />
+        <InfoMessage inEditor={true} />
 
         <AlertMessage inEditor={true} />
       </S.leftMessages>

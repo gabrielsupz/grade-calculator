@@ -3,6 +3,7 @@ import * as S from './style'
 
 import { useTabs } from '../../providers/hook'
 import { MdArticle } from 'react-icons/md'
+import { PMInfoMessage } from '../PersonalModels/PMInfoMessage'
 interface InfoMessafeProps {
   text?: string | undefined
   inEditor?: boolean
@@ -10,37 +11,42 @@ interface InfoMessafeProps {
 
 export function InfoMessage({ text, inEditor }: InfoMessafeProps) {
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
-  const { period } = useTabs()
+  const { period, inPersonalModel } = useTabs()
+
   if (inEditor === true) {
-    return (
-      <S.Info>
-        {' '}
-        <S.InfoRetract>
-          <S.InfoShow isVisible={menuIsVisible}>
+    if (inPersonalModel === true) {
+      return <PMInfoMessage />
+    } else {
+      return (
+        <S.Info>
+          {' '}
+          <S.InfoRetract>
+            <S.InfoShow isVisible={menuIsVisible}>
+              <p>
+                A mensagem de informação será gerado automaticamente dependendo
+                do modelo criado.
+              </p>
+              <img src="src\assets\Info.svg" alt="ícone de informação" />
+            </S.InfoShow>
+            <MdArticle
+              size={55}
+              onClick={
+                menuIsVisible
+                  ? () => setMenuIsVisible(false)
+                  : () => setMenuIsVisible(true)
+              }
+            />
+          </S.InfoRetract>
+          <S.InfoBox>
             <p>
               A mensagem de informação será gerado automaticamente dependendo do
               modelo criado.
             </p>
             <img src="src\assets\Info.svg" alt="ícone de informação" />
-          </S.InfoShow>
-          <MdArticle
-            size={55}
-            onClick={
-              menuIsVisible
-                ? () => setMenuIsVisible(false)
-                : () => setMenuIsVisible(true)
-            }
-          />
-        </S.InfoRetract>
-        <S.InfoBox>
-          <p>
-            A mensagem de informação será gerado automaticamente dependendo do
-            modelo criado.
-          </p>
-          <img src="src\assets\Info.svg" alt="ícone de informação" />
-        </S.InfoBox>
-      </S.Info>
-    )
+          </S.InfoBox>
+        </S.Info>
+      )
+    }
   } else {
     if (text === undefined) {
       if (period === 'bi') {

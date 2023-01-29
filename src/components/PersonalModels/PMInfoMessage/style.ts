@@ -7,6 +7,9 @@ export const Info = styled.div`
   div {
     transition: 0.5s;
   }
+  strong {
+    color: blue;
+  }
 `
 export const InfoRetract = styled.div`
   display: none;
