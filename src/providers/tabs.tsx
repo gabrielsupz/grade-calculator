@@ -10,6 +10,7 @@ interface IProps {
 export const TabsProvider = ({ children }: IProps) => {
   const [period, setPeriod] = useState<Period>('bi')
   const [inEditor, setInEditor] = useState<IsEditor>('Editor')
+
   const [inPersonalModel, setInPersonalModel] = useState<boolean>(false)
   const [personalModelForInfo, setPersonalModelForInfo] =
     useState<CreateModelsProps>({} as CreateModelsProps)
