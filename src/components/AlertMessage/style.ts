@@ -32,11 +32,13 @@ export const AlertShowDeskTop = styled.div`
   );
   border-radius: 10px;
   padding: 3rem 2rem 1rem 2rem;
-
+  gap: 1rem;
   width: 25rem;
   text-align: center;
 
-  svg {
+  img {
+    width: 3rem;
+    height: 3rem;
     margin: 0 17rem 0 0;
   }
   p {
@@ -97,6 +99,7 @@ export const AlertShowMobile = styled.div<ShowMenuProps>`
   right: 17rem;
   z-index: 3;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   border: 1px solid var(--text-color);
   background: rgb(44, 44, 49);
@@ -112,7 +115,9 @@ export const AlertShowMobile = styled.div<ShowMenuProps>`
   width: 25rem;
   text-align: center;
 
-  svg {
+  img {
+    width: 3rem;
+    height: 3rem;
     margin: 0 17rem 0 0;
   }
   p {

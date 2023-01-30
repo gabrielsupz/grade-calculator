@@ -40,7 +40,7 @@ export function PMAverageResponseBox({
 
       var avarage = total / (weight1 + weight2 + weight3)
       var response = avarage > 0 ? avarage : 0
-      console.log(v1, weight1)
+
       var responseCorrect = Number.isInteger(response)
         ? response
         : response.toFixed(2)

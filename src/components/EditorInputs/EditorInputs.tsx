@@ -23,6 +23,7 @@ type modelStateProps = 'bimestre' | 'trimestre'
 
 export function EditorInputs() {
   const {
+    setInEditor,
     inEditor,
     setInPersonalModel,
     setPersonalModelForInfo,
@@ -92,6 +93,9 @@ export function EditorInputs() {
       if (personalModels[5] != undefined) {
         alert('O máximo de modelos por usuário foi atingido!')
       } else {
+        function setInEditorModels() {
+          setInEditor('Modelos')
+        }
         if (model === 'bimestre') {
           try {
             await createModels(uid, {
@@ -102,7 +106,7 @@ export function EditorInputs() {
               weight3: data.weight3,
               weight4: data.weight4,
               average: data.average
-            })
+            }).then(() => setTimeout(setInEditorModels, 100))
           } catch (e) {
             console.error('Error:', e)
           }
@@ -116,7 +120,7 @@ export function EditorInputs() {
               weight2: data.weight2,
               weight3: data.weight3,
               average: data.average
-            })
+            }).then(() => setTimeout(setInEditorModels, 100))
           } catch (e) {
             console.error('Error:', e)
           }

@@ -38,7 +38,8 @@ export const AuthContextProvider = ({ children }) => {
       if (currentUser !== null) {
         setUid(currentUser.uid)
       }
-      console.log('User:', currentUser)
+      //Dar console no usuário logado
+      // console.log('User:', currentUser)
     })
     return () => {
       unsubscribe()

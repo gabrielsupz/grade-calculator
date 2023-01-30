@@ -59,9 +59,10 @@ export async function createModels(
           average: average
         }
       )
-      console.log('Document written with ID: ', docRef.id)
+      // Id do doc
+      // console.log('Document written with ID: ', docRef.id)
     } catch (e) {
-      console.error('Error adding document: ', e)
+      alert(e)
     }
   } else {
     try {
@@ -77,9 +78,9 @@ export async function createModels(
           average: average
         }
       )
-      console.log('Document written with ID: ', docRef.id)
+      // console.log('Document written with ID: ', docRef.id)
     } catch (e) {
-      console.error('Error adding document: ', e)
+      alert(e)
     }
   }
 }
