@@ -45,6 +45,7 @@ export function EditorInputs() {
     {} as CreateModelsProps
   ])
   const [refresh, setRefresh] = useState<boolean>(true)
+  const [buttonEnabled, setButtonEnabled] = useState(true)
 
   const { uid } = UserAuth()
 
@@ -90,41 +91,48 @@ export function EditorInputs() {
     }
 
     const onSubmit = async data => {
-      if (personalModels[5] != undefined) {
-        alert('O máximo de modelos por usuário foi atingido!')
-      } else {
-        function setInEditorModels() {
-          setInEditor('Modelos')
-        }
-        if (model === 'bimestre') {
-          try {
-            await createModels(uid, {
-              modelName: data.modelName,
-              modelType: 'bimestre',
-              weight1: data.weight1,
-              weight2: data.weight2,
-              weight3: data.weight3,
-              weight4: data.weight4,
-              average: data.average
-            }).then(() => setTimeout(setInEditorModels, 100))
-          } catch (e) {
-            console.error('Error:', e)
+      if (buttonEnabled) {
+        if (personalModels[5] != undefined) {
+          alert('O máximo de modelos por usuário foi atingido!')
+        } else {
+          setButtonEnabled(false)
+
+          if (model === 'bimestre') {
+            try {
+              await createModels(uid, {
+                modelName: data.modelName,
+                modelType: 'bimestre',
+                weight1: data.weight1,
+                weight2: data.weight2,
+                weight3: data.weight3,
+                weight4: data.weight4,
+                average: data.average
+              })
+                .then(() => setInEditor('Modelos'))
+                .then(() => setButtonEnabled(true))
+            } catch (e) {
+              console.error('Error:', e)
+            }
+          }
+          if (model === 'trimestre') {
+            try {
+              await createModels(uid, {
+                modelName: data.modelName,
+                modelType: 'trimestre',
+                weight1: data.weight1,
+                weight2: data.weight2,
+                weight3: data.weight3,
+                average: data.average
+              })
+                .then(() => setInEditor('Modelos'))
+                .then(() => setButtonEnabled(true))
+            } catch (e) {
+              console.error('Error:', e)
+            }
           }
         }
-        if (model === 'trimestre') {
-          try {
-            await createModels(uid, {
-              modelName: data.modelName,
-              modelType: 'trimestre',
-              weight1: data.weight1,
-              weight2: data.weight2,
-              weight3: data.weight3,
-              average: data.average
-            }).then(() => setTimeout(setInEditorModels, 100))
-          } catch (e) {
-            console.error('Error:', e)
-          }
-        }
+      }
+      if (buttonEnabled === false) {
       }
     }
 
