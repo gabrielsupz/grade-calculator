@@ -17,6 +17,7 @@ export const AlertRetract = styled.div`
 `
 
 export const AlertShowDeskTop = styled.div`
+  transition: 0.5s;
   @media screen and (max-width: 785px) {
     display: none;
   }
@@ -81,19 +82,17 @@ export const AlertShowMobile = styled.div<ShowMenuProps>`
         `}
 
   @media screen and (max-width: 600px) {
-    bottom: 3rem;
+    bottom: 1%;
+
     right: 30%;
   }
   @media screen and (max-width: 425px) {
-    bottom: 3rem;
     right: 20%;
   }
   @media screen and (max-width: 375px) {
-    bottom: 3rem;
     right: 17%;
   }
   @media screen and (max-width: 320px) {
-    bottom: 3rem;
     right: 10%;
   }
   right: 17rem;

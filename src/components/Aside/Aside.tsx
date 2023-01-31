@@ -10,7 +10,6 @@ import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
 import { useTabs } from '../../providers/hook'
-import { PMInfoMessage } from '../PersonalModels/PMInfoMessage'
 
 interface AsideProps {
   inEditor: boolean
