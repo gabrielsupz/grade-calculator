@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { IoInformationCircle } from 'react-icons/io5'
+import { usePopper } from 'react-popper'
 import { useTabs } from '../../providers/hook'
 import * as S from './style'
 
@@ -10,31 +11,63 @@ interface AlertMessageProps {
 
 export function AlertMessage({ text, inEditor }: AlertMessageProps) {
   const { inPersonalModel } = useTabs()
-  const [menuIsVisible, setMenuIsVisible] = useState<boolean>()
+
+  const [showPopper, setShowPopper] = useState(false)
+
+  const buttonRefAlert = useRef(null)
+  const popperRefAlert = useRef(null)
+
+  const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null)
+
+  const { styles, attributes } = usePopper(
+    buttonRefAlert.current,
+    popperRefAlert.current,
+    {
+      modifiers: [
+        {
+          name: 'arrow',
+          options: {
+            element: arrowRef
+          }
+        },
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10]
+          }
+        }
+      ]
+    }
+  )
 
   if (inEditor) {
     if (inPersonalModel) {
       return (
         <S.Alert>
           <S.AlertRetract>
-            <S.AlertShowMobile isVisible={menuIsVisible}>
-              <p>
-                Calcule a nota necessária para atingir a média ou calcule sua
-                nota final com base no modelo escolhido.
-              </p>
-              <img
-                src="src\assets\Alert.svg"
-                alt="Ícone da mensagem de explicação"
-              />
-            </S.AlertShowMobile>
-            <IoInformationCircle
-              onClick={
-                menuIsVisible
-                  ? () => setMenuIsVisible(false)
-                  : () => setMenuIsVisible(true)
-              }
-              size={55}
-            />
+            {showPopper ? (
+              <S.AlertShowMobile
+                ref={popperRefAlert}
+                style={styles.popper}
+                {...attributes.popper}
+              >
+                <div ref={setArrowRef} style={styles.arrow} id="arrow" />
+                <p>
+                  Calcule a nota necessária para atingir a média ou calcule sua
+                  nota final com base no modelo escolhido.
+                </p>
+                <img
+                  src="src\assets\Alert.svg"
+                  alt="Ícone da mensagem de explicação"
+                />
+              </S.AlertShowMobile>
+            ) : null}
+            <button
+              ref={buttonRefAlert}
+              onClick={() => setShowPopper(!showPopper)}
+            >
+              <IoInformationCircle size={55} />
+            </button>
           </S.AlertRetract>
 
           <S.AlertShowDeskTop>
@@ -53,24 +86,30 @@ export function AlertMessage({ text, inEditor }: AlertMessageProps) {
       return (
         <S.Alert>
           <S.AlertRetract>
-            <S.AlertShowMobile isVisible={menuIsVisible}>
-              <p>
-                Crie seu próprio modelo de cálculo, sendo bimestral ou
-                trimestral!
-              </p>
-              <img
-                src="src\assets\Alert.svg"
-                alt="Ícone da mensagem de explicação"
-              />
-            </S.AlertShowMobile>
-            <IoInformationCircle
-              onClick={
-                menuIsVisible
-                  ? () => setMenuIsVisible(false)
-                  : () => setMenuIsVisible(true)
-              }
-              size={55}
-            />
+            {showPopper ? (
+              <S.AlertShowMobile
+                ref={popperRefAlert}
+                style={styles.popper}
+                {...attributes.popper}
+              >
+                <div ref={setArrowRef} style={styles.arrow} id="arrow" />
+                <p>
+                  Crie seu próprio modelo de cálculo, sendo bimestral ou
+                  trimestral!
+                </p>
+                <img
+                  src="src\assets\Alert.svg"
+                  alt="Ícone da mensagem de explicação"
+                />
+              </S.AlertShowMobile>
+            ) : null}
+
+            <button
+              ref={buttonRefAlert}
+              onClick={() => setShowPopper(!showPopper)}
+            >
+              <IoInformationCircle size={55} />
+            </button>
           </S.AlertRetract>
 
           <S.AlertShowDeskTop>
@@ -90,21 +129,24 @@ export function AlertMessage({ text, inEditor }: AlertMessageProps) {
     return (
       <S.Alert>
         <S.AlertRetract>
-          <S.AlertShowMobile isVisible={menuIsVisible}>
-            <p>{text}</p>
-            <img
-              src="src\assets\Alert.svg"
-              alt="Ícone da mensagem de explicação"
-            />
-          </S.AlertShowMobile>
-          <IoInformationCircle
-            onClick={
-              menuIsVisible
-                ? () => setMenuIsVisible(false)
-                : () => setMenuIsVisible(true)
-            }
-            size={55}
-          />
+          {showPopper ? (
+            <S.AlertShowMobile
+              ref={popperRefAlert}
+              style={styles.popper}
+              {...attributes.popper}
+            >
+              <div ref={setArrowRef} style={styles.arrow} id="arrow" />
+              <p>{text}</p>
+              <img
+                src="src\assets\Alert.svg"
+                alt="Ícone da mensagem de explicação"
+              />
+            </S.AlertShowMobile>
+          ) : null}
+
+          <button>
+            <IoInformationCircle size={55} />
+          </button>
         </S.AlertRetract>
 
         <S.AlertShowDeskTop>

@@ -9,9 +9,14 @@ export const Info = styled.div`
   }
 `
 export const InfoRetract = styled.div`
-  display: none;
   @media screen and (max-width: 785px) {
     display: flex;
+  }
+
+  button {
+    background: local;
+
+    border: none;
   }
 `
 export const InfoBox = styled.div`
@@ -45,49 +50,32 @@ export const InfoBox = styled.div`
   }
 `
 
-interface ShowMenuProps {
-  isVisible: boolean | undefined
-}
-export const InfoShow = styled.div<ShowMenuProps>`
-  ${({ isVisible }) =>
-    isVisible
-      ? css`
-          @media screen and (max-width: 730px) {
-            right: 15rem;
-          }
-          @media screen and (max-width: 685px) {
-            right: 13rem;
-          }
-          @media screen and (max-width: 620px) {
-            right: 10rem;
-          }
-          @media screen and (max-width: 620px) {
-          }
-          position: absolute;
+export const InfoShow = styled.div`
+  #arrow1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    &:after {
+      content: ' ';
+      background-color: white;
+      box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: -25px;
 
-          opacity: 1;
-          pointer-events: auto;
-        `
-      : css`
-          position: absolute;
-
-          display: none;
-          opacity: 0;
-          pointer-events: none;
-        `}
-
-  right:17rem;
-  @media screen and (max-width: 600px) {
-    bottom: 1%;
-    right: 15%;
-  }
-  @media screen and (max-width: 425px) {
-    right: 3%;
-  }
-  @media screen and (max-width: 320px) {
-    right: 10%;
+      transform: rotate(45deg);
+      width: 10px;
+      height: 10px;
+    }
   }
 
+  &[data-popper-placement^='top'] > #arrow1 {
+    bottom: -30px;
+    :after {
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  right: 17rem;
   z-index: 4;
   display: flex;
   flex-direction: column;
