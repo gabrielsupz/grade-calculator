@@ -94,8 +94,8 @@ export function AlertMessage({ text, inEditor }: AlertMessageProps) {
               >
                 <div ref={setArrowRef} style={styles.arrow} id="arrow" />
                 <p>
-                  Crie seu próprio modelo de cálculo, sendo bimestral ou
-                  trimestral!
+                  Crie seu próprio modelo de calculo, seja bimestral ou
+                  trimestral.
                 </p>
                 <img
                   src="src\assets\Alert.svg"
@@ -103,7 +103,6 @@ export function AlertMessage({ text, inEditor }: AlertMessageProps) {
                 />
               </S.AlertShowMobile>
             ) : null}
-
             <button
               ref={buttonRefAlert}
               onClick={() => setShowPopper(!showPopper)}
@@ -136,15 +135,20 @@ export function AlertMessage({ text, inEditor }: AlertMessageProps) {
               {...attributes.popper}
             >
               <div ref={setArrowRef} style={styles.arrow} id="arrow" />
-              <p>{text}</p>
+              <p>
+                Crie seu próprio modelo de calculo, seja bimestral ou
+                trimestral.
+              </p>
               <img
                 src="src\assets\Alert.svg"
                 alt="Ícone da mensagem de explicação"
               />
             </S.AlertShowMobile>
           ) : null}
-
-          <button>
+          <button
+            ref={buttonRefAlert}
+            onClick={() => setShowPopper(!showPopper)}
+          >
             <IoInformationCircle size={55} />
           </button>
         </S.AlertRetract>

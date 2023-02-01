@@ -12,6 +12,7 @@ export const InfoRetract = styled.div`
   @media screen and (max-width: 785px) {
     display: flex;
   }
+  display: none;
 
   button {
     background: local;
@@ -57,7 +58,12 @@ export const InfoShow = styled.div`
     height: 10px;
     &:after {
       content: ' ';
-      background-color: white;
+      background: linear-gradient(
+        0deg,
+        rgba(236, 232, 232, 1) 0%,
+        rgba(201, 198, 200, 1) 50%,
+        rgba(77, 77, 86, 1) 100%
+      );
       box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
       position: absolute;
       top: -25px;
@@ -70,11 +76,7 @@ export const InfoShow = styled.div`
 
   &[data-popper-placement^='top'] > #arrow1 {
     bottom: -30px;
-    :after {
-      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    }
   }
-
   right: 17rem;
   z-index: 4;
   display: flex;

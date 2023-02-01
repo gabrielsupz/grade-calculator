@@ -9,10 +9,12 @@ export const Alert = styled.div`
   }
 `
 export const AlertRetract = styled.div`
+  display: none;
   @media screen and (max-width: 785px) {
     display: flex;
   }
   button {
+    border: none;
     background: local;
   }
 `
@@ -57,7 +59,12 @@ export const AlertShowMobile = styled.div`
     height: 10px;
     &:after {
       content: ' ';
-      background-color: white;
+      background: linear-gradient(
+        0deg,
+        rgba(236, 232, 232, 1) 0%,
+        rgba(201, 198, 200, 1) 50%,
+        rgba(77, 77, 86, 1) 100%
+      );
       box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
       position: absolute;
       top: -25px;
