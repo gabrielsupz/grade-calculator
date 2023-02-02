@@ -6,6 +6,7 @@ import { EditorInputs } from '../EditorInputs/EditorInputs'
 
 import { GradeInputs } from '../GradeInputs/GradeInputs'
 import { Header } from '../Header/Header'
+
 import { NavButtons } from '../NavButtons/NavButtons'
 
 import { NecessaryGradeInputs } from '../NecessaryGradeInputs/NecessaryGradeInputs'
@@ -35,7 +36,6 @@ export function Section({ inWorkshop }: SectionProps) {
   return (
     <S.SectionStyled>
       <Header />
-
       <NavButtons />
 
       <div className="divWithBackground">

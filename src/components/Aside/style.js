@@ -107,5 +107,3 @@ export const NoticeDiv = styled.div`
   text-align: center;
   text-shadow: 1px 1px 2px red, 0 0 1em var(--body-bg-color);
 `
-
-export const loginInToAccess = styled.div``

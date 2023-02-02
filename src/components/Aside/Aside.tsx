@@ -108,14 +108,6 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
 
           <div>
             <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
-            <S.loginInToAccess>
-              <IoCloseCircleOutline size={50} />
-              <h2>OOPS..</h2>
-              <p>
-                Logue para acessar mais funcionalidades como o editor e os
-                modelos personalizados!!!
-              </p>
-            </S.loginInToAccess>
             <Button
               id="fakeButton"
               title="Editor"

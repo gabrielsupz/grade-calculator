@@ -2,6 +2,7 @@ import { AlertMessage } from '../../components/AlertMessage/AlertMessage'
 import { Aside } from '../../components/Aside/Aside'
 import { Button } from '../../components/Button/Button'
 import { InfoMessage } from '../../components/InfoMessage/InfoMessage'
+import { LoginInToAccess } from '../../components/LoginInToAccess/LoginInToAccess'
 import { Section } from '../../components/Section/Section'
 import { useTabs } from '../../providers/hook'
 import * as S from './style'
@@ -19,6 +20,7 @@ export function Home() {
         />
       </S.leftMessages>
 
+      <LoginInToAccess />
       <Section />
 
       <Aside />
