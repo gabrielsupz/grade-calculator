@@ -16,6 +16,11 @@ export const InfoRetract = styled.div`
   @media screen and (max-width: 785px) {
     display: flex;
   }
+  button {
+    background: local;
+
+    border: none;
+  }
 `
 export const InfoBox = styled.div`
   @media screen and (max-width: 785px) {
@@ -51,46 +56,31 @@ export const InfoBox = styled.div`
 interface ShowMenuProps {
   isVisible: boolean | undefined
 }
-export const InfoShow = styled.div<ShowMenuProps>`
-  ${({ isVisible }) =>
-    isVisible
-      ? css`
-          @media screen and (max-width: 730px) {
-            right: 15rem;
-          }
-          @media screen and (max-width: 685px) {
-            right: 13rem;
-          }
-          @media screen and (max-width: 620px) {
-            right: 10rem;
-          }
-          @media screen and (max-width: 620px) {
-          }
-          position: absolute;
+export const InfoShow = styled.div`
+  #arrow1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    &:after {
+      content: ' ';
+      background: linear-gradient(
+        0deg,
+        rgba(236, 232, 232, 1) 0%,
+        rgba(201, 198, 200, 1) 50%,
+        rgba(77, 77, 86, 1) 100%
+      );
+      box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: -25px;
 
-          opacity: 1;
-          pointer-events: auto;
-        `
-      : css`
-          position: absolute;
-
-          display: none;
-          opacity: 0;
-          pointer-events: none;
-        `}
-
-  right:17rem;
-  @media screen and (max-width: 600px) {
-    bottom: 3rem;
-    right: 15%;
+      transform: rotate(45deg);
+      width: 10px;
+      height: 10px;
+    }
   }
-  @media screen and (max-width: 425px) {
-    bottom: 3rem;
-    right: 3%;
-  }
-  @media screen and (max-width: 320px) {
-    bottom: 3rem;
-    right: 10%;
+
+  &[data-popper-placement^='top'] > #arrow1 {
+    bottom: -30px;
   }
 
   z-index: 4;

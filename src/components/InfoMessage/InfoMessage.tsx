@@ -24,7 +24,9 @@ export function InfoMessage({ text, inEditor }: InfoMessafeProps) {
   const { styles, attributes } = usePopper(
     buttonRefInfo.current,
     popperRefInfo.current,
+
     {
+      placement: 'top',
       modifiers: [
         {
           name: 'arrow',
