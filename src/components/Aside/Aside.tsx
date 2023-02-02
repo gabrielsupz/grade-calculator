@@ -10,6 +10,7 @@ import { AlertMessage } from '../AlertMessage/AlertMessage'
 
 import * as S from './style'
 import { useTabs } from '../../providers/hook'
+import { IoCloseCircleOutline } from 'react-icons/io5'
 
 interface AsideProps {
   inEditor: boolean
@@ -36,6 +37,7 @@ export function Aside({ inEditor }: AsideProps) {
       console.log(error)
     }
   }
+  function showLoginInToAccess() {}
 
   if (user != null) {
     return (
@@ -106,8 +108,24 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
 
           <div>
             <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
-            <Button id="fakeButton" title="Editor" />{' '}
-            <Button id="fakeButton" title="Modelos pesonalizados" />
+            <S.loginInToAccess>
+              <IoCloseCircleOutline size={50} />
+              <h2>OOPS..</h2>
+              <p>
+                Logue para acessar mais funcionalidades como o editor e os
+                modelos personalizados!!!
+              </p>
+            </S.loginInToAccess>
+            <Button
+              id="fakeButton"
+              title="Editor"
+              onClick={() => showLoginInToAccess()}
+            />{' '}
+            <Button
+              id="fakeButton"
+              title="Modelos pesonalizados"
+              onClick={() => showLoginInToAccess()}
+            />
           </div>
         </S.AsideFlex>
       </S.AsideMenu>

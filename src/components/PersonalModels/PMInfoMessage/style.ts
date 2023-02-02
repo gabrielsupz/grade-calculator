@@ -57,7 +57,7 @@ interface ShowMenuProps {
   isVisible: boolean | undefined
 }
 export const InfoShow = styled.div`
-  #arrow1 {
+  #arrow {
     position: absolute;
     width: 10px;
     height: 10px;
@@ -79,7 +79,7 @@ export const InfoShow = styled.div`
     }
   }
 
-  &[data-popper-placement^='top'] > #arrow1 {
+  &[data-popper-placement^='top'] > #arrow {
     bottom: -30px;
   }
 

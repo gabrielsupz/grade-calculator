@@ -48,7 +48,7 @@ export function PMInfoMessage() {
               style={styles.popper}
               {...attributes.popper}
             >
-              <div ref={setArrowRef} style={styles.arrow} id="arrow1" />
+              <div ref={setArrowRef} style={styles.arrow} id="arrow" />
               <p>
                 São contadas as notas dos 4 bimestres sendo a média
                 <strong> {personalModelForInfo.average}</strong>, a primeira
@@ -96,7 +96,7 @@ export function PMInfoMessage() {
               style={styles.popper}
               {...attributes.popper}
             >
-              <div ref={setArrowRef} style={styles.arrow} id="arrow1" />
+              <div ref={setArrowRef} style={styles.arrow} id="arrow" />
               <p>
                 São contadas as notas dos 3 trimestres com a média
                 <strong> {personalModelForInfo.average}</strong> , sendo que a
