@@ -85,7 +85,10 @@ export function MenuMobile() {
   return (
     <S.MenuMoBileBox>
       <IoReorderFourSharp
-        onClick={() => setMenuIsVisible(true)}
+        onClick={() => {
+          window.scrollTo(0, 0)
+          setMenuIsVisible(true)
+        }}
         size={55}
         color="var(--text-color)"
       />

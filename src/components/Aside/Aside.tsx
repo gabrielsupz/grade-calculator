@@ -16,8 +16,7 @@ interface AsideProps {
 }
 
 export function Aside({ inEditor }: AsideProps) {
-  const { setPeriod, setInEditor, inPersonalModel, setInPersonalModel } =
-    useTabs()
+  const { setPeriod, setInEditor, setInPersonalModel } = useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {
@@ -53,7 +52,11 @@ export function Aside({ inEditor }: AsideProps) {
         </S.AsideTablet>
         <S.AsideFlex>
           <div>
-            <img className="userImage" src={user.photoURL} alt="" />
+            <img
+              className="userImage"
+              src={user.photoURL}
+              alt="Imagem do usuário"
+            />
             <Link to={'/'}>
               <Button
                 title="Início"

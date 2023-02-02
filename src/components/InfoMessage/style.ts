@@ -12,6 +12,7 @@ export const InfoRetract = styled.div`
   @media screen and (max-width: 785px) {
     display: flex;
   }
+
   display: none;
 
   button {
