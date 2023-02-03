@@ -115,6 +115,8 @@ export const EverythingBox = styled.div`
     text-align: center;
     display: flex;
     align-items: center;
+
+    justify-content: center;
   }
   h3.closeAndNamePersonalModel {
     display: flex;
@@ -209,7 +211,7 @@ export const GradeWeightBox = styled.div`
 export const ModelAndName = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: top;
+  justify-content: center;
   gap: 2rem;
   align-items: center;
   animation: ${fromRight} 0.7s backwards;
@@ -217,6 +219,9 @@ export const ModelAndName = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    h3 {
+    }
   }
 `
 export const FormBox = styled.form`
@@ -226,6 +231,7 @@ export const FormBox = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   fieldset {
     width: 100%;
     height: 100%;
@@ -246,6 +252,7 @@ export const FormBox = styled.form`
     font-weight: 500;
     color: var(--text-color);
     text-align: center;
+    width: 100%;
   }
 
   label {
