@@ -72,7 +72,7 @@ export function LoginInToAccess() {
             </div>
           </div>
           <div className="message">
-            <p>Logue para poder acessar está função.</p>
+            <p>Logue com o google para mais funcionalidades.</p>
             <button
               className="button blue "
               onClick={() => handleGoogleSignIn()}

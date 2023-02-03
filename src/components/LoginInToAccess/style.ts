@@ -58,6 +58,21 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
     }
   }
 
+  @media screen and (max-width: 333px) {
+    .alertBox {
+      width: 300px;
+      max-height: 260px;
+    }
+    .background {
+      width: 300px;
+      max-height: 260px;
+    }
+    .absolute {
+      max-width: 300px;
+      max-height: 260px;
+    }
+  }
+
   .background {
     transition: all 1s;
     img {

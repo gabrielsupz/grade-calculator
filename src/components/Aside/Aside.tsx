@@ -33,12 +33,10 @@ export function Aside({ inEditor }: AsideProps) {
     try {
       setInPersonalModel(false)
       await logOut()
-      alert('Deslogado com sucesso!')
     } catch (error) {
       console.log(error)
     }
   }
-  function showLoginInToAccess() {}
 
   if (user != null) {
     return (

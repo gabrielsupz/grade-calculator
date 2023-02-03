@@ -9,8 +9,10 @@ import { Button } from '../Button/Button'
 import { SocialLinks } from '../SocialLinks/SocialLinks'
 
 import * as S from './style'
+import { useTabs } from '../../providers/hook'
 
 export function MenuMobile() {
+  const { setShowLoginInToAccess } = useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>()
 
@@ -75,7 +77,20 @@ export function MenuMobile() {
           </div>
           <div className="contentMenu">
             <S.NoticeDiv>Logue para mais funcionalidades:</S.NoticeDiv>
-            <Button title="Editor" /> <Button title="Modelos pesonalizados" />
+            <Button
+              title="Editor"
+              onClick={() => {
+                setMenuIsVisible(false)
+                setShowLoginInToAccess(true)
+              }}
+            />{' '}
+            <Button
+              title="Modelos pesonalizados"
+              onClick={() => {
+                setMenuIsVisible(false)
+                setShowLoginInToAccess(true)
+              }}
+            />
           </div>
         </S.ShowMenu>
       )
