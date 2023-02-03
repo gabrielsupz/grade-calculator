@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+
 interface LoginInToAccessProps {
   isVisible: boolean
 }
@@ -7,21 +8,26 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
   ${({ isVisible }) =>
     isVisible
       ? css`
+          div {
+            transform: translateX(0);
+            transform: translateY(0px);
+          }
+
           display: flex;
           pointer-events: auto;
-          transform: translateX(0);
-          transform: translateY(0px);
         `
       : css`
           display: none;
           pointer-events: none;
-          transform: translateX(-50px);
+
+          div {
+            transform: translateX(-50px);
+            transform: translateY(-100px);
+          }
         `}
 
-  @media
-    screen
-    and
-    (max-width: 785px) {
+  transition:  1s;
+  @media screen and (max-width: 785px) {
     min-height: 75rem;
   }
   position: absolute;
@@ -37,6 +43,7 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
   backdrop-filter: blur(1.5px);
 
   .alertBox {
+    transition: all 1s;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -52,6 +59,7 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
   }
 
   .background {
+    transition: all 1s;
     img {
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
@@ -62,12 +70,8 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
     border-top-right-radius: 8px;
 
     #oops {
-      h2 {
-        font-family: 'Roboto Mono', monospace;
+      transition: all 1s;
 
-        font-size: 3.4rem;
-        font-weight: 400;
-      }
       height: 270px;
       display: flex;
       flex-direction: column;
@@ -78,9 +82,17 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
       z-index: 100;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+
+      h2 {
+        font-family: 'Roboto Mono', monospace;
+
+        font-size: 3.4rem;
+        font-weight: 400;
+      }
     }
 
     .absolute {
+      transition: all 1s;
       position: absolute;
       width: 325px;
       height: 270px;
@@ -92,6 +104,10 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
       opacity: 0.65;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+    }
+    .green {
+      background-color: #80ac4b;
+      height: 280px;
     }
 
     display: flex;
@@ -108,6 +124,7 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
     border-top-right-radius: 8px;
   }
   .message {
+    transition: all 1s;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding: 5rem 3rem 3rem 3rem;
@@ -127,6 +144,7 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
     flex-direction: column;
 
     button {
+      transition: all 2s;
       font-size: 1.6rem;
       font-weight: 700;
       padding: 1.5rem 1rem;
@@ -157,6 +175,7 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
       &.red {
         color: #f56a6a;
       }
+
       &.red:hover {
         color: var(--text-color);
 
@@ -169,11 +188,39 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
         );
         transition: all 0.5;
       }
+
+      &.green {
+      }
+      &.green:hover {
+        transition: all 0.5;
+        background: rgb(128, 172, 75);
+        background: linear-gradient(
+          49deg,
+          rgba(128, 172, 75, 1) 0%,
+          rgba(83, 136, 19, 1) 100%
+        );
+      }
+      &.editor {
+      }
+      &.editor:hover {
+        transition: all 0.5;
+        background: rgb(209, 28, 28);
+        background: linear-gradient(
+          49deg,
+          rgba(209, 28, 28, 1) 0%,
+          rgba(84, 75, 75, 1) 51%,
+          rgba(125, 111, 111, 1) 100%
+        );
+      }
     }
     p {
       color: var(--text-color);
       font-size: 2rem;
       text-align: center;
     }
+  }
+  .messageSuccess {
+    height: 250px;
+    justify-content: space-around;
   }
 `

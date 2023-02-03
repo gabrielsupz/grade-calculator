@@ -17,7 +17,8 @@ interface AsideProps {
 }
 
 export function Aside({ inEditor }: AsideProps) {
-  const { setPeriod, setInEditor, setInPersonalModel } = useTabs()
+  const { setPeriod, setInEditor, setInPersonalModel, setShowLoginInToAccess } =
+    useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
 
   const handleGoogleSignIn = async () => {
@@ -111,12 +112,12 @@ média, o peso define quantas vezes será contada a nota e o total da soma será
             <Button
               id="fakeButton"
               title="Editor"
-              onClick={() => showLoginInToAccess()}
+              onClick={() => setShowLoginInToAccess(true)}
             />{' '}
             <Button
               id="fakeButton"
               title="Modelos pesonalizados"
-              onClick={() => showLoginInToAccess()}
+              onClick={() => setShowLoginInToAccess(true)}
             />
           </div>
         </S.AsideFlex>

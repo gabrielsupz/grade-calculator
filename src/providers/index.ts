@@ -11,6 +11,8 @@ type UserCOntextType = {
   setInPersonalModel: (value: boolean) => void
   personalModelForInfo: CreateModelsProps
   setPersonalModelForInfo: ({}: CreateModelsProps) => void
+  showLoginInToAccess: boolean
+  setShowLoginInToAccess: (value: boolean) => void
 }
 const period: Period = 'bi'
 const inEditor: IsEditor = 'Editor'
@@ -23,6 +25,8 @@ const initialValue = {
   inPersonalModel: false,
   setInPersonalModel: () => {},
   personalModelForInfo: {} as CreateModelsProps,
-  setPersonalModelForInfo: () => {}
+  setPersonalModelForInfo: () => {},
+  showLoginInToAccess: false,
+  setShowLoginInToAccess: () => {}
 }
 export const TabsContext = React.createContext<UserCOntextType>(initialValue)

@@ -15,9 +15,13 @@ export const TabsProvider = ({ children }: IProps) => {
   const [personalModelForInfo, setPersonalModelForInfo] =
     useState<CreateModelsProps>({} as CreateModelsProps)
 
+  const [showLoginInToAccess, setShowLoginInToAccess] = useState<boolean>(false)
+
   return (
     <TabsContext.Provider
       value={{
+        showLoginInToAccess,
+        setShowLoginInToAccess,
         personalModelForInfo,
         setPersonalModelForInfo,
         inPersonalModel,
