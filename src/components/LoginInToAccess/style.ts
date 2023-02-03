@@ -142,8 +142,11 @@ export const loginInToAccess = styled.div<LoginInToAccessProps>`
     gap: 2rem;
     display: flex;
     flex-direction: column;
-
+    Link {
+      width: 100%;
+    }
     button {
+      width: 100%;
       transition: all 2s;
       font-size: 1.6rem;
       font-weight: 700;

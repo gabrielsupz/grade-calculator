@@ -37,6 +37,15 @@ export const EverythingBox = styled.div`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  width: 100%;
+  gap: 1rem;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+  align-items: center;
+
   ul {
     p {
       display: flex;
@@ -91,13 +100,6 @@ export const EverythingBox = styled.div`
     display: flex;
     flex-direction: row;
   }
-  width: 100%;
-  gap: 1rem;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  color: var(--text-color);
-  align-items: center;
 
   h2 {
     font-size: 3.2rem;

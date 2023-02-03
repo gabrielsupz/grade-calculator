@@ -37,7 +37,6 @@ export const SectionStyled = styled.section`
     @media screen and (max-width: 375px) {
       padding: 5rem 1.5rem 2rem 1.5rem;
     }
-    /* background-color: var(--bg-cards); */
 
     background: rgb(44, 44, 49);
     background: radial-gradient(

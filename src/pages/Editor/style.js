@@ -10,6 +10,12 @@ export const EditorStyled = styled.div`
   height: 100vh;
   padding: 2.6rem 2.6rem;
 
+  @media screen and (max-width: 1245px) {
+    gap: 7%;
+  }
+  @media screen and (max-width: 1150px) {
+    gap: 5%;
+  }
   @media screen and (max-width: 1065px) {
     height: 100%;
   }

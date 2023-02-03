@@ -4,10 +4,11 @@ import { FiAlertCircle } from 'react-icons/fi'
 import { IoCheckmarkCircleOutline } from 'react-icons/io5'
 import { UserAuth } from '../../context/AuthContext'
 import { useTabs } from '../../providers/hook'
+import { Link } from 'react-router-dom'
 
 export function LoginInToAccess() {
   const { googleSignIn, user } = UserAuth()
-  const { setShowLoginInToAccess, showLoginInToAccess } = useTabs()
+  const { setShowLoginInToAccess, showLoginInToAccess, setInEditor } = useTabs()
   const handleGoogleSignIn = () => {
     try {
       googleSignIn()
@@ -33,13 +34,18 @@ export function LoginInToAccess() {
           </div>
           <div className="message messageSuccess">
             <p>Obrigado por logar!</p>
+            <Link to={'/editor'}>
+              <button
+                className="button editor "
+                onClick={() => {
+                  setInEditor('Editor')
+                  setShowLoginInToAccess(false)
+                }}
+              >
+                EDITOR
+              </button>
+            </Link>
 
-            <button
-              className="button editor "
-              onClick={() => setShowLoginInToAccess(false)}
-            >
-              EDITOR
-            </button>
             <button
               className="button green "
               onClick={() => setShowLoginInToAccess(false)}
