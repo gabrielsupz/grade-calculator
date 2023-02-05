@@ -12,7 +12,7 @@ import * as S from './style'
 import { useTabs } from '../../providers/hook'
 
 export function MenuMobile() {
-  const { setShowLoginInToAccess } = useTabs()
+  const { setShowLoginInToAccess, setInPersonalModel, setInEditor } = useTabs()
   const { googleSignIn, user, logOut } = UserAuth()
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>()
 
@@ -50,11 +50,27 @@ export function MenuMobile() {
               alt="Foto do usuário"
             />
             <Link to={'/'}>
-              <Button title="Início" onClick={() => setMenuIsVisible(false)} />
+              <Button
+                title="Início"
+                onClick={() => {
+                  setInPersonalModel(false)
+
+                  setInEditor('Editor')
+                  setMenuIsVisible(false)
+                }}
+              />
             </Link>
             <Button title="Sair" onClick={handleSignOut} />
             <Link to={'/editor'}>
-              <Button title="Editor" onClick={() => setMenuIsVisible(false)} />
+              <Button
+                title="Editor"
+                onClick={() => {
+                  setMenuIsVisible(false)
+                  setInPersonalModel(false)
+
+                  setInEditor('Editor')
+                }}
+              />
             </Link>
           </div>
 

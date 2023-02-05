@@ -64,6 +64,8 @@ export function Aside({ inEditor }: AsideProps) {
                 onClick={() => {
                   setPeriod('bi')
                   setInPersonalModel(false)
+
+                  setInEditor('Editor')
                 }}
               />
             </Link>
