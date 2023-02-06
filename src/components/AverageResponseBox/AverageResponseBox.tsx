@@ -18,7 +18,7 @@ export function AverageResponseBox({ v1, v2, v3, v4 }: valuesProps) {
       ? response
       : response.toFixed(1)
 
-    if (responseCorrect > 59) {
+    if (responseCorrect > 59.9) {
       document.getElementById('response')?.classList.remove('red')
       document.getElementById('response')?.classList.add('blue')
     } else {
@@ -33,7 +33,7 @@ export function AverageResponseBox({ v1, v2, v3, v4 }: valuesProps) {
     var responseCorrect = Number.isInteger(response)
       ? response
       : response.toFixed(1)
-    if (responseCorrect > 59) {
+    if (responseCorrect > 59.9) {
       document.getElementById('response')?.classList.remove('red')
       document.getElementById('response')?.classList.add('blue')
     } else {

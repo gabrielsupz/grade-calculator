@@ -30,7 +30,7 @@ export function PMAverageResponseBox({
     var responseCorrect = Number.isInteger(response)
       ? response
       : response.toFixed(1)
-    if (responseCorrect > 59) {
+    if (responseCorrect > 59.9) {
       document.getElementById('response')?.classList.remove('red')
       document.getElementById('response')?.classList.add('blue')
     } else {
@@ -51,7 +51,7 @@ export function PMAverageResponseBox({
       var responseCorrect = Number.isInteger(response)
         ? response
         : response.toFixed(2)
-      if (responseCorrect > 59) {
+      if (responseCorrect > 59.9) {
         document.getElementById('response')?.classList.remove('red')
         document.getElementById('response')?.classList.add('blue')
       } else {
