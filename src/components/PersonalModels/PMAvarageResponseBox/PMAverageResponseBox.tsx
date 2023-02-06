@@ -30,6 +30,13 @@ export function PMAverageResponseBox({
     var responseCorrect = Number.isInteger(response)
       ? response
       : response.toFixed(1)
+    if (responseCorrect > 59) {
+      document.getElementById('response')?.classList.remove('red')
+      document.getElementById('response')?.classList.add('blue')
+    } else {
+      document.getElementById('response')?.classList.remove('blue')
+      document.getElementById('response')?.classList.add('red')
+    }
   } else {
     if (weight3 != undefined) {
       const valor1 = v1 * weight1
@@ -44,6 +51,13 @@ export function PMAverageResponseBox({
       var responseCorrect = Number.isInteger(response)
         ? response
         : response.toFixed(2)
+      if (responseCorrect > 59) {
+        document.getElementById('response')?.classList.remove('red')
+        document.getElementById('response')?.classList.add('blue')
+      } else {
+        document.getElementById('response')?.classList.remove('blue')
+        document.getElementById('response')?.classList.add('red')
+      }
     } else {
       responseCorrect = 0
     }

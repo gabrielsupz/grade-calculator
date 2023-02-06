@@ -33,6 +33,13 @@ export function AverageResponseBox({ v1, v2, v3, v4 }: valuesProps) {
     var responseCorrect = Number.isInteger(response)
       ? response
       : response.toFixed(1)
+    if (responseCorrect > 59) {
+      document.getElementById('response')?.classList.remove('red')
+      document.getElementById('response')?.classList.add('blue')
+    } else {
+      document.getElementById('response')?.classList.remove('blue')
+      document.getElementById('response')?.classList.add('red')
+    }
   }
 
   return <S.ResponseBox id="response">{responseCorrect}</S.ResponseBox>
