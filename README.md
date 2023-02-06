@@ -4,11 +4,7 @@
 Calcule sua média ou veja a nota necessária para atingir a média.
 </p>
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
+
 
 <p align="center">
 
@@ -30,18 +26,18 @@ Calcule sua média ou veja a nota necessária para atingir a média.
 
 
 
-## 🚀 Tecnologias  🛠️
+## Tecnologias  🛠️
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### Front-End
+#### Front-End
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [StyledComponents](https://styled-components.com/)
 - [Popper JS](https://popper.js.org/)
 - [React Ícons](https://react-icons.github.io/react-icons)
 
-### Back-End 🖥️
+#### Back-End 🖥️
 - [Firebase and Firestore](https://console.firebase.google.com/)
 
 ## 💻 Projeto
