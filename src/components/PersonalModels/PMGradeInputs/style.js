@@ -14,8 +14,8 @@ export const GradeInputBox = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.5rem;
-  max-height: 100%;
+  gap: 1rem;
+  height: 100%;
   h2 {
     font-size: 2rem;
     font-weight: 700;

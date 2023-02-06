@@ -59,7 +59,42 @@ export function PMInfoMessage() {
                 <strong> {personalModelForInfo.weight3}</strong> e a quarta por
                 <strong> {personalModelForInfo.weight4}</strong>.
               </p>
-              <img src="src\assets\Info.svg" alt="ícone de informação" />
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27 6H5C4.44772 6 4 6.44772 4 7V25C4 25.5523 4.44772 26 5 26H27C27.5523 26 28 25.5523 28 25V7C28 6.44772 27.5523 6 27 6Z"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 12H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 16H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 20H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </S.InfoShow>
           ) : null}
 
@@ -80,7 +115,42 @@ export function PMInfoMessage() {
             <strong> {personalModelForInfo.weight3}</strong> e a quarta por
             <strong> {personalModelForInfo.weight4}</strong>.
           </p>
-          <img src="src\assets\Info.svg" alt="ícone de informação" />
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27 6H5C4.44772 6 4 6.44772 4 7V25C4 25.5523 4.44772 26 5 26H27C27.5523 26 28 25.5523 28 25V7C28 6.44772 27.5523 6 27 6Z"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 12H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 16H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 20H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </S.InfoBox>
       </S.Info>
     )
@@ -106,7 +176,42 @@ export function PMInfoMessage() {
                 por
                 <strong> {personalModelForInfo.weight2}</strong>.
               </p>
-              <img src="src\assets\Info.svg" alt="ícone de informação" />
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27 6H5C4.44772 6 4 6.44772 4 7V25C4 25.5523 4.44772 26 5 26H27C27.5523 26 28 25.5523 28 25V7C28 6.44772 27.5523 6 27 6Z"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 12H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 16H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.5 20H22.5"
+                  stroke="#E8E8EC"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </S.InfoShow>
           ) : null}
 
@@ -126,7 +231,42 @@ export function PMInfoMessage() {
             <strong> {personalModelForInfo.weight2}</strong> e a terceira por
             <strong> {personalModelForInfo.weight2}</strong>.
           </p>
-          <img src="src\assets\Info.svg" alt="ícone de informação" />
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27 6H5C4.44772 6 4 6.44772 4 7V25C4 25.5523 4.44772 26 5 26H27C27.5523 26 28 25.5523 28 25V7C28 6.44772 27.5523 6 27 6Z"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 12H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 16H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9.5 20H22.5"
+              stroke="#E8E8EC"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </S.InfoBox>
       </S.Info>
     )

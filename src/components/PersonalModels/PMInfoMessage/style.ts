@@ -37,13 +37,13 @@ export const InfoBox = styled.div`
     rgba(35, 35, 39, 1) 94%,
     rgba(28, 28, 31, 1) 100%
   );
-  width: 22rem;
+  width: 25rem;
   border-radius: 10px;
   border: 2px solid var(--text-color);
 
   text-align: center;
 
-  img {
+  svg {
     margin: 0 0 0 15rem;
   }
   p {
@@ -100,7 +100,7 @@ export const InfoShow = styled.div`
 
   text-align: center;
 
-  img {
+  svg {
     margin: 0 0 0 15rem;
   }
   p {
