@@ -39,6 +39,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 #### Back-End 🖥️
 - [Firebase and Firestore](https://console.firebase.google.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## 💻 Projeto
 O Grade Calculator é uma calculadora de média escolar, podendo ser utilizada para cálculos do gênero, feita por mim Gabriel para estudar novas tecnologias e me aprofundar no uso do typescript  e React. O projeto trás dois modelos de cálculos , o bimestral e o trimestral, com os pesos das notas sendo referentes aos usados nas escolas onde estudei. Mas para quem logar o projeto  conta com um banco de dados não relacional feito no firestore , assim podendo habilitar um editor onde o usuário poderá criar seus próprios modelos de notas.
