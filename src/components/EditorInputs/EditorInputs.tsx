@@ -15,6 +15,7 @@ import { PMInputs } from '../PersonalModels/PMInputs'
 import { collection, getDocs } from 'firebase/firestore'
 import { firestore } from '../../services/firebase'
 import { IoReturnDownBackOutline, IoCloseOutline } from 'react-icons/io5'
+import { AiFillFolderOpen } from 'react-icons/ai'
 
 import * as S from './style'
 import { UserAuth } from '../../context/AuthContext'
@@ -372,8 +373,7 @@ export function EditorInputs() {
       return (
         <S.EverythingBox>
           <h2>
-            Meus Modelos{' '}
-            <img src="src\assets\Folder.svg" alt="ícone de pasta" />
+            Meus Modelos <AiFillFolderOpen color="var(--text-color)" />
           </h2>
           <div className="pessoalModelInputs">
             <ul>{personalModelList()}</ul>
