@@ -174,7 +174,7 @@ export function PMInfoMessage() {
                 <strong> {personalModelForInfo.weight1}</strong>, a segunda por{' '}
                 <strong> {personalModelForInfo.weight2}</strong> e a terceira
                 por
-                <strong> {personalModelForInfo.weight2}</strong>.
+                <strong> {personalModelForInfo.weight3}</strong>.
               </p>
               <svg
                 width="32"
@@ -229,7 +229,7 @@ export function PMInfoMessage() {
             primeira nota tem seu valor multiplicado por{' '}
             <strong> {personalModelForInfo.weight1}</strong>, a segunda por{' '}
             <strong> {personalModelForInfo.weight2}</strong> e a terceira por
-            <strong> {personalModelForInfo.weight2}</strong>.
+            <strong> {personalModelForInfo.weight3}</strong>.
           </p>
           <svg
             width="32"
