@@ -10,7 +10,7 @@ Calcule sua média ou veja a nota necessária para atingir a média.
 
   
 
-  <img alt="img 1" src="https://user-images.githubusercontent.com/102992996/217092935-35c4398d-b9c9-46a3-b5bd-245117527bb3.jpeg" width="70%">
+  <img alt="img 1" src="https://user-images.githubusercontent.com/102992996/217095188-27aedeb9-d36a-4bee-be9d-e2d7fd1a1fb3.jpeg" width="70%">
   <img alt="img 2" src="https://user-images.githubusercontent.com/102992996/217092947-eedef622-a544-4db7-8acc-30a3c2d33093.jpeg" width="70%">
     <img alt="img 3" src="https://user-images.githubusercontent.com/102992996/217093929-5e604a3e-77b7-4689-94a4-9850af0f581e.jpeg" width="70%">
     
