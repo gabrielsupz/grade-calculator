@@ -34,7 +34,7 @@ export function LoginInToAccess() {
           </div>
           <div className="message messageSuccess">
             <p>Obrigado por logar!</p>
-            <Link to={'/editor'}>
+            <Link to={'/grade-calculator/editor'}>
               <button
                 className="button editor "
                 onClick={() => {

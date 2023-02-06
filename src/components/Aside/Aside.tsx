@@ -70,7 +70,7 @@ export function Aside({ inEditor }: AsideProps) {
               />
             </Link>
             <Button title="Sair" onClick={handleSignOut} />
-            <Link to={'/editor'}>
+            <Link to={'/grade-calculator/editor'}>
               <Button
                 title="Editor"
                 onClick={() => {
