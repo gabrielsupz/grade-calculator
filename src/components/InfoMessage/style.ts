@@ -42,7 +42,9 @@ export const InfoBox = styled.div`
 
   text-align: center;
 
-  img {
+  svg {
+    max-width: 3rem;
+    max-height: 3rem;
     margin: 0 0 0 15rem;
   }
   p {
@@ -96,7 +98,9 @@ export const InfoShow = styled.div`
 
   text-align: center;
 
-  img {
+  svg {
+    max-width: 3rem;
+    max-height: 3rem;
     margin: 0 0 0 15rem;
   }
   p {

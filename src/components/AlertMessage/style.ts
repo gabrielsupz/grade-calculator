@@ -40,7 +40,7 @@ export const AlertShowDeskTop = styled.div`
   width: 25rem;
   text-align: center;
 
-  img {
+  svg {
     width: 3rem;
     height: 3rem;
     margin: 0 17rem 0 0;
@@ -100,9 +100,9 @@ export const AlertShowMobile = styled.div`
   width: 25rem;
   text-align: center;
 
-  img {
-    width: 3rem;
-    height: 3rem;
+  svg {
+    max-width: 3rem;
+    max-height: 3rem;
     margin: 0 17rem 0 0;
   }
   p {

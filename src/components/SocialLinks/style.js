@@ -32,7 +32,7 @@ export const SocialBox = styled.div`
 
   a {
     transition: 0.5s;
-    img {
+    svg {
       @media screen and (max-width: 1023px) {
         width: 40px;
         height: 40pxm;
