@@ -1775,4 +1775,4 @@ to {
   justify-content: center;
   align-items: center;
   margin-left: 3rem;
-`;function fr(){k();const{user:r}=V(),a=zt();return p.exports.useEffect(()=>{r===null&&a("/")},[r]),t(br,{children:[t(xr,{children:[e(O,{inEditor:!0}),e(q,{inEditor:!0})]}),e(ct,{inWorkshop:!0}),e(at,{inEditor:!0})]})}function vr(){return e(bt,{children:t(Vt,{children:[e(pe,{path:"/",element:e(hr,{})}),e(pe,{path:"/editor",element:e(fr,{})})]})})}ht.createRoot(document.getElementById("root")).render(e(_e.StrictMode,{children:e(qt,{children:e(Ct,{children:e(vr,{})})})}));
+`;function fr(){k();const{user:r}=V(),a=zt();return p.exports.useEffect(()=>{r===null&&a("/")},[r]),t(br,{children:[t(xr,{children:[e(O,{inEditor:!0}),e(q,{inEditor:!0})]}),e(ct,{inWorkshop:!0}),e(at,{inEditor:!0})]})}function vr(){return e(bt,{children:t(Vt,{children:[e(pe,{path:"*",element:e(hr,{})}),e(pe,{path:"/editor",element:e(fr,{})})]})})}ht.createRoot(document.getElementById("root")).render(e(_e.StrictMode,{children:e(qt,{children:e(Ct,{children:e(vr,{})})})}));
