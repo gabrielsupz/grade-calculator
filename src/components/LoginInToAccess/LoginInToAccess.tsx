@@ -23,7 +23,7 @@ export function LoginInToAccess() {
         <div className="alertBox">
           <div className="background">
             <img
-              src="src\assets\success.jpg"
+              src="https://user-images.githubusercontent.com/102992996/216957519-0ff6cd2c-6372-4057-a68c-c43dce035336.jpg"
               alt="Imagem de criança comemorando o sucesso"
             />
             <div className="absolute green"></div>
